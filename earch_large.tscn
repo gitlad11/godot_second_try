@@ -1,0 +1,56 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://earth.tscn" type="PackedScene" id=1]
+[ext_resource path="res://tiles/forest/grass.png" type="Texture" id=2]
+
+[node name="Node2D7" type="Node2D"]
+
+[node name="Node2D6" parent="." instance=ExtResource( 1 )]
+position = Vector2( 383, -348 )
+
+[node name="Node2D3" parent="." instance=ExtResource( 1 )]
+position = Vector2( 382, -186 )
+
+[node name="Node2D5" parent="." instance=ExtResource( 1 )]
+position = Vector2( 52, -348 )
+
+[node name="Node2D2" parent="." instance=ExtResource( 1 )]
+position = Vector2( 384, -22 )
+
+[node name="Node2D4" parent="." instance=ExtResource( 1 )]
+position = Vector2( 52, -186 )
+
+[node name="Node2D" parent="." instance=ExtResource( 1 )]
+position = Vector2( 52, -22 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 74, -78 )
+texture = ExtResource( 2 )
+
+[node name="Sprite2" type="Sprite" parent="."]
+position = Vector2( 321, -73 )
+texture = ExtResource( 2 )
+
+[node name="Sprite3" type="Sprite" parent="."]
+position = Vector2( 158, -241 )
+texture = ExtResource( 2 )
+
+[node name="Sprite4" type="Sprite" parent="."]
+position = Vector2( 417, -424 )
+texture = ExtResource( 2 )
+offset = Vector2( -12, 23 )
+
+[node name="Sprite5" type="Sprite" parent="."]
+position = Vector2( 483, -228 )
+texture = ExtResource( 2 )
+
+[node name="Sprite6" type="Sprite" parent="."]
+position = Vector2( 81.7287, -325.5 )
+scale = Vector2( 0.830357, 0.732142 )
+texture = ExtResource( 2 )
+offset = Vector2( -2.38298, 0 )
+
+[node name="Sprite7" type="Sprite" parent="."]
+position = Vector2( 159, -410 )
+scale = Vector2( 0.839286, 0.714286 )
+texture = ExtResource( 2 )

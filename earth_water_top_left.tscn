@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://tiles/forest/ezgif.com-gif-maker (17).png" type="Texture" id=1]
+[ext_resource path="res://tiles/forest/ezgif.com-gif-maker (14).png" type="Texture" id=2]
+
+[node name="Node2D13" type="Node2D"]
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( -3, -58 )
+scale = Vector2( 0.923729, 1 )
+texture = ExtResource( 2 )
+
+[node name="Sprite2" type="Sprite" parent="."]
+position = Vector2( -512, -30 )
+texture = ExtResource( 1 )
+offset = Vector2( 512, 30 )
+
+[node name="Sprite3" type="Sprite" parent="."]
+position = Vector2( 0, 60 )
+texture = ExtResource( 1 )
