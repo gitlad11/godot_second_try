@@ -6,7 +6,12 @@ var velocity = Vector2()
 var running = false
 var double_hit = false
 var hiting = false
-var attack_speed = 0.6
+export (float) var attack_speed = 0.6
+export (String) var current_weapon = "sword"
+
+export (int) var wood = 0
+export (int) var stone = 0
+export (int) var rope = 0
 
 func attack():
 	if(!hiting):
@@ -22,6 +27,23 @@ func attack():
 		get_node("AnimationPlayer").play("idle")
 		hiting = false	
 		speed = 160
+
+func cut():
+	if(!hiting):
+		hiting = true 
+		get_node("AnimationPlayer").play("hit_2")
+		speed = speed / 2
+		yield(get_tree().create_timer(attack_speed / 2),"timeout")
+		get_node("player").monitorable = true
+		yield(get_tree().create_timer(attack_speed / 2),"timeout")
+		speed = 160
+		get_node("player").monitorable = false
+		get_node("AnimationPlayer").play("idle")
+		hiting = false
+
+		
+func change_weapon(weapon):
+	current_weapon = weapon
 
 func get_input():
 	velocity = Vector2()
@@ -55,7 +77,7 @@ func get_input():
 		running = true
 	
 	if Input.is_action_just_pressed("ui_accept"):
-		attack()
+		cut()
 	
 	elif !Input.is_action_pressed("ui_left") and !Input.is_action_pressed("ui_up") and !Input.is_action_pressed("ui_right") and !Input.is_action_pressed("ui_down"):
 		if !hiting:
@@ -80,3 +102,10 @@ func _on_position_above(area):
 func _on_position_area_exited(area):
 	if(area.get_name() == get_name()):
 		get_node("AnimationPlayer").z_index = 0
+
+
+func _on_wood(body):
+	if(body.get_name() == "player"):
+		wood = wood + 1
+		
+		

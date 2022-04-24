@@ -13,7 +13,7 @@ extents = Vector2( 10, 16.5 )
 position = Vector2( -66, -243 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 39, -5 )
+position = Vector2( 39, 2 )
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
