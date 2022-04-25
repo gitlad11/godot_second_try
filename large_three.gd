@@ -1,6 +1,6 @@
 extends Area2D
 
-export (int) var endurance = 4
+export (int) var endurance = 6
 export (int) var woods = 1
 
 var cutting = false
@@ -16,7 +16,7 @@ func _process(delta):
 		cut_down = true
 		get_node("Sprite").visible = false
 		get_node("Sprite2").visible = true
-		get_node("KinematicBody2D").scale.y = 0.2
+		get_node("KinematicBody2D").queue_free()
 		get_node("wood").visible = true
 		get_node("wood").monitoring = true
 

@@ -34,13 +34,15 @@ func cut():
 		get_node("AnimationPlayer").play("hit_2")
 		speed = speed / 2
 		yield(get_tree().create_timer(attack_speed / 2),"timeout")
-		get_node("player").monitorable = true
+		get_node("player").set_monitorable(true)
+		get_node("player").position.y = 0
 		yield(get_tree().create_timer(attack_speed / 2),"timeout")
 		speed = 160
-		get_node("player").monitorable = false
+		get_node("player").set_monitorable(false)
+		get_node("player").position.y = 150
 		get_node("AnimationPlayer").play("idle")
 		hiting = false
-
+	
 		
 func change_weapon(weapon):
 	current_weapon = weapon
@@ -101,7 +103,7 @@ func _on_position_above(area):
 
 func _on_position_area_exited(area):
 	if(area.get_name() == get_name()):
-		get_node("AnimationPlayer").z_index = 0
+		get_node("AnimationPlayer").z_index = 10
 
 
 func _on_wood(body):

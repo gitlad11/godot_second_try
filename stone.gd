@@ -1,11 +1,17 @@
 extends Area2D
 
-var cute_down = false
+var cut_down = false
 var cutting = false
-var endurance = 6
+var endurance = 10
+
+func _process(delta):
+	if(endurance == 0 and cut_down == false):
+		cut_down = true
+		get_node("KinematicBody2D").queue_free()
+		get_node("ore").visible = true
+		get_node("ore").monitoring = true
 
 func _on_ore(area):
-	print(area.get_name())
 	if(area.get_name() == "player" and endurance > 0):
 		if(endurance == 1):
 			pass
