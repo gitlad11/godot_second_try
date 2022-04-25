@@ -4,7 +4,7 @@ export (bool) var flying_away = false
 export (int) var x_velocity = 1
 export (int) var y_velocity = 1
 var health = 1
-var speed = 170
+export (int) var speed = 170
 var velocity = Vector2()
 var direction = 'left'
 

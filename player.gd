@@ -6,6 +6,7 @@ var velocity = Vector2()
 var running = false
 var double_hit = false
 var hiting = false
+var direction = ""
 export (float) var attack_speed = 0.6
 export (String) var current_weapon = "sword"
 
@@ -43,6 +44,27 @@ func cut():
 		get_node("AnimationPlayer").play("idle")
 		hiting = false
 	
+func shoot():
+	if(!hiting):
+		hiting = true
+		get_node("AnimationPlayer").play("bow")
+		speed = speed / 2	
+		yield(get_tree().create_timer(attack_speed),"timeout")
+		get_node("AnimationPlayer").play("idle")
+		
+		var arrow = preload("res://arrow.tscn").instance()
+		arrow.on_flying(direction)
+		if(direction == "left"):
+			arrow.position.x = position.x - 140
+			arrow.position.y = position.y + 120
+		else:
+			arrow.position.x = position.x - 50
+			arrow.position.y = position.y + 120
+			
+		get_tree().get_root().add_child(arrow)
+		
+		speed = 160	
+		hiting = false
 		
 func change_weapon(weapon):
 	current_weapon = weapon
@@ -56,6 +78,7 @@ func get_input():
 			get_node("AnimationPlayer").play("run2")
 		get_node("AnimationPlayer").set_flip_h( true )
 		get_node("player").position.x = 50
+		direction = "right"
 		running = true
 		
 	if Input.is_action_pressed("ui_left"):
@@ -64,6 +87,7 @@ func get_input():
 			get_node("AnimationPlayer").play("run2")
 		get_node("AnimationPlayer").set_flip_h( false )
 		get_node("player").position.x = 0
+		direction = "left"
 		running = true
 		
 	if Input.is_action_pressed("ui_down"):
@@ -79,7 +103,7 @@ func get_input():
 		running = true
 	
 	if Input.is_action_just_pressed("ui_accept"):
-		cut()
+		shoot()
 	
 	elif !Input.is_action_pressed("ui_left") and !Input.is_action_pressed("ui_up") and !Input.is_action_pressed("ui_right") and !Input.is_action_pressed("ui_down"):
 		if !hiting:
