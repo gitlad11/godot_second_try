@@ -102,7 +102,7 @@ position = Vector2( 791, -255 )
 position = Vector2( 791, -255 )
 
 [node name="Node2D28" parent="." instance=ExtResource( 4 )]
-position = Vector2( -137, -628 )
+position = Vector2( -142, -628 )
 
 [node name="sand_huge" parent="." instance=ExtResource( 12 )]
 position = Vector2( -16, -333 )
@@ -284,7 +284,7 @@ position = Vector2( -596, -670 )
 position = Vector2( -597, -678 )
 
 [node name="Node2D44" parent="." instance=ExtResource( 9 )]
-position = Vector2( -433, -685 )
+position = Vector2( -438, -685 )
 
 [node name="Node2D45" parent="." instance=ExtResource( 3 )]
 position = Vector2( -263, -859 )

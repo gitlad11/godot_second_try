@@ -216,7 +216,7 @@ texture = ExtResource( 15 )
 position = Vector2( -2, -5 )
 scale = Vector2( 1.8, 1.8 )
 frames = SubResource( 5 )
-frame = 1
+frame = 2
 speed_scale = 1.6
 playing = true
 
@@ -649,6 +649,64 @@ z_index = 999
 frames = SubResource( 12 )
 speed_scale = 1.4
 
+[node name="stone2" parent="island" instance=ExtResource( 13 )]
+position = Vector2( -387, -525 )
+z_index = 11
+script = ExtResource( 30 )
+
+[node name="ore" type="Area2D" parent="island/stone2"]
+visible = false
+position = Vector2( -12, 0 )
+monitoring = false
+script = ExtResource( 32 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="island/stone2/ore"]
+position = Vector2( 8, 40 )
+shape = SubResource( 13 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="island/stone2/ore"]
+position = Vector2( 10, 40 )
+scale = Vector2( 0.8, 0.8 )
+frames = SubResource( 14 )
+
+[node name="position" type="Area2D" parent="island/stone2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="island/stone2/position"]
+position = Vector2( 0, 44 )
+shape = SubResource( 7 )
+
+[node name="stone3" parent="island" instance=ExtResource( 13 )]
+position = Vector2( -84, -573 )
+z_index = 11
+script = ExtResource( 30 )
+
+[node name="ore" type="Area2D" parent="island/stone3"]
+visible = false
+position = Vector2( -12, 0 )
+monitoring = false
+script = ExtResource( 32 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="island/stone3/ore"]
+position = Vector2( 8, 40 )
+shape = SubResource( 13 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="island/stone3/ore"]
+position = Vector2( 10, 40 )
+scale = Vector2( 0.8, 0.8 )
+frames = SubResource( 14 )
+
+[node name="position" type="Area2D" parent="island/stone3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="island/stone3/position"]
+position = Vector2( 0, 44 )
+shape = SubResource( 7 )
+
 [connection signal="area_entered" from="large_three2" to="large_three2" method="_on_axe"]
 [connection signal="body_entered" from="large_three2/position" to="player" method="_on_position_above"]
 [connection signal="body_exited" from="large_three2/position" to="player" method="_on_position_area_exited"]
@@ -694,3 +752,9 @@ speed_scale = 1.4
 [connection signal="body_exited" from="island/large_three7/position" to="player" method="_on_position_area_exited"]
 [connection signal="body_entered" from="island/large_three7/wood" to="player" method="_on_wood"]
 [connection signal="body_entered" from="island/large_three7/wood" to="island/large_three7/wood" method="_on_wood"]
+[connection signal="area_entered" from="island/stone2" to="island/stone2" method="_on_ore"]
+[connection signal="body_entered" from="island/stone2/position" to="player" method="_on_position_above"]
+[connection signal="body_exited" from="island/stone2/position" to="player" method="_on_position_area_exited"]
+[connection signal="area_entered" from="island/stone3" to="island/stone3" method="_on_ore"]
+[connection signal="body_entered" from="island/stone3/position" to="player" method="_on_position_above"]
+[connection signal="body_exited" from="island/stone3/position" to="player" method="_on_position_area_exited"]
