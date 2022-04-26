@@ -1,0 +1,710 @@
+[gd_scene load_steps=20 format=2]
+
+[ext_resource path="res://tiles/forest/ezgif.com-gif-maker (12).png" type="Texture" id=1]
+[ext_resource path="res://tiles/forest/ezgif.com-gif-maker (19).png" type="Texture" id=2]
+[ext_resource path="res://earth_water_left.tscn" type="PackedScene" id=3]
+[ext_resource path="res://earth.tscn" type="PackedScene" id=4]
+[ext_resource path="res://earch_bottom_water.tscn" type="PackedScene" id=5]
+[ext_resource path="res://earch_water_left_2.tscn" type="PackedScene" id=6]
+[ext_resource path="res://sand_large.tscn" type="PackedScene" id=7]
+[ext_resource path="res://water_huge.tscn" type="PackedScene" id=8]
+[ext_resource path="res://earch_end_top.tscn" type="PackedScene" id=9]
+[ext_resource path="res://sand_earth_bottom.tscn" type="PackedScene" id=10]
+[ext_resource path="res://sand_earth_top.tscn" type="PackedScene" id=11]
+[ext_resource path="res://sand_huge.tscn" type="PackedScene" id=12]
+[ext_resource path="res://tiles/forest/forest (5).png" type="Texture" id=13]
+[ext_resource path="res://tiles/forest/forest (4).png" type="Texture" id=14]
+[ext_resource path="res://stone_earth_bottom_left.tscn" type="PackedScene" id=15]
+[ext_resource path="res://tiles/forest/forest (3).png" type="Texture" id=16]
+[ext_resource path="res://tiles/forest/stone (2).png" type="Texture" id=17]
+[ext_resource path="res://tiles/forest/stone (1).png" type="Texture" id=18]
+[ext_resource path="res://tiles/forest/ezgif.com-gif-maker (4).png" type="Texture" id=19]
+
+[node name="island" type="Node2D"]
+position = Vector2( 1485, -139 )
+
+[node name="Node2D36" parent="." instance=ExtResource( 4 )]
+position = Vector2( 282, -788 )
+
+[node name="Node2D35" parent="." instance=ExtResource( 4 )]
+position = Vector2( 937, -630 )
+
+[node name="Node2D26" parent="." instance=ExtResource( 4 )]
+position = Vector2( 281, -628 )
+
+[node name="Node2D32" parent="." instance=ExtResource( 4 )]
+position = Vector2( 281, -628 )
+
+[node name="Node2D34" parent="." instance=ExtResource( 4 )]
+position = Vector2( 612, -628 )
+
+[node name="Node2D20" parent="." instance=ExtResource( 4 )]
+position = Vector2( 282, -467 )
+
+[node name="Node2D33" parent="." instance=ExtResource( 4 )]
+position = Vector2( 871, -466 )
+
+[node name="sand_large11" parent="." instance=ExtResource( 7 )]
+position = Vector2( 45, -400 )
+
+[node name="sand_large12" parent="." instance=ExtResource( 7 )]
+position = Vector2( 137, -395 )
+
+[node name="sand_large18" parent="." instance=ExtResource( 7 )]
+position = Vector2( 687, -396 )
+
+[node name="sand_huge2" parent="." instance=ExtResource( 12 )]
+position = Vector2( 46, -268 )
+
+[node name="sand_huge3" parent="." instance=ExtResource( 12 )]
+position = Vector2( 290, -333 )
+
+[node name="sand_huge6" parent="." instance=ExtResource( 12 )]
+position = Vector2( 290, -333 )
+
+[node name="sand_huge4" parent="." instance=ExtResource( 12 )]
+position = Vector2( 137, -333 )
+
+[node name="Node2D18" parent="." instance=ExtResource( 4 )]
+position = Vector2( -465, -471 )
+
+[node name="Node2D37" parent="." instance=ExtResource( 4 )]
+position = Vector2( -475, -468 )
+
+[node name="Node2D42" parent="." instance=ExtResource( 4 )]
+position = Vector2( -424, -514 )
+
+[node name="sand_huge5" parent="." instance=ExtResource( 12 )]
+position = Vector2( 199, -268 )
+
+[node name="sand_huge7" parent="." instance=ExtResource( 12 )]
+position = Vector2( 350, -205 )
+
+[node name="sand_huge8" parent="." instance=ExtResource( 12 )]
+position = Vector2( 441, -302 )
+
+[node name="Node2D46" parent="." instance=ExtResource( 4 )]
+position = Vector2( -89, -792 )
+
+[node name="sand_huge9" parent="." instance=ExtResource( 12 )]
+position = Vector2( 441, -302 )
+
+[node name="sand_huge10" parent="." instance=ExtResource( 12 )]
+position = Vector2( 486, -265 )
+
+[node name="sand_huge11" parent="." instance=ExtResource( 12 )]
+position = Vector2( 639, -266 )
+
+[node name="sand_huge12" parent="." instance=ExtResource( 12 )]
+position = Vector2( 791, -255 )
+
+[node name="sand_huge13" parent="." instance=ExtResource( 12 )]
+position = Vector2( 791, -255 )
+
+[node name="Node2D28" parent="." instance=ExtResource( 4 )]
+position = Vector2( -137, -628 )
+
+[node name="sand_huge" parent="." instance=ExtResource( 12 )]
+position = Vector2( -16, -333 )
+
+[node name="Node2D22" parent="." instance=ExtResource( 4 )]
+position = Vector2( -138, -471 )
+
+[node name="Node2D16" parent="." instance=ExtResource( 4 )]
+position = Vector2( -251, -307 )
+
+[node name="Node2D15" parent="." instance=ExtResource( 4 )]
+position = Vector2( -555, -306 )
+
+[node name="Node2D17" parent="." instance=ExtResource( 4 )]
+position = Vector2( -248, -76 )
+
+[node name="Node2D31" parent="." instance=ExtResource( 4 )]
+position = Vector2( -255, 87 )
+
+[node name="Node2D14" parent="." instance=ExtResource( 4 )]
+position = Vector2( -576, -73 )
+
+[node name="sand_large6" parent="." instance=ExtResource( 7 )]
+position = Vector2( -626, -235 )
+
+[node name="sand_large5" parent="." instance=ExtResource( 7 )]
+position = Vector2( -535, -235 )
+
+[node name="sand_large4" parent="." instance=ExtResource( 7 )]
+position = Vector2( -444, -235 )
+
+[node name="sand_large19" parent="." instance=ExtResource( 7 )]
+position = Vector2( 687, -396 )
+
+[node name="sand_large17" parent="." instance=ExtResource( 7 )]
+position = Vector2( 595, -397 )
+
+[node name="sand_large16" parent="." instance=ExtResource( 7 )]
+position = Vector2( 503, -397 )
+
+[node name="sand_large24" parent="." instance=ExtResource( 7 )]
+position = Vector2( 503, -397 )
+
+[node name="sand_large25" parent="." instance=ExtResource( 7 )]
+position = Vector2( 518, -359 )
+
+[node name="sand_large30" parent="." instance=ExtResource( 7 )]
+position = Vector2( 609, -348 )
+
+[node name="sand_large31" parent="." instance=ExtResource( 7 )]
+position = Vector2( 687, -343 )
+
+[node name="sand_large33" parent="." instance=ExtResource( 7 )]
+position = Vector2( 821, -353 )
+
+[node name="sand_large32" parent="." instance=ExtResource( 7 )]
+position = Vector2( 779, -353 )
+
+[node name="sand_large15" parent="." instance=ExtResource( 7 )]
+position = Vector2( 411, -397 )
+
+[node name="sand_large20" parent="." instance=ExtResource( 7 )]
+position = Vector2( 63, -461 )
+
+[node name="sand_large21" parent="." instance=ExtResource( 7 )]
+position = Vector2( 62, -653 )
+
+[node name="sand_large26" parent="." instance=ExtResource( 7 )]
+position = Vector2( 62, -719 )
+
+[node name="sand_large27" parent="." instance=ExtResource( 7 )]
+position = Vector2( 61, -783 )
+
+[node name="sand_large28" parent="." instance=ExtResource( 7 )]
+position = Vector2( 62, -848 )
+
+[node name="sand_large29" parent="." instance=ExtResource( 7 )]
+position = Vector2( 62, -912 )
+
+[node name="sand_large22" parent="." instance=ExtResource( 7 )]
+position = Vector2( 62, -591 )
+
+[node name="sand_large23" parent="." instance=ExtResource( 7 )]
+position = Vector2( 62, -526 )
+
+[node name="sand_large8" parent="." instance=ExtResource( 7 )]
+position = Vector2( -261, -236 )
+
+[node name="sand_large9" parent="." instance=ExtResource( 7 )]
+position = Vector2( -77, -236 )
+
+[node name="sand_large14" parent="." instance=ExtResource( 7 )]
+position = Vector2( 319, -395 )
+
+[node name="sand_large13" parent="." instance=ExtResource( 7 )]
+position = Vector2( 229, -395 )
+
+[node name="sand_large10" parent="." instance=ExtResource( 7 )]
+position = Vector2( -47, -400 )
+
+[node name="sand_large7" parent="." instance=ExtResource( 7 )]
+position = Vector2( -169, -235 )
+
+[node name="Node2D25" parent="." instance=ExtResource( 4 )]
+position = Vector2( 539, -467 )
+
+[node name="Node2D51" parent="." instance=ExtResource( 4 )]
+position = Vector2( 539, -467 )
+
+[node name="sand_large3" parent="." instance=ExtResource( 7 )]
+position = Vector2( -352, -235 )
+
+[node name="sand_large2" parent="." instance=ExtResource( 7 )]
+position = Vector2( -717, -235 )
+
+[node name="Node2D23" parent="." instance=ExtResource( 4 )]
+position = Vector2( 404, -76 )
+
+[node name="Node2D29" parent="." instance=ExtResource( 4 )]
+position = Vector2( 409, 87 )
+
+[node name="Node2D21" parent="." instance=ExtResource( 4 )]
+position = Vector2( 86, -75 )
+
+[node name="Node2D38" parent="." instance=ExtResource( 6 )]
+position = Vector2( -435, -24 )
+
+[node name="Node2D30" parent="." instance=ExtResource( 4 )]
+position = Vector2( 79, 88 )
+
+[node name="Node2D27" parent="." instance=ExtResource( 4 )]
+position = Vector2( 740, 88 )
+
+[node name="Node2D41" parent="." instance=ExtResource( 6 )]
+position = Vector2( -718, -194 )
+
+[node name="Node2D24" parent="." instance=ExtResource( 4 )]
+position = Vector2( 736, -74 )
+
+[node name="sand_large" parent="." instance=ExtResource( 7 )]
+position = Vector2( -717, -235 )
+
+[node name="Node2D55" parent="." instance=ExtResource( 8 )]
+position = Vector2( 3354, 195 )
+
+[node name="Node2D19" parent="." instance=ExtResource( 5 )]
+position = Vector2( -656, -69 )
+
+[node name="Node2D50" parent="." instance=ExtResource( 5 )]
+position = Vector2( -374, 103 )
+
+[node name="Node2D57" parent="." instance=ExtResource( 8 )]
+position = Vector2( 2098, -2331 )
+
+[node name="Node2D58" parent="." instance=ExtResource( 8 )]
+position = Vector2( 3351, -2323 )
+
+[node name="Node2D59" parent="." instance=ExtResource( 8 )]
+position = Vector2( 3351, -1083 )
+
+[node name="Sprite4" type="Sprite" parent="."]
+position = Vector2( -647, -441 )
+texture = ExtResource( 2 )
+
+[node name="Sprite5" type="Sprite" parent="."]
+position = Vector2( -650, -493 )
+texture = ExtResource( 1 )
+
+[node name="Node2D56" parent="." instance=ExtResource( 8 )]
+position = Vector2( 836, -2335 )
+
+[node name="Node2D39" parent="." instance=ExtResource( 3 )]
+position = Vector2( -703, -439 )
+
+[node name="Node2D40" parent="." instance=ExtResource( 3 )]
+position = Vector2( -596, -670 )
+
+[node name="Node2D47" parent="." instance=ExtResource( 3 )]
+position = Vector2( -597, -678 )
+
+[node name="Node2D44" parent="." instance=ExtResource( 9 )]
+position = Vector2( -433, -685 )
+
+[node name="Node2D45" parent="." instance=ExtResource( 3 )]
+position = Vector2( -263, -859 )
+
+[node name="Node2D43" parent="." instance=ExtResource( 9 )]
+position = Vector2( -526, -684 )
+
+[node name="Node2D49" parent="." instance=ExtResource( 9 )]
+position = Vector2( -526, -684 )
+
+[node name="Node2D48" parent="." instance=ExtResource( 9 )]
+position = Vector2( -116, -918 )
+
+[node name="Sprite5" type="Sprite" parent="Node2D48"]
+position = Vector2( -92, 0.749999 )
+scale = Vector2( 1, 0.919118 )
+texture = ExtResource( 1 )
+
+[node name="sand_earth" parent="." instance=ExtResource( 11 )]
+position = Vector2( -536, -319 )
+
+[node name="sand_earth3" parent="." instance=ExtResource( 11 )]
+position = Vector2( -653, -319 )
+
+[node name="sand_earth4" parent="." instance=ExtResource( 11 )]
+position = Vector2( -741, -318 )
+
+[node name="sand_earth2" parent="." instance=ExtResource( 11 )]
+position = Vector2( -419, -319 )
+
+[node name="sand_earth6" parent="." instance=ExtResource( 11 )]
+position = Vector2( -192, -320 )
+
+[node name="sand_earth7" parent="." instance=ExtResource( 11 )]
+position = Vector2( -304, -320 )
+
+[node name="sand_earth8" parent="." instance=ExtResource( 11 )]
+position = Vector2( -304, -320 )
+
+[node name="sand_earth9" parent="." instance=ExtResource( 11 )]
+position = Vector2( 126, -434 )
+
+[node name="sand_earth10" parent="." instance=ExtResource( 11 )]
+position = Vector2( 269, -436 )
+
+[node name="sand_earth14" parent="." instance=ExtResource( 11 )]
+position = Vector2( 249, -435 )
+
+[node name="sand_earth16" parent="." instance=ExtResource( 11 )]
+position = Vector2( -82, -439 )
+
+[node name="sand_earth12" parent="." instance=ExtResource( 11 )]
+position = Vector2( 496, -435 )
+
+[node name="sand_earth13" parent="." instance=ExtResource( 11 )]
+position = Vector2( 616, -435 )
+
+[node name="sand_earth15" parent="." instance=ExtResource( 11 )]
+position = Vector2( 733, -435 )
+
+[node name="sand_earth11" parent="." instance=ExtResource( 11 )]
+position = Vector2( 380, -435 )
+
+[node name="sand_earth_bottom" parent="." instance=ExtResource( 10 )]
+position = Vector2( -577, -201 )
+
+[node name="sand_earth_bottom2" parent="." instance=ExtResource( 10 )]
+position = Vector2( -437, -202 )
+
+[node name="sand_earth_bottom3" parent="." instance=ExtResource( 10 )]
+position = Vector2( -297, -202 )
+
+[node name="sand_earth_bottom4" parent="." instance=ExtResource( 10 )]
+position = Vector2( -157, -202 )
+
+[node name="sand_earth_bottom5" parent="." instance=ExtResource( 10 )]
+position = Vector2( -17, -203 )
+
+[node name="sand_earth_bottom6" parent="." instance=ExtResource( 10 )]
+position = Vector2( 124, -204 )
+
+[node name="sand_earth_bottom7" parent="." instance=ExtResource( 10 )]
+position = Vector2( 266, -205 )
+
+[node name="sand_earth_bottom8" parent="." instance=ExtResource( 10 )]
+position = Vector2( 405, -205 )
+
+[node name="sand_earth_bottom9" parent="." instance=ExtResource( 10 )]
+position = Vector2( 542, -205 )
+
+[node name="sand_earth_bottom10" parent="." instance=ExtResource( 10 )]
+position = Vector2( -718, -199 )
+
+[node name="Node2D" parent="." instance=ExtResource( 15 )]
+position = Vector2( 202, -472 )
+
+[node name="Forest(3)5" type="Sprite" parent="Node2D"]
+position = Vector2( 367, 6 )
+scale = Vector2( 1.20082, 1 )
+texture = ExtResource( 16 )
+
+[node name="Forest(3)6" type="Sprite" parent="Node2D"]
+position = Vector2( 420, -4 )
+scale = Vector2( 1.20082, 1 )
+texture = ExtResource( 18 )
+
+[node name="Forest(3)4" type="Sprite" parent="Node2D"]
+position = Vector2( 295, 7 )
+scale = Vector2( 1.20082, 1 )
+texture = ExtResource( 16 )
+
+[node name="Forest(3)11" type="Sprite" parent="Node2D"]
+position = Vector2( 320.156, -245 )
+scale = Vector2( 1.20799, 1.05882 )
+texture = ExtResource( 16 )
+flip_v = true
+
+[node name="Forest(3)12" type="Sprite" parent="Node2D"]
+position = Vector2( 393.078, -245 )
+scale = Vector2( 1.17777, 1.05882 )
+texture = ExtResource( 16 )
+flip_v = true
+
+[node name="Forest(3)3" type="Sprite" parent="Node2D"]
+position = Vector2( 226.625, 8 )
+scale = Vector2( 1.20082, 1 )
+texture = ExtResource( 16 )
+
+[node name="Forest(3)10" type="Sprite" parent="Node2D"]
+position = Vector2( 246, -245 )
+scale = Vector2( 1.28484, 1.05882 )
+texture = ExtResource( 16 )
+flip_v = true
+
+[node name="Forest(5)11" type="Sprite" parent="Node2D"]
+position = Vector2( 323, -17 )
+scale = Vector2( 1.32661, 0.983334 )
+texture = ExtResource( 13 )
+
+[node name="Forest(5)12" type="Sprite" parent="Node2D"]
+position = Vector2( 364, -17 )
+scale = Vector2( 1.32661, 0.983334 )
+texture = ExtResource( 13 )
+
+[node name="Forest(5)13" type="Sprite" parent="Node2D"]
+position = Vector2( 389.719, -17 )
+scale = Vector2( 1.8246, 0.983334 )
+texture = ExtResource( 13 )
+
+[node name="Forest(5)14" type="Sprite" parent="Node2D"]
+position = Vector2( 389.719, -17 )
+scale = Vector2( 1.8246, 0.983334 )
+texture = ExtResource( 13 )
+
+[node name="Forest(3)2" type="Sprite" parent="Node2D"]
+position = Vector2( 160.25, 8 )
+scale = Vector2( 1.12295, 1 )
+texture = ExtResource( 16 )
+
+[node name="Forest(5)" type="Sprite" parent="Node2D"]
+position = Vector2( 21.875, -30 )
+scale = Vector2( 1.23387, 1 )
+texture = ExtResource( 13 )
+
+[node name="Forest(3)" type="Sprite" parent="Node2D"]
+position = Vector2( 103.75, 8 )
+scale = Vector2( 1.0082, 1 )
+texture = ExtResource( 16 )
+
+[node name="Forest(3)8" type="Sprite" parent="Node2D"]
+position = Vector2( 109.187, -245 )
+scale = Vector2( 1.1209, 1.05882 )
+texture = ExtResource( 16 )
+flip_v = true
+
+[node name="Forest(3)9" type="Sprite" parent="Node2D"]
+position = Vector2( 175, -245 )
+scale = Vector2( 1.15984, 1.05882 )
+texture = ExtResource( 16 )
+flip_v = true
+
+[node name="Forest(3)7" type="Sprite" parent="Node2D"]
+position = Vector2( 47, -246 )
+scale = Vector2( 1.0082, 1.05882 )
+texture = ExtResource( 16 )
+flip_v = true
+
+[node name="Forest(5)3" type="Sprite" parent="Node2D"]
+position = Vector2( 57, -17 )
+scale = Vector2( 1.04839, 1 )
+texture = ExtResource( 13 )
+
+[node name="Forest(5)5" type="Sprite" parent="Node2D"]
+position = Vector2( 89, -17.5 )
+scale = Vector2( 1.04839, 0.966667 )
+texture = ExtResource( 13 )
+
+[node name="Forest(5)6" type="Sprite" parent="Node2D"]
+position = Vector2( 124, -17.5 )
+scale = Vector2( 1.32661, 0.966667 )
+texture = ExtResource( 13 )
+
+[node name="Forest(5)7" type="Sprite" parent="Node2D"]
+position = Vector2( 165, -17.5 )
+scale = Vector2( 1.32661, 0.966667 )
+texture = ExtResource( 13 )
+
+[node name="Forest(5)8" type="Sprite" parent="Node2D"]
+position = Vector2( 205, -17.25 )
+scale = Vector2( 1.32661, 0.983334 )
+texture = ExtResource( 13 )
+
+[node name="Forest(5)9" type="Sprite" parent="Node2D"]
+position = Vector2( 243, -17 )
+scale = Vector2( 1.32661, 0.983334 )
+texture = ExtResource( 13 )
+
+[node name="Forest(5)10" type="Sprite" parent="Node2D"]
+position = Vector2( 283, -17 )
+scale = Vector2( 1.32661, 0.983334 )
+texture = ExtResource( 13 )
+
+[node name="Forest(5)4" type="Sprite" parent="Node2D"]
+position = Vector2( 22, -17 )
+scale = Vector2( 1.26613, 1 )
+texture = ExtResource( 13 )
+
+[node name="Forest(5)2" type="Sprite" parent="Node2D"]
+position = Vector2( 21.875, -54 )
+scale = Vector2( 1.23387, 1 )
+texture = ExtResource( 13 )
+
+[node name="Forest(5)15" type="Sprite" parent="Node2D"]
+position = Vector2( 402, -46 )
+scale = Vector2( 1.23387, 1 )
+texture = ExtResource( 13 )
+
+[node name="Forest(5)16" type="Sprite" parent="Node2D"]
+position = Vector2( 402, -105 )
+scale = Vector2( 1.23387, 1 )
+texture = ExtResource( 13 )
+
+[node name="Forest(5)18" type="Sprite" parent="Node2D"]
+position = Vector2( 402, -134 )
+scale = Vector2( 1.23387, 1 )
+texture = ExtResource( 13 )
+
+[node name="Forest(5)19" type="Sprite" parent="Node2D"]
+position = Vector2( 402, -164 )
+scale = Vector2( 1.23387, 1 )
+texture = ExtResource( 13 )
+
+[node name="Forest(5)20" type="Sprite" parent="Node2D"]
+position = Vector2( 402, -195 )
+scale = Vector2( 1.23387, 1.06667 )
+texture = ExtResource( 13 )
+
+[node name="Sprite17" type="Sprite" parent="Node2D"]
+position = Vector2( 416.349, -230.021 )
+scale = Vector2( 1.21733, 1.51833 )
+texture = ExtResource( 17 )
+flip_h = true
+
+[node name="Forest(5)21" type="Sprite" parent="Node2D"]
+position = Vector2( 403, -222 )
+scale = Vector2( 1.23387, 1.06667 )
+texture = ExtResource( 13 )
+
+[node name="Forest(5)17" type="Sprite" parent="Node2D"]
+position = Vector2( 402, -76 )
+scale = Vector2( 1.23387, 1 )
+texture = ExtResource( 13 )
+
+[node name="Node2D2" type="Node2D" parent="Node2D"]
+position = Vector2( -4, -97 )
+z_index = 2
+
+[node name="Sprite11" type="Sprite" parent="Node2D/Node2D2"]
+position = Vector2( 10, -137.042 )
+scale = Vector2( 1.14516, 1.27667 )
+texture = ExtResource( 17 )
+
+[node name="Sprite16" type="Sprite" parent="Node2D/Node2D2"]
+position = Vector2( 10, -137.042 )
+scale = Vector2( 1.14516, 1.27667 )
+texture = ExtResource( 17 )
+
+[node name="Sprite10" type="Sprite" parent="Node2D/Node2D2"]
+position = Vector2( 27, -125 )
+scale = Vector2( 1.14516, 1.03333 )
+texture = ExtResource( 13 )
+
+[node name="Sprite" type="Sprite" parent="Node2D/Node2D2"]
+position = Vector2( -1.25, 0 )
+scale = Vector2( 1.13158, 1 )
+texture = ExtResource( 14 )
+
+[node name="Sprite12" type="Sprite" parent="Node2D/Node2D2"]
+position = Vector2( 432, 56 )
+scale = Vector2( 1.13158, 1.07143 )
+texture = ExtResource( 14 )
+flip_h = true
+
+[node name="Sprite13" type="Sprite" parent="Node2D/Node2D2"]
+position = Vector2( 432, -2 )
+scale = Vector2( 1.13158, 1 )
+texture = ExtResource( 14 )
+flip_h = true
+
+[node name="Sprite14" type="Sprite" parent="Node2D/Node2D2"]
+position = Vector2( 432, -56 )
+scale = Vector2( 1.13158, 1 )
+texture = ExtResource( 14 )
+flip_h = true
+
+[node name="Sprite15" type="Sprite" parent="Node2D/Node2D2"]
+position = Vector2( 431, -101.75 )
+scale = Vector2( 1.13158, 0.6875 )
+texture = ExtResource( 14 )
+flip_h = true
+
+[node name="Sprite7" type="Sprite" parent="Node2D/Node2D2"]
+position = Vector2( 27, -46 )
+scale = Vector2( 1.14516, 1.03333 )
+texture = ExtResource( 13 )
+
+[node name="Sprite2" type="Sprite" parent="Node2D/Node2D2"]
+position = Vector2( -0.75, -112 )
+scale = Vector2( 1.07895, 1 )
+texture = ExtResource( 14 )
+
+[node name="Sprite3" type="Sprite" parent="Node2D/Node2D2"]
+position = Vector2( -0.75, -56 )
+scale = Vector2( 1.07895, 1 )
+texture = ExtResource( 14 )
+
+[node name="Sprite4" type="Sprite" parent="Node2D/Node2D2"]
+position = Vector2( 27.25, 12.5 )
+scale = Vector2( 1.14516, 1.03333 )
+texture = ExtResource( 13 )
+
+[node name="Sprite6" type="Sprite" parent="Node2D/Node2D2"]
+position = Vector2( 27, -17 )
+scale = Vector2( 1.14516, 1.03333 )
+texture = ExtResource( 13 )
+
+[node name="Sprite8" type="Sprite" parent="Node2D/Node2D2"]
+position = Vector2( 27, -77.75 )
+scale = Vector2( 1.14516, 1.11667 )
+texture = ExtResource( 13 )
+flip_h = true
+
+[node name="Sprite9" type="Sprite" parent="Node2D/Node2D2"]
+position = Vector2( 27, -110 )
+scale = Vector2( 1.14516, 1.03333 )
+texture = ExtResource( 13 )
+
+[node name="Sprite17" type="Sprite" parent="Node2D/Node2D2"]
+position = Vector2( 60, -117 )
+scale = Vector2( 1.14516, 1.03333 )
+texture = ExtResource( 13 )
+
+[node name="Sprite18" type="Sprite" parent="Node2D/Node2D2"]
+position = Vector2( 95, -116 )
+scale = Vector2( 1.14516, 1.03333 )
+texture = ExtResource( 13 )
+
+[node name="Sprite19" type="Sprite" parent="Node2D/Node2D2"]
+position = Vector2( 130, -115 )
+scale = Vector2( 1.14516, 1.03333 )
+texture = ExtResource( 13 )
+
+[node name="Sprite20" type="Sprite" parent="Node2D/Node2D2"]
+position = Vector2( 164, -115 )
+scale = Vector2( 1.14516, 1.03333 )
+texture = ExtResource( 13 )
+
+[node name="Sprite21" type="Sprite" parent="Node2D/Node2D2"]
+position = Vector2( 198, -115 )
+scale = Vector2( 1.14516, 1.03333 )
+texture = ExtResource( 13 )
+
+[node name="Sprite22" type="Sprite" parent="Node2D/Node2D2"]
+position = Vector2( 233, -115 )
+scale = Vector2( 1.14516, 1.03333 )
+texture = ExtResource( 13 )
+
+[node name="Sprite23" type="Sprite" parent="Node2D/Node2D2"]
+position = Vector2( 267, -115 )
+scale = Vector2( 1.14516, 1.03333 )
+texture = ExtResource( 13 )
+
+[node name="Sprite24" type="Sprite" parent="Node2D/Node2D2"]
+position = Vector2( 300, -115 )
+scale = Vector2( 1.14516, 1.03333 )
+texture = ExtResource( 13 )
+
+[node name="Sprite25" type="Sprite" parent="Node2D/Node2D2"]
+position = Vector2( 334, -115 )
+scale = Vector2( 1.14516, 1.03333 )
+texture = ExtResource( 13 )
+
+[node name="Sprite26" type="Sprite" parent="Node2D/Node2D2"]
+position = Vector2( 366, -115 )
+scale = Vector2( 1.14516, 1.03333 )
+texture = ExtResource( 13 )
+
+[node name="Sprite27" type="Sprite" parent="Node2D/Node2D2"]
+position = Vector2( 368.125, -115 )
+scale = Vector2( 1.28226, 1.03333 )
+texture = ExtResource( 13 )
+
+[node name="Sprite5" type="Sprite" parent="Node2D/Node2D2"]
+
+[node name="Sprite5" type="Sprite" parent="Node2D"]
+position = Vector2( -274.5, 59 )
+scale = Vector2( 1.04545, 1.21698 )
+texture = ExtResource( 19 )
+
+[node name="Sprite6" type="Sprite" parent="Node2D"]
+position = Vector2( -274.5, 117 )
+scale = Vector2( 1.04545, 1.06604 )
+texture = ExtResource( 19 )

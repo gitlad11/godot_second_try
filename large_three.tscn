@@ -9,7 +9,7 @@
 [ext_resource path="res://tiles/three_cut_animation/SFX303_05.png" type="Texture" id=7]
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 15, 17.0625 )
+extents = Vector2( 12.1875, 18.3281 )
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 34.0147
@@ -23,23 +23,23 @@ animations = [ {
 } ]
 
 [node name="large_three" type="Area2D"]
-position = Vector2( -39, -358 )
+position = Vector2( -24, -370 )
 
 [node name="KinematicBody2D" type="KinematicBody2D" parent="."]
-position = Vector2( -53, 67 )
+position = Vector2( 51, -6 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D"]
-position = Vector2( 100, -81 )
+position = Vector2( -11.75, -17.6625 )
 scale = Vector2( 0.8, 0.8 )
 z_index = 100
 shape = SubResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 40, -17 )
+position = Vector2( 39, -28 )
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 41, -47 )
+position = Vector2( 40, -47 )
 scale = Vector2( 1.6, 1.6 )
 z_index = 99
 texture = ExtResource( 1 )
@@ -51,7 +51,7 @@ scale = Vector2( 1.35714, 1.25 )
 texture = ExtResource( 2 )
 
 [node name="damage" type="AnimatedSprite" parent="."]
-position = Vector2( 42, -2 )
+position = Vector2( 41, -18 )
 scale = Vector2( 1.5, 1 )
 z_index = 999
 frames = SubResource( 3 )

@@ -1,25 +1,35 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://arrow.gd" type="Script" id=1]
 [ext_resource path="res://tiles/assets/iron arrow.png" type="Texture" id=2]
+[ext_resource path="res://range.gd" type="Script" id=3]
 
 [sub_resource type="RectangleShape2D" id=21]
 extents = Vector2( 28, 6 )
 
+[sub_resource type="RectangleShape2D" id=22]
+
 [node name="arrow" type="KinematicBody2D"]
-position = Vector2( -48, 33 )
-scale = Vector2( 0.7, 0.7 )
+position = Vector2( -51, 36 )
+scale = Vector2( 0.5, 0.5 )
 z_index = 999
 script = ExtResource( 1 )
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 18, -4 )
+position = Vector2( 20, -4.28572 )
 shape = SubResource( 21 )
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 20, -2 )
 texture = ExtResource( 2 )
 flip_h = true
+
+[node name="range" type="Area2D" parent="."]
+scale = Vector2( 1, 1 )
+script = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="range"]
+position = Vector2( -1.42857, -4.28572 )
+shape = SubResource( 22 )
+
+[connection signal="area_exited" from="range" to="range" method="_on_range_exited"]

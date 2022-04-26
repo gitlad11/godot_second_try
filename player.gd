@@ -6,7 +6,7 @@ var velocity = Vector2()
 var running = false
 var double_hit = false
 var hiting = false
-var direction = ""
+var direction = "left"
 export (float) var attack_speed = 0.6
 export (String) var current_weapon = "sword"
 
@@ -32,6 +32,7 @@ func attack():
 func cut():
 	if(!hiting):
 		hiting = true 
+		
 		get_node("AnimationPlayer").play("hit_2")
 		speed = speed / 2
 		yield(get_tree().create_timer(attack_speed / 2),"timeout")
@@ -53,16 +54,23 @@ func shoot():
 		get_node("AnimationPlayer").play("idle")
 		
 		var arrow = preload("res://arrow.tscn").instance()
-		arrow.on_flying(direction)
+	
+		arrow.on_flying(direction)	
 		if(direction == "left"):
 			arrow.position.x = position.x - 140
 			arrow.position.y = position.y + 120
-		else:
+		elif(direction == "right"):
 			arrow.position.x = position.x - 50
-			arrow.position.y = position.y + 120
-			
-		get_tree().get_root().add_child(arrow)
-		
+			arrow.position.y = position.y + 120		
+		elif(direction == "down"):
+			arrow.position.x = position.x - 80
+			arrow.position.y = position.y + 180	
+			arrow.rotation_degrees = -90
+		else:
+			arrow.position.x = position.x - 80
+			arrow.position.y = position.y + 70	
+			arrow.rotation_degrees = 90		
+		get_tree().get_root().add_child(arrow)	
 		speed = 160	
 		hiting = false
 		
@@ -79,6 +87,7 @@ func get_input():
 		get_node("AnimationPlayer").set_flip_h( true )
 		get_node("player").position.x = 50
 		direction = "right"
+
 		running = true
 		
 	if Input.is_action_pressed("ui_left"):
@@ -88,22 +97,27 @@ func get_input():
 		get_node("AnimationPlayer").set_flip_h( false )
 		get_node("player").position.x = 0
 		direction = "left"
+
 		running = true
 		
 	if Input.is_action_pressed("ui_down"):
 		velocity.y += 1
 		if(!hiting):
 			get_node("AnimationPlayer").play("run2")
+		direction = "down"	
+			
 		running = true
 		
 	if Input.is_action_pressed("ui_up"):
 		velocity.y -= 1
 		if(!hiting):
 			get_node("AnimationPlayer").play("run2")
+		
+		direction = "up"	
 		running = true
 	
 	if Input.is_action_just_pressed("ui_accept"):
-		shoot()
+		cut()
 	
 	elif !Input.is_action_pressed("ui_left") and !Input.is_action_pressed("ui_up") and !Input.is_action_pressed("ui_right") and !Input.is_action_pressed("ui_down"):
 		if !hiting:
