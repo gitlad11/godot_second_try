@@ -12,7 +12,10 @@ export (String) var current_weapon = "sword"
 
 export (int) var wood = 0
 export (int) var stone = 0
+export (int) var leaves = 0
 export (int) var rope = 0
+
+
 
 func attack():
 	if(!hiting):
@@ -36,12 +39,12 @@ func cut():
 		get_node("AnimationPlayer").play("hit_2")
 		speed = speed / 2
 		yield(get_tree().create_timer(attack_speed / 2),"timeout")
-		get_node("player").set_monitorable(true)
-		get_node("player").position.y = 0
+		get_node("axe").set_monitorable(true)
+		get_node("axe").position.y = 0
 		yield(get_tree().create_timer(attack_speed / 2),"timeout")
 		speed = 160
-		get_node("player").set_monitorable(false)
-		get_node("player").position.y = 150
+		get_node("axe").set_monitorable(false)
+		get_node("axe").position.y = 150
 		get_node("AnimationPlayer").play("idle")
 		hiting = false
 	
@@ -80,12 +83,19 @@ func change_weapon(weapon):
 func get_input():
 	velocity = Vector2()
 	
+	if Input.is_action_just_pressed("axe"):
+		change_weapon("axe")
+	if Input.is_action_just_pressed("bow"):
+		change_weapon("bow")
+	if Input.is_action_just_pressed("sword"):
+		change_weapon("sword")		
 	if Input.is_action_pressed("ui_right"):
 		velocity.x += 1
 		if(!hiting):
 			get_node("AnimationPlayer").play("run2")
 		get_node("AnimationPlayer").set_flip_h( true )
-		get_node("player").position.x = 50
+		get_node("axe").position.x = 50
+		get_node("sword").position.x = 50
 		direction = "right"
 
 		running = true
@@ -95,7 +105,8 @@ func get_input():
 		if(!hiting):
 			get_node("AnimationPlayer").play("run2")
 		get_node("AnimationPlayer").set_flip_h( false )
-		get_node("player").position.x = 0
+		get_node("axe").position.x = 0
+		get_node("sword").position.x = 0
 		direction = "left"
 
 		running = true
@@ -117,7 +128,12 @@ func get_input():
 		running = true
 	
 	if Input.is_action_just_pressed("ui_accept"):
-		cut()
+		if current_weapon == "axe":
+			cut()
+		elif current_weapon == "sword":
+			attack()
+		elif current_weapon == "bow":
+			shoot()		
 	
 	elif !Input.is_action_pressed("ui_left") and !Input.is_action_pressed("ui_up") and !Input.is_action_pressed("ui_right") and !Input.is_action_pressed("ui_down"):
 		if !hiting:
@@ -125,8 +141,6 @@ func get_input():
 		running = false
 			
 	velocity = velocity.normalized() * speed
-	
-	
 	
 func _physics_process(delta):
 	get_input()
@@ -138,14 +152,9 @@ func _on_position_above(area):
 		get_node("AnimationPlayer").z_index = 100
 		
 
-
 func _on_position_area_exited(area):
 	if(area.get_name() == get_name()):
 		get_node("AnimationPlayer").z_index = 10
 
-
-func _on_wood(body):
-	if(body.get_name() == "player"):
-		wood = wood + 1
-		
-		
+func on_item(body, item):
+	print(item)

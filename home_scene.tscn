@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=2]
+[gd_scene load_steps=46 format=2]
 
 [ext_resource path="res://earch_large.tscn" type="PackedScene" id=1]
 [ext_resource path="res://earth_water_left.tscn" type="PackedScene" id=2]
@@ -15,26 +15,20 @@
 [ext_resource path="res://stone.tscn" type="PackedScene" id=13]
 [ext_resource path="res://tiles/animation/Campfire36.png" type="Texture" id=14]
 [ext_resource path="res://tiles/forest/ezgif.com-gif-maker (5).png" type="Texture" id=15]
-[ext_resource path="res://tiles/assets/wood.png" type="Texture" id=16]
+[ext_resource path="res://leaf.tscn" type="PackedScene" id=16]
 [ext_resource path="res://large_three.tscn" type="PackedScene" id=17]
 [ext_resource path="res://bridge_done.tscn" type="PackedScene" id=18]
 [ext_resource path="res://red_hat.tscn" type="PackedScene" id=19]
 [ext_resource path="res://flower_rose.tscn" type="PackedScene" id=20]
-[ext_resource path="res://wood.gd" type="Script" id=21]
+[ext_resource path="res://wood.tscn" type="PackedScene" id=21]
 [ext_resource path="res://Camera2D.gd" type="Script" id=22]
 [ext_resource path="res://large_three.gd" type="Script" id=23]
-[ext_resource path="res://tiles/assets/pixil-frame-0.png" type="Texture" id=24]
-[ext_resource path="res://tiles/assets/pixil-frame-1.png" type="Texture" id=25]
-[ext_resource path="res://tiles/assets/pixil-frame-4.png" type="Texture" id=26]
-[ext_resource path="res://tiles/assets/pixil-frame-2.png" type="Texture" id=27]
-[ext_resource path="res://tiles/assets/pixil-frame-3.png" type="Texture" id=28]
 [ext_resource path="res://tiles/assets/stone.png" type="Texture" id=29]
 [ext_resource path="res://stone.gd" type="Script" id=30]
-[ext_resource path="res://tiles/flowers/023.png" type="Texture" id=31]
 [ext_resource path="res://ore.gd" type="Script" id=32]
 [ext_resource path="res://crow.tscn" type="PackedScene" id=33]
-[ext_resource path="res://sand_earth_top.tscn" type="PackedScene" id=34]
 [ext_resource path="res://island1.tscn" type="PackedScene" id=35]
+[ext_resource path="res://yuka.tscn" type="PackedScene" id=36]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 14 )
@@ -63,32 +57,14 @@ animations = [ {
 [sub_resource type="CircleShape2D" id=6]
 radius = 66.0681
 
-[sub_resource type="CircleShape2D" id=7]
-radius = 31.0161
-
-[sub_resource type="CircleShape2D" id=10]
-radius = 38.0526
-
-[sub_resource type="CircleShape2D" id=11]
-
-[sub_resource type="SpriteFrames" id=12]
-animations = [ {
-"frames": [ ExtResource( 16 ) ],
-"loop": true,
-"name": "default",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 24 ), ExtResource( 25 ), ExtResource( 27 ), ExtResource( 28 ), ExtResource( 26 ) ],
-"loop": true,
-"name": "gone",
-"speed": 5.0
-} ]
+[sub_resource type="CircleShape2D" id=20]
+radius = 485.004
 
 [sub_resource type="CircleShape2D" id=9]
 radius = 35.0143
 
-[sub_resource type="CircleShape2D" id=20]
-radius = 485.004
+[sub_resource type="CircleShape2D" id=21]
+radius = 41.9762
 
 [sub_resource type="CircleShape2D" id=13]
 radius = 27.0185
@@ -101,8 +77,8 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="CircleShape2D" id=15]
-radius = 34.0
+[sub_resource type="CircleShape2D" id=7]
+radius = 31.0161
 
 [sub_resource type="RectangleShape2D" id=16]
 extents = Vector2( 394.5, 10 )
@@ -185,7 +161,7 @@ position = Vector2( 1210, -5 )
 position = Vector2( 1012, -935 )
 
 [node name="Node2D51" parent="." instance=ExtResource( 8 )]
-position = Vector2( 1045, -2196 )
+position = Vector2( 1066, -2196 )
 
 [node name="Node2D50" parent="." instance=ExtResource( 8 )]
 position = Vector2( -180, -1838 )
@@ -216,51 +192,13 @@ texture = ExtResource( 15 )
 position = Vector2( -2, -5 )
 scale = Vector2( 1.8, 1.8 )
 frames = SubResource( 5 )
-frame = 2
+frame = 3
 speed_scale = 1.6
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2( -7, 0 )
 shape = SubResource( 6 )
-
-[node name="large_three2" parent="." instance=ExtResource( 17 )]
-position = Vector2( 49, -545 )
-monitorable = false
-script = ExtResource( 23 )
-
-[node name="position" type="Area2D" parent="large_three2"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="large_three2/position"]
-position = Vector2( 39, 16 )
-shape = SubResource( 7 )
-
-[node name="wood" type="Area2D" parent="large_three2"]
-visible = false
-position = Vector2( 42, 6 )
-monitoring = false
-script = ExtResource( 21 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="large_three2/wood"]
-position = Vector2( -2, 9 )
-shape = SubResource( 10 )
-
-[node name="woods" type="KinematicBody2D" parent="large_three2/wood"]
-position = Vector2( -4, 3 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="large_three2/wood/woods"]
-position = Vector2( -1, 9 )
-shape = SubResource( 11 )
-
-[node name="AnimatedSprite" type="AnimatedSprite" parent="large_three2/wood/woods"]
-position = Vector2( 2.99998, 6.00002 )
-scale = Vector2( 0.8, 0.8 )
-z_index = 999
-frames = SubResource( 12 )
-speed_scale = 1.4
 
 [node name="bridge_done" parent="." instance=ExtResource( 18 )]
 position = Vector2( 470, -394 )
@@ -269,28 +207,37 @@ position = Vector2( 470, -394 )
 position = Vector2( 308, -236 )
 
 [node name="player" parent="." instance=ExtResource( 19 )]
-position = Vector2( 437, -514 )
+position = Vector2( 888, -407 )
 z_index = 10
 
+[node name="bow_range" type="Area2D" parent="player"]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player/bow_range"]
+position = Vector2( 8, 36 )
+shape = SubResource( 20 )
+
+[node name="axe" type="Area2D" parent="player"]
+visible = false
+position = Vector2( 1, 150 )
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player/axe"]
+position = Vector2( -20, 27 )
+shape = SubResource( 9 )
+
 [node name="Camera2D" type="Camera2D" parent="player"]
-position = Vector2( 13, 26 )
 current = true
 zoom = Vector2( 0.6, 0.6 )
 script = ExtResource( 22 )
 
-[node name="player" type="Area2D" parent="player"]
-position = Vector2( 1, 150 )
+[node name="sword" type="Area2D" parent="player"]
+visible = false
 monitorable = false
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="player/player"]
-position = Vector2( -20, 27 )
-shape = SubResource( 9 )
-
-[node name="bow_range" type="Area2D" parent="player"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="player/bow_range"]
-position = Vector2( -5, 51 )
-shape = SubResource( 20 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player/sword"]
+position = Vector2( -36, 27 )
+shape = SubResource( 21 )
 
 [node name="stone" parent="." instance=ExtResource( 13 )]
 position = Vector2( 255, -516 )
@@ -321,24 +268,19 @@ frames = SubResource( 14 )
 position = Vector2( 0, 44 )
 shape = SubResource( 7 )
 
-[node name="yuka" type="Area2D" parent="."]
-position = Vector2( -11, -241 )
-z_index = 11
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="yuka"]
-position = Vector2( -3, -1 )
-shape = SubResource( 15 )
-
-[node name="Sprite" type="Sprite" parent="yuka"]
-scale = Vector2( 2, 2 )
-z_index = 11
-texture = ExtResource( 31 )
+[node name="yuka" parent="." instance=ExtResource( 36 )]
 
 [node name="position" type="Area2D" parent="yuka"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="yuka/position"]
-position = Vector2( -7, 48 )
+position = Vector2( 2, 48 )
 shape = SubResource( 7 )
+
+[node name="leaf" parent="yuka" instance=ExtResource( 16 )]
+visible = false
+position = Vector2( -2, 44 )
+scale = Vector2( 0.8, 0.8 )
+monitoring = false
 
 [node name="KinematicBody2D" type="KinematicBody2D" parent="."]
 position = Vector2( -7, -1 )
@@ -378,383 +320,24 @@ shape = SubResource( 19 )
 [node name="crow_vision" parent="." instance=ExtResource( 33 )]
 position = Vector2( -143, -601 )
 
-[node name="sand_earth5" parent="." instance=ExtResource( 34 )]
-position = Vector2( 1182, -459 )
-
 [node name="island" parent="." instance=ExtResource( 35 )]
+position = Vector2( 1486, -127 )
 
-[node name="large_three3" parent="island" instance=ExtResource( 17 )]
-position = Vector2( -562, -378 )
-monitorable = false
+[node name="large_three" parent="." instance=ExtResource( 17 )]
+position = Vector2( -117, -271 )
 script = ExtResource( 23 )
 
-[node name="position" type="Area2D" parent="island/large_three3"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="island/large_three3/position"]
-position = Vector2( 35, 22 )
-shape = SubResource( 7 )
-
-[node name="wood" type="Area2D" parent="island/large_three3"]
+[node name="wood" parent="large_three" instance=ExtResource( 21 )]
 visible = false
-position = Vector2( 42, 6 )
-monitoring = false
-script = ExtResource( 21 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="island/large_three3/wood"]
-position = Vector2( -2, 9 )
-shape = SubResource( 10 )
-
-[node name="woods" type="KinematicBody2D" parent="island/large_three3/wood"]
-position = Vector2( -4, 3 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="island/large_three3/wood/woods"]
-position = Vector2( -1, 9 )
-shape = SubResource( 11 )
-
-[node name="AnimatedSprite" type="AnimatedSprite" parent="island/large_three3/wood/woods"]
-position = Vector2( 2.99998, 6.00002 )
+position = Vector2( 24, 13 )
 scale = Vector2( 0.8, 0.8 )
-z_index = 999
-frames = SubResource( 12 )
-speed_scale = 1.4
-
-[node name="large_three4" parent="island" instance=ExtResource( 17 )]
-position = Vector2( -367, -89 )
-monitorable = false
-script = ExtResource( 23 )
-
-[node name="position" type="Area2D" parent="island/large_three4"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="island/large_three4/position"]
-position = Vector2( 39, 16 )
-shape = SubResource( 7 )
-
-[node name="wood" type="Area2D" parent="island/large_three4"]
-visible = false
-position = Vector2( 42, 6 )
 monitoring = false
-script = ExtResource( 21 )
-__meta__ = {
-"_edit_group_": true
-}
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="island/large_three4/wood"]
-position = Vector2( -2, 9 )
-shape = SubResource( 10 )
-
-[node name="woods" type="KinematicBody2D" parent="island/large_three4/wood"]
-position = Vector2( -4, 3 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="island/large_three4/wood/woods"]
-position = Vector2( -1, 9 )
-shape = SubResource( 11 )
-
-[node name="AnimatedSprite" type="AnimatedSprite" parent="island/large_three4/wood/woods"]
-position = Vector2( 2.99998, 6.00002 )
-scale = Vector2( 0.8, 0.8 )
-z_index = 999
-frames = SubResource( 12 )
-speed_scale = 1.4
-
-[node name="large_three9" parent="island" instance=ExtResource( 17 )]
-position = Vector2( -22, -109 )
-monitorable = false
-script = ExtResource( 23 )
-
-[node name="position" type="Area2D" parent="island/large_three9"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="island/large_three9/position"]
-position = Vector2( 39, 16 )
-shape = SubResource( 7 )
-
-[node name="wood" type="Area2D" parent="island/large_three9"]
-visible = false
-position = Vector2( 42, 6 )
-monitoring = false
-script = ExtResource( 21 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="island/large_three9/wood"]
-position = Vector2( -2, 9 )
-shape = SubResource( 10 )
-
-[node name="woods" type="KinematicBody2D" parent="island/large_three9/wood"]
-position = Vector2( -4, 3 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="island/large_three9/wood/woods"]
-position = Vector2( -1, 9 )
-shape = SubResource( 11 )
-
-[node name="AnimatedSprite" type="AnimatedSprite" parent="island/large_three9/wood/woods"]
-position = Vector2( 2.99998, 6.00002 )
-scale = Vector2( 0.8, 0.8 )
-z_index = 999
-frames = SubResource( 12 )
-speed_scale = 1.4
-
-[node name="large_three5" parent="island" instance=ExtResource( 17 )]
-position = Vector2( -95, -646 )
-monitorable = false
-script = ExtResource( 23 )
-
-[node name="position" type="Area2D" parent="island/large_three5"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="island/large_three5/position"]
-position = Vector2( 39, 16 )
-shape = SubResource( 7 )
-
-[node name="wood" type="Area2D" parent="island/large_three5"]
-visible = false
-position = Vector2( 42, 6 )
-monitoring = false
-script = ExtResource( 21 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="island/large_three5/wood"]
-position = Vector2( -2, 9 )
-shape = SubResource( 10 )
-
-[node name="woods" type="KinematicBody2D" parent="island/large_three5/wood"]
-position = Vector2( -4, 3 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="island/large_three5/wood/woods"]
-position = Vector2( -1, 9 )
-shape = SubResource( 11 )
-
-[node name="AnimatedSprite" type="AnimatedSprite" parent="island/large_three5/wood/woods"]
-position = Vector2( 2.99998, 6.00002 )
-scale = Vector2( 0.8, 0.8 )
-z_index = 999
-frames = SubResource( 12 )
-speed_scale = 1.4
-
-[node name="large_three8" parent="island" instance=ExtResource( 17 )]
-position = Vector2( -198, -415 )
-monitorable = false
-script = ExtResource( 23 )
-
-[node name="position" type="Area2D" parent="island/large_three8"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="island/large_three8/position"]
-position = Vector2( 39, 16 )
-shape = SubResource( 7 )
-
-[node name="wood" type="Area2D" parent="island/large_three8"]
-visible = false
-position = Vector2( 42, 6 )
-monitoring = false
-script = ExtResource( 21 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="island/large_three8/wood"]
-position = Vector2( -2, 9 )
-shape = SubResource( 10 )
-
-[node name="woods" type="KinematicBody2D" parent="island/large_three8/wood"]
-position = Vector2( -4, 3 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="island/large_three8/wood/woods"]
-position = Vector2( -1, 9 )
-shape = SubResource( 11 )
-
-[node name="AnimatedSprite" type="AnimatedSprite" parent="island/large_three8/wood/woods"]
-position = Vector2( 2.99998, 6.00002 )
-scale = Vector2( 0.8, 0.8 )
-z_index = 999
-frames = SubResource( 12 )
-speed_scale = 1.4
-
-[node name="large_three6" parent="island" instance=ExtResource( 17 )]
-position = Vector2( -538, -559 )
-monitorable = false
-script = ExtResource( 23 )
-
-[node name="position" type="Area2D" parent="island/large_three6"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="island/large_three6/position"]
-position = Vector2( 39, 16 )
-shape = SubResource( 7 )
-
-[node name="wood" type="Area2D" parent="island/large_three6"]
-visible = false
-position = Vector2( 42, 6 )
-monitoring = false
-script = ExtResource( 21 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="island/large_three6/wood"]
-position = Vector2( -2, 9 )
-shape = SubResource( 10 )
-
-[node name="woods" type="KinematicBody2D" parent="island/large_three6/wood"]
-position = Vector2( -4, 3 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="island/large_three6/wood/woods"]
-position = Vector2( -1, 9 )
-shape = SubResource( 11 )
-
-[node name="AnimatedSprite" type="AnimatedSprite" parent="island/large_three6/wood/woods"]
-position = Vector2( 2.99998, 6.00002 )
-scale = Vector2( 0.8, 0.8 )
-z_index = 999
-frames = SubResource( 12 )
-speed_scale = 1.4
-
-[node name="large_three7" parent="island" instance=ExtResource( 17 )]
-position = Vector2( -304, -597 )
-monitorable = false
-script = ExtResource( 23 )
-
-[node name="position" type="Area2D" parent="island/large_three7"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="island/large_three7/position"]
-position = Vector2( 39, 16 )
-shape = SubResource( 7 )
-
-[node name="wood" type="Area2D" parent="island/large_three7"]
-visible = false
-position = Vector2( 42, 6 )
-monitoring = false
-script = ExtResource( 21 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="island/large_three7/wood"]
-position = Vector2( -2, 9 )
-shape = SubResource( 10 )
-
-[node name="woods" type="KinematicBody2D" parent="island/large_three7/wood"]
-position = Vector2( -4, 3 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="island/large_three7/wood/woods"]
-position = Vector2( -1, 9 )
-shape = SubResource( 11 )
-
-[node name="AnimatedSprite" type="AnimatedSprite" parent="island/large_three7/wood/woods"]
-position = Vector2( 2.99998, 6.00002 )
-scale = Vector2( 0.8, 0.8 )
-z_index = 999
-frames = SubResource( 12 )
-speed_scale = 1.4
-
-[node name="stone2" parent="island" instance=ExtResource( 13 )]
-position = Vector2( -387, -525 )
-z_index = 11
-script = ExtResource( 30 )
-
-[node name="ore" type="Area2D" parent="island/stone2"]
-visible = false
-position = Vector2( -12, 0 )
-monitoring = false
-script = ExtResource( 32 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="island/stone2/ore"]
-position = Vector2( 8, 40 )
-shape = SubResource( 13 )
-
-[node name="AnimatedSprite" type="AnimatedSprite" parent="island/stone2/ore"]
-position = Vector2( 10, 40 )
-scale = Vector2( 0.8, 0.8 )
-frames = SubResource( 14 )
-
-[node name="position" type="Area2D" parent="island/stone2"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="island/stone2/position"]
-position = Vector2( 0, 44 )
-shape = SubResource( 7 )
-
-[node name="stone3" parent="island" instance=ExtResource( 13 )]
-position = Vector2( -84, -573 )
-z_index = 11
-script = ExtResource( 30 )
-
-[node name="ore" type="Area2D" parent="island/stone3"]
-visible = false
-position = Vector2( -12, 0 )
-monitoring = false
-script = ExtResource( 32 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="island/stone3/ore"]
-position = Vector2( 8, 40 )
-shape = SubResource( 13 )
-
-[node name="AnimatedSprite" type="AnimatedSprite" parent="island/stone3/ore"]
-position = Vector2( 10, 40 )
-scale = Vector2( 0.8, 0.8 )
-frames = SubResource( 14 )
-
-[node name="position" type="Area2D" parent="island/stone3"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="island/stone3/position"]
-position = Vector2( 0, 44 )
-shape = SubResource( 7 )
-
-[connection signal="area_entered" from="large_three2" to="large_three2" method="_on_axe"]
-[connection signal="body_entered" from="large_three2/position" to="player" method="_on_position_above"]
-[connection signal="body_exited" from="large_three2/position" to="player" method="_on_position_area_exited"]
-[connection signal="body_entered" from="large_three2/wood" to="large_three2/wood" method="_on_wood"]
-[connection signal="body_entered" from="large_three2/wood" to="player" method="_on_wood"]
 [connection signal="area_entered" from="stone" to="stone" method="_on_ore"]
 [connection signal="body_entered" from="stone/position" to="player" method="_on_position_above"]
 [connection signal="body_exited" from="stone/position" to="player" method="_on_position_area_exited"]
 [connection signal="body_entered" from="yuka/position" to="player" method="_on_position_above"]
 [connection signal="body_exited" from="yuka/position" to="player" method="_on_position_area_exited"]
-[connection signal="area_entered" from="island/large_three3" to="island/large_three3" method="_on_axe"]
-[connection signal="body_entered" from="island/large_three3/position" to="player" method="_on_position_above"]
-[connection signal="body_exited" from="island/large_three3/position" to="player" method="_on_position_area_exited"]
-[connection signal="body_entered" from="island/large_three3/wood" to="player" method="_on_wood"]
-[connection signal="body_entered" from="island/large_three3/wood" to="island/large_three3/wood" method="_on_wood"]
-[connection signal="area_entered" from="island/large_three4" to="island/large_three4" method="_on_axe"]
-[connection signal="body_entered" from="island/large_three4/position" to="player" method="_on_position_above"]
-[connection signal="body_exited" from="island/large_three4/position" to="player" method="_on_position_area_exited"]
-[connection signal="body_entered" from="island/large_three4/wood" to="player" method="_on_wood"]
-[connection signal="body_entered" from="island/large_three4/wood" to="island/large_three4/wood" method="_on_wood"]
-[connection signal="area_entered" from="island/large_three9" to="island/large_three9" method="_on_axe"]
-[connection signal="body_entered" from="island/large_three9/position" to="player" method="_on_position_above"]
-[connection signal="body_exited" from="island/large_three9/position" to="player" method="_on_position_area_exited"]
-[connection signal="body_entered" from="island/large_three9/wood" to="player" method="_on_wood"]
-[connection signal="body_entered" from="island/large_three9/wood" to="island/large_three9/wood" method="_on_wood"]
-[connection signal="area_entered" from="island/large_three5" to="island/large_three5" method="_on_axe"]
-[connection signal="body_entered" from="island/large_three5/position" to="player" method="_on_position_above"]
-[connection signal="body_exited" from="island/large_three5/position" to="player" method="_on_position_area_exited"]
-[connection signal="body_entered" from="island/large_three5/wood" to="player" method="_on_wood"]
-[connection signal="body_entered" from="island/large_three5/wood" to="island/large_three5/wood" method="_on_wood"]
-[connection signal="area_entered" from="island/large_three8" to="island/large_three8" method="_on_axe"]
-[connection signal="body_entered" from="island/large_three8/position" to="player" method="_on_position_above"]
-[connection signal="body_exited" from="island/large_three8/position" to="player" method="_on_position_area_exited"]
-[connection signal="body_entered" from="island/large_three8/wood" to="player" method="_on_wood"]
-[connection signal="body_entered" from="island/large_three8/wood" to="island/large_three8/wood" method="_on_wood"]
-[connection signal="area_entered" from="island/large_three6" to="island/large_three6" method="_on_axe"]
-[connection signal="body_entered" from="island/large_three6/position" to="player" method="_on_position_above"]
-[connection signal="body_exited" from="island/large_three6/position" to="player" method="_on_position_area_exited"]
-[connection signal="body_entered" from="island/large_three6/wood" to="player" method="_on_wood"]
-[connection signal="body_entered" from="island/large_three6/wood" to="island/large_three6/wood" method="_on_wood"]
-[connection signal="area_entered" from="island/large_three7" to="island/large_three7" method="_on_axe"]
-[connection signal="body_entered" from="island/large_three7/position" to="player" method="_on_position_above"]
-[connection signal="body_exited" from="island/large_three7/position" to="player" method="_on_position_area_exited"]
-[connection signal="body_entered" from="island/large_three7/wood" to="player" method="_on_wood"]
-[connection signal="body_entered" from="island/large_three7/wood" to="island/large_three7/wood" method="_on_wood"]
-[connection signal="area_entered" from="island/stone2" to="island/stone2" method="_on_ore"]
-[connection signal="body_entered" from="island/stone2/position" to="player" method="_on_position_above"]
-[connection signal="body_exited" from="island/stone2/position" to="player" method="_on_position_area_exited"]
-[connection signal="area_entered" from="island/stone3" to="island/stone3" method="_on_ore"]
-[connection signal="body_entered" from="island/stone3/position" to="player" method="_on_position_above"]
-[connection signal="body_exited" from="island/stone3/position" to="player" method="_on_position_area_exited"]
+[connection signal="body_entered" from="yuka/leaf" to="player" method="on_item" binds= [ "leaf" ]]
+[connection signal="area_entered" from="large_three" to="large_three" method="_on_axe"]
+[connection signal="body_entered" from="large_three/wood" to="player" method="on_item" binds= [ "wood" ]]

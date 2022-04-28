@@ -1,19 +1,21 @@
 extends Area2D
 
-var cut_down = false
+var endurance = 5
 var cutting = false
-var endurance = 10
+var cut_down = false
 
 func _process(delta):
 	if(endurance == 0 and cut_down == false):
+		print(endurance)
 		cut_down = true
-		get_node("KinematicBody2D").queue_free()
+		var leaf = get_node("leaf")
+		get_node("Sprite").queue_free()
 		get_node("damage").queue_free()
-		get_node("ore").visible = true
-		get_node("ore").monitoring = true
+		leaf.visible = true
+		leaf.monitoring = true
 
-func _on_ore(area):
-	if(area.get_name() == "player" and endurance > 0):
+func _on_yuka(area):
+	if(area.get_name() == "axe" and endurance > 0):
 		if(endurance == 1):
 			pass
 		elif(!cutting):
