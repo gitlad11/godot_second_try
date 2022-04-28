@@ -2337,6 +2337,353 @@ texture = ExtResource( 13 )
 
 [node name="Sprite5" type="Sprite" parent="house_ground2/Node2D2"]
 
+[node name="house_ground3" parent="." instance=ExtResource( 15 )]
+position = Vector2( 616, -1339 )
+
+[node name="Forest(3)5" type="Sprite" parent="house_ground3"]
+position = Vector2( 367, 6 )
+scale = Vector2( 1.20082, 1 )
+texture = ExtResource( 16 )
+
+[node name="Forest(3)6" type="Sprite" parent="house_ground3"]
+position = Vector2( 420, -4 )
+scale = Vector2( 1.20082, 1 )
+texture = ExtResource( 18 )
+
+[node name="Forest(3)4" type="Sprite" parent="house_ground3"]
+position = Vector2( 295, 7 )
+scale = Vector2( 1.20082, 1 )
+texture = ExtResource( 16 )
+
+[node name="Forest(3)11" type="Sprite" parent="house_ground3"]
+position = Vector2( 320.156, -245 )
+scale = Vector2( 1.20799, 1.05882 )
+texture = ExtResource( 16 )
+flip_v = true
+
+[node name="Forest(3)12" type="Sprite" parent="house_ground3"]
+position = Vector2( 393.078, -245 )
+scale = Vector2( 1.17777, 1.05882 )
+texture = ExtResource( 16 )
+flip_v = true
+
+[node name="Forest(3)3" type="Sprite" parent="house_ground3"]
+position = Vector2( 226.625, 8 )
+scale = Vector2( 1.20082, 1 )
+texture = ExtResource( 16 )
+
+[node name="Forest(3)10" type="Sprite" parent="house_ground3"]
+position = Vector2( 246, -245 )
+scale = Vector2( 1.28484, 1.05882 )
+texture = ExtResource( 16 )
+flip_v = true
+
+[node name="Forest(5)11" type="Sprite" parent="house_ground3"]
+position = Vector2( 323, -17 )
+scale = Vector2( 1.32661, 0.983334 )
+texture = ExtResource( 13 )
+
+[node name="Forest(5)12" type="Sprite" parent="house_ground3"]
+position = Vector2( 364, -17 )
+scale = Vector2( 1.32661, 0.983334 )
+texture = ExtResource( 13 )
+
+[node name="Forest(5)13" type="Sprite" parent="house_ground3"]
+position = Vector2( 389.719, -17 )
+scale = Vector2( 1.8246, 0.983334 )
+texture = ExtResource( 13 )
+
+[node name="Forest(5)14" type="Sprite" parent="house_ground3"]
+position = Vector2( 389.719, -17 )
+scale = Vector2( 1.8246, 0.983334 )
+texture = ExtResource( 13 )
+
+[node name="Forest(3)2" type="Sprite" parent="house_ground3"]
+position = Vector2( 160.25, 8 )
+scale = Vector2( 1.12295, 1 )
+texture = ExtResource( 16 )
+
+[node name="Forest(5)" type="Sprite" parent="house_ground3"]
+position = Vector2( 21.875, -30 )
+scale = Vector2( 1.23387, 1 )
+texture = ExtResource( 13 )
+
+[node name="Forest(3)" type="Sprite" parent="house_ground3"]
+position = Vector2( 103.75, 8 )
+scale = Vector2( 1.0082, 1 )
+texture = ExtResource( 16 )
+
+[node name="Forest(3)8" type="Sprite" parent="house_ground3"]
+position = Vector2( 109.187, -245 )
+scale = Vector2( 1.1209, 1.05882 )
+texture = ExtResource( 16 )
+flip_v = true
+
+[node name="Forest(3)9" type="Sprite" parent="house_ground3"]
+position = Vector2( 175, -245 )
+scale = Vector2( 1.15984, 1.05882 )
+texture = ExtResource( 16 )
+flip_v = true
+
+[node name="Forest(3)7" type="Sprite" parent="house_ground3"]
+position = Vector2( 47, -246 )
+scale = Vector2( 1.0082, 1.05882 )
+texture = ExtResource( 16 )
+flip_v = true
+
+[node name="Forest(5)3" type="Sprite" parent="house_ground3"]
+position = Vector2( 57, -17 )
+scale = Vector2( 1.04839, 1 )
+texture = ExtResource( 13 )
+
+[node name="Forest(5)5" type="Sprite" parent="house_ground3"]
+position = Vector2( 89, -17.5 )
+scale = Vector2( 1.04839, 0.966667 )
+texture = ExtResource( 13 )
+
+[node name="Forest(5)6" type="Sprite" parent="house_ground3"]
+position = Vector2( 124, -17.5 )
+scale = Vector2( 1.32661, 0.966667 )
+texture = ExtResource( 13 )
+
+[node name="Forest(5)7" type="Sprite" parent="house_ground3"]
+position = Vector2( 165, -17.5 )
+scale = Vector2( 1.32661, 0.966667 )
+texture = ExtResource( 13 )
+
+[node name="Forest(5)8" type="Sprite" parent="house_ground3"]
+position = Vector2( 205, -17.25 )
+scale = Vector2( 1.32661, 0.983334 )
+texture = ExtResource( 13 )
+
+[node name="Forest(5)9" type="Sprite" parent="house_ground3"]
+position = Vector2( 243, -17 )
+scale = Vector2( 1.32661, 0.983334 )
+texture = ExtResource( 13 )
+
+[node name="Forest(5)10" type="Sprite" parent="house_ground3"]
+position = Vector2( 283, -17 )
+scale = Vector2( 1.32661, 0.983334 )
+texture = ExtResource( 13 )
+
+[node name="Forest(5)4" type="Sprite" parent="house_ground3"]
+position = Vector2( 22.8125, -17 )
+scale = Vector2( 1.21371, 1 )
+texture = ExtResource( 13 )
+
+[node name="KinematicBody2D2" type="KinematicBody2D" parent="house_ground3"]
+position = Vector2( 3571, -962 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="house_ground3/KinematicBody2D2"]
+position = Vector2( -2062, 1134 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="house_ground3/KinematicBody2D2"]
+position = Vector2( -2062, 516 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="house_ground3/KinematicBody2D2"]
+position = Vector2( -4029, 244 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="house_ground3/KinematicBody2D2"]
+position = Vector2( -4033, 531 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="house_ground3/KinematicBody2D2"]
+position = Vector2( -2054, -94 )
+shape = SubResource( 1 )
+
+[node name="Forest(5)2" type="Sprite" parent="house_ground3"]
+position = Vector2( 21.875, -54 )
+scale = Vector2( 1.23387, 1 )
+texture = ExtResource( 13 )
+
+[node name="Forest(5)15" type="Sprite" parent="house_ground3"]
+position = Vector2( 402, -46 )
+scale = Vector2( 1.23387, 1 )
+texture = ExtResource( 13 )
+
+[node name="Forest(5)16" type="Sprite" parent="house_ground3"]
+position = Vector2( 402, -105 )
+scale = Vector2( 1.23387, 1 )
+texture = ExtResource( 13 )
+
+[node name="Forest(5)18" type="Sprite" parent="house_ground3"]
+position = Vector2( 402, -134 )
+scale = Vector2( 1.23387, 1 )
+texture = ExtResource( 13 )
+
+[node name="Forest(5)19" type="Sprite" parent="house_ground3"]
+position = Vector2( 402, -164 )
+scale = Vector2( 1.23387, 1 )
+texture = ExtResource( 13 )
+
+[node name="Forest(5)20" type="Sprite" parent="house_ground3"]
+position = Vector2( 402, -195 )
+scale = Vector2( 1.23387, 1.06667 )
+texture = ExtResource( 13 )
+
+[node name="Sprite17" type="Sprite" parent="house_ground3"]
+position = Vector2( 416.349, -230.021 )
+scale = Vector2( 1.21733, 1.51833 )
+texture = ExtResource( 17 )
+flip_h = true
+
+[node name="Forest(5)21" type="Sprite" parent="house_ground3"]
+position = Vector2( 403, -222 )
+scale = Vector2( 1.23387, 1.06667 )
+texture = ExtResource( 13 )
+
+[node name="Forest(5)17" type="Sprite" parent="house_ground3"]
+position = Vector2( 402, -76 )
+scale = Vector2( 1.23387, 1 )
+texture = ExtResource( 13 )
+
+[node name="Node2D2" type="Node2D" parent="house_ground3"]
+position = Vector2( -4, -97 )
+z_index = 2
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite11" type="Sprite" parent="house_ground3/Node2D2"]
+position = Vector2( 10, -137.042 )
+scale = Vector2( 1.14516, 1.27667 )
+texture = ExtResource( 17 )
+
+[node name="Sprite16" type="Sprite" parent="house_ground3/Node2D2"]
+position = Vector2( 10, -137.042 )
+scale = Vector2( 1.14516, 1.27667 )
+texture = ExtResource( 17 )
+
+[node name="Sprite10" type="Sprite" parent="house_ground3/Node2D2"]
+position = Vector2( 27, -125 )
+scale = Vector2( 1.14516, 1.03333 )
+texture = ExtResource( 13 )
+
+[node name="Sprite" type="Sprite" parent="house_ground3/Node2D2"]
+position = Vector2( -1.25, 0 )
+scale = Vector2( 1.13158, 1 )
+texture = ExtResource( 14 )
+
+[node name="Sprite12" type="Sprite" parent="house_ground3/Node2D2"]
+position = Vector2( 432, 56 )
+scale = Vector2( 1.13158, 1.07143 )
+texture = ExtResource( 14 )
+flip_h = true
+
+[node name="Sprite13" type="Sprite" parent="house_ground3/Node2D2"]
+position = Vector2( 432, -2 )
+scale = Vector2( 1.13158, 1 )
+texture = ExtResource( 14 )
+flip_h = true
+
+[node name="Sprite14" type="Sprite" parent="house_ground3/Node2D2"]
+position = Vector2( 432, -56 )
+scale = Vector2( 1.13158, 1 )
+texture = ExtResource( 14 )
+flip_h = true
+
+[node name="Sprite15" type="Sprite" parent="house_ground3/Node2D2"]
+position = Vector2( 431, -101.75 )
+scale = Vector2( 1.13158, 0.6875 )
+texture = ExtResource( 14 )
+flip_h = true
+
+[node name="Sprite7" type="Sprite" parent="house_ground3/Node2D2"]
+position = Vector2( 27, -46 )
+scale = Vector2( 1.14516, 1.03333 )
+texture = ExtResource( 13 )
+
+[node name="Sprite2" type="Sprite" parent="house_ground3/Node2D2"]
+position = Vector2( -0.75, -112 )
+scale = Vector2( 1.07895, 1 )
+texture = ExtResource( 14 )
+
+[node name="Sprite3" type="Sprite" parent="house_ground3/Node2D2"]
+position = Vector2( -0.75, -56 )
+scale = Vector2( 1.07895, 1 )
+texture = ExtResource( 14 )
+
+[node name="Sprite4" type="Sprite" parent="house_ground3/Node2D2"]
+position = Vector2( 27.25, 12.5 )
+scale = Vector2( 1.14516, 1.03333 )
+texture = ExtResource( 13 )
+
+[node name="Sprite6" type="Sprite" parent="house_ground3/Node2D2"]
+position = Vector2( 27, -17 )
+scale = Vector2( 1.14516, 1.03333 )
+texture = ExtResource( 13 )
+
+[node name="Sprite8" type="Sprite" parent="house_ground3/Node2D2"]
+position = Vector2( 27, -77.75 )
+scale = Vector2( 1.14516, 1.11667 )
+texture = ExtResource( 13 )
+flip_h = true
+
+[node name="Sprite9" type="Sprite" parent="house_ground3/Node2D2"]
+position = Vector2( 27, -110 )
+scale = Vector2( 1.14516, 1.03333 )
+texture = ExtResource( 13 )
+
+[node name="Sprite17" type="Sprite" parent="house_ground3/Node2D2"]
+position = Vector2( 60, -117 )
+scale = Vector2( 1.14516, 1.03333 )
+texture = ExtResource( 13 )
+
+[node name="Sprite18" type="Sprite" parent="house_ground3/Node2D2"]
+position = Vector2( 95, -116 )
+scale = Vector2( 1.14516, 1.03333 )
+texture = ExtResource( 13 )
+
+[node name="Sprite19" type="Sprite" parent="house_ground3/Node2D2"]
+position = Vector2( 130, -115 )
+scale = Vector2( 1.14516, 1.03333 )
+texture = ExtResource( 13 )
+
+[node name="Sprite20" type="Sprite" parent="house_ground3/Node2D2"]
+position = Vector2( 164, -115 )
+scale = Vector2( 1.14516, 1.03333 )
+texture = ExtResource( 13 )
+
+[node name="Sprite21" type="Sprite" parent="house_ground3/Node2D2"]
+position = Vector2( 198, -115 )
+scale = Vector2( 1.14516, 1.03333 )
+texture = ExtResource( 13 )
+
+[node name="Sprite22" type="Sprite" parent="house_ground3/Node2D2"]
+position = Vector2( 233, -115 )
+scale = Vector2( 1.14516, 1.03333 )
+texture = ExtResource( 13 )
+
+[node name="Sprite23" type="Sprite" parent="house_ground3/Node2D2"]
+position = Vector2( 267, -115 )
+scale = Vector2( 1.14516, 1.03333 )
+texture = ExtResource( 13 )
+
+[node name="Sprite24" type="Sprite" parent="house_ground3/Node2D2"]
+position = Vector2( 300, -115 )
+scale = Vector2( 1.14516, 1.03333 )
+texture = ExtResource( 13 )
+
+[node name="Sprite25" type="Sprite" parent="house_ground3/Node2D2"]
+position = Vector2( 334, -115 )
+scale = Vector2( 1.14516, 1.03333 )
+texture = ExtResource( 13 )
+
+[node name="Sprite26" type="Sprite" parent="house_ground3/Node2D2"]
+position = Vector2( 366, -115 )
+scale = Vector2( 1.14516, 1.03333 )
+texture = ExtResource( 13 )
+
+[node name="Sprite27" type="Sprite" parent="house_ground3/Node2D2"]
+position = Vector2( 368.125, -115 )
+scale = Vector2( 1.28226, 1.03333 )
+texture = ExtResource( 13 )
+
+[node name="Sprite5" type="Sprite" parent="house_ground3/Node2D2"]
+
 [node name="sand_earth20" parent="." instance=ExtResource( 11 )]
 position = Vector2( 360, -832 )
 
@@ -2744,7 +3091,7 @@ position = Vector2( -192, -909 )
 shape = SubResource( 2 )
 
 [node name="CollisionShape2D10" type="CollisionShape2D" parent="KinematicBody2D"]
-position = Vector2( -1332, -980 )
+position = Vector2( -1333, -982 )
 shape = SubResource( 2 )
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="KinematicBody2D"]
@@ -2779,7 +3126,7 @@ position = Vector2( -237, 625.875 )
 shape = SubResource( 3 )
 
 [node name="CollisionShape2D14" type="CollisionShape2D" parent="KinematicBody2D3"]
-position = Vector2( -916, -1099 )
+position = Vector2( -905, -1121 )
 shape = SubResource( 3 )
 
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="KinematicBody2D3"]

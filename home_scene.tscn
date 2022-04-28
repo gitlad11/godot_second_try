@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=2]
+[gd_scene load_steps=53 format=2]
 
 [ext_resource path="res://earch_large.tscn" type="PackedScene" id=1]
 [ext_resource path="res://earth_water_left.tscn" type="PackedScene" id=2]
@@ -23,6 +23,8 @@
 [ext_resource path="res://wood.tscn" type="PackedScene" id=21]
 [ext_resource path="res://Camera2D.gd" type="Script" id=22]
 [ext_resource path="res://large_three.gd" type="Script" id=23]
+[ext_resource path="res://characters/Pixilart Sprite Sheet (1).png" type="Texture" id=24]
+[ext_resource path="res://character.gd" type="Script" id=25]
 [ext_resource path="res://tiles/assets/stone.png" type="Texture" id=29]
 [ext_resource path="res://stone.gd" type="Script" id=30]
 [ext_resource path="res://ore.gd" type="Script" id=32]
@@ -91,6 +93,28 @@ extents = Vector2( 10, 255.5 )
 
 [sub_resource type="RectangleShape2D" id=19]
 extents = Vector2( 6.75, 97.75 )
+
+[sub_resource type="AtlasTexture" id=22]
+atlas = ExtResource( 24 )
+region = Rect2( 0, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=23]
+atlas = ExtResource( 24 )
+region = Rect2( 32, 0, 32, 32 )
+
+[sub_resource type="SpriteFrames" id=24]
+animations = [ {
+"frames": [ SubResource( 22 ), SubResource( 23 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="CircleShape2D" id=25]
+radius = 61.4887
+
+[sub_resource type="CircleShape2D" id=26]
+radius = 135.412
 
 [node name="Node2D" type="Node2D"]
 position = Vector2( -88, 95 )
@@ -192,7 +216,7 @@ texture = ExtResource( 15 )
 position = Vector2( -2, -5 )
 scale = Vector2( 1.8, 1.8 )
 frames = SubResource( 5 )
-frame = 3
+frame = 2
 speed_scale = 1.6
 playing = true
 
@@ -333,6 +357,30 @@ position = Vector2( 24, 13 )
 scale = Vector2( 0.8, 0.8 )
 monitoring = false
 
+[node name="character" type="Node2D" parent="."]
+position = Vector2( 1430, -618 )
+scale = Vector2( 1.8, 1.8 )
+script = ExtResource( 25 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="character"]
+position = Vector2( 1, -5 )
+frames = SubResource( 24 )
+speed_scale = 0.2
+playing = true
+
+[node name="conversation" type="Area2D" parent="character"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="character/conversation"]
+position = Vector2( 1.11108, -2.77774 )
+shape = SubResource( 25 )
+
+[node name="vision" type="Area2D" parent="character"]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="character/vision"]
+position = Vector2( -1.11115, -1.11108 )
+shape = SubResource( 26 )
+
 [connection signal="area_entered" from="stone" to="stone" method="_on_ore"]
 [connection signal="body_entered" from="stone/position" to="player" method="_on_position_above"]
 [connection signal="body_exited" from="stone/position" to="player" method="_on_position_area_exited"]
@@ -341,3 +389,5 @@ monitoring = false
 [connection signal="body_entered" from="yuka/leaf" to="player" method="on_item" binds= [ "leaf" ]]
 [connection signal="area_entered" from="large_three" to="large_three" method="_on_axe"]
 [connection signal="body_entered" from="large_three/wood" to="player" method="on_item" binds= [ "wood" ]]
+[connection signal="body_entered" from="character/vision" to="character" method="on_vision"]
+[connection signal="body_exited" from="character/vision" to="character" method="_on_unvision"]
