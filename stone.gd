@@ -13,7 +13,7 @@ func _process(delta):
 		get_node("ore").monitoring = true
 
 func _on_ore(area):
-	if(area.get_name() == "player" and endurance > 0):
+	if(area.get_name() == "axe" and endurance > 0):
 		if(endurance == 1):
 			pass
 		elif(!cutting):

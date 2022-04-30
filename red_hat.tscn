@@ -1,4 +1,4 @@
-[gd_scene load_steps=106 format=2]
+[gd_scene load_steps=109 format=2]
 
 [ext_resource path="res://player/tile002.png" type="Texture" id=1]
 [ext_resource path="res://player/tile005.png" type="Texture" id=2]
@@ -9,6 +9,9 @@
 [ext_resource path="res://player/tile009.png" type="Texture" id=7]
 [ext_resource path="res://player/tile010.png" type="Texture" id=8]
 [ext_resource path="res://player.gd" type="Script" id=9]
+[ext_resource path="res://tiles/assets/bars/hunger (1).png" type="Texture" id=10]
+[ext_resource path="res://tiles/assets/bars/health (2).png" type="Texture" id=11]
+[ext_resource path="res://tiles/assets/bars/items.png" type="Texture" id=12]
 
 [sub_resource type="AtlasTexture" id=97]
 atlas = ExtResource( 8 )
@@ -86,6 +89,34 @@ region = Rect2( 1120, 0, 112, 133 )
 atlas = ExtResource( 3 )
 region = Rect2( 1232, 0, 112, 133 )
 
+[sub_resource type="AtlasTexture" id=20]
+atlas = ExtResource( 8 )
+region = Rect2( 0, 0, 112, 133 )
+
+[sub_resource type="AtlasTexture" id=21]
+atlas = ExtResource( 8 )
+region = Rect2( 112, 0, 112, 133 )
+
+[sub_resource type="AtlasTexture" id=22]
+atlas = ExtResource( 8 )
+region = Rect2( 224, 0, 112, 133 )
+
+[sub_resource type="AtlasTexture" id=23]
+atlas = ExtResource( 8 )
+region = Rect2( 336, 0, 112, 133 )
+
+[sub_resource type="AtlasTexture" id=24]
+atlas = ExtResource( 8 )
+region = Rect2( 448, 0, 112, 133 )
+
+[sub_resource type="AtlasTexture" id=25]
+atlas = ExtResource( 8 )
+region = Rect2( 560, 0, 112, 133 )
+
+[sub_resource type="AtlasTexture" id=26]
+atlas = ExtResource( 8 )
+region = Rect2( 672, 0, 112, 133 )
+
 [sub_resource type="AtlasTexture" id=8]
 atlas = ExtResource( 5 )
 region = Rect2( 0, 0, 112, 133 )
@@ -132,114 +163,6 @@ region = Rect2( 1120, 0, 112, 133 )
 
 [sub_resource type="AtlasTexture" id=19]
 atlas = ExtResource( 5 )
-region = Rect2( 1232, 0, 112, 133 )
-
-[sub_resource type="AtlasTexture" id=20]
-atlas = ExtResource( 8 )
-region = Rect2( 0, 0, 112, 133 )
-
-[sub_resource type="AtlasTexture" id=21]
-atlas = ExtResource( 8 )
-region = Rect2( 112, 0, 112, 133 )
-
-[sub_resource type="AtlasTexture" id=22]
-atlas = ExtResource( 8 )
-region = Rect2( 224, 0, 112, 133 )
-
-[sub_resource type="AtlasTexture" id=23]
-atlas = ExtResource( 8 )
-region = Rect2( 336, 0, 112, 133 )
-
-[sub_resource type="AtlasTexture" id=24]
-atlas = ExtResource( 8 )
-region = Rect2( 448, 0, 112, 133 )
-
-[sub_resource type="AtlasTexture" id=25]
-atlas = ExtResource( 8 )
-region = Rect2( 560, 0, 112, 133 )
-
-[sub_resource type="AtlasTexture" id=26]
-atlas = ExtResource( 8 )
-region = Rect2( 672, 0, 112, 133 )
-
-[sub_resource type="AtlasTexture" id=83]
-atlas = ExtResource( 4 )
-region = Rect2( 0, 0, 112, 133 )
-
-[sub_resource type="AtlasTexture" id=84]
-atlas = ExtResource( 4 )
-region = Rect2( 112, 0, 112, 133 )
-
-[sub_resource type="AtlasTexture" id=85]
-atlas = ExtResource( 4 )
-region = Rect2( 224, 0, 112, 133 )
-
-[sub_resource type="AtlasTexture" id=86]
-atlas = ExtResource( 4 )
-region = Rect2( 336, 0, 112, 133 )
-
-[sub_resource type="AtlasTexture" id=87]
-atlas = ExtResource( 4 )
-region = Rect2( 448, 0, 112, 133 )
-
-[sub_resource type="AtlasTexture" id=88]
-atlas = ExtResource( 4 )
-region = Rect2( 560, 0, 112, 133 )
-
-[sub_resource type="AtlasTexture" id=89]
-atlas = ExtResource( 4 )
-region = Rect2( 672, 0, 112, 133 )
-
-[sub_resource type="AtlasTexture" id=90]
-atlas = ExtResource( 4 )
-region = Rect2( 784, 0, 112, 133 )
-
-[sub_resource type="AtlasTexture" id=91]
-atlas = ExtResource( 4 )
-region = Rect2( 896, 0, 112, 133 )
-
-[sub_resource type="AtlasTexture" id=92]
-atlas = ExtResource( 4 )
-region = Rect2( 1008, 0, 112, 133 )
-
-[sub_resource type="AtlasTexture" id=93]
-atlas = ExtResource( 4 )
-region = Rect2( 1120, 0, 112, 133 )
-
-[sub_resource type="AtlasTexture" id=94]
-atlas = ExtResource( 4 )
-region = Rect2( 1232, 0, 112, 133 )
-
-[sub_resource type="AtlasTexture" id=75]
-atlas = ExtResource( 2 )
-region = Rect2( 448, 0, 112, 133 )
-
-[sub_resource type="AtlasTexture" id=76]
-atlas = ExtResource( 2 )
-region = Rect2( 560, 0, 112, 133 )
-
-[sub_resource type="AtlasTexture" id=77]
-atlas = ExtResource( 2 )
-region = Rect2( 672, 0, 112, 133 )
-
-[sub_resource type="AtlasTexture" id=78]
-atlas = ExtResource( 2 )
-region = Rect2( 784, 0, 112, 133 )
-
-[sub_resource type="AtlasTexture" id=79]
-atlas = ExtResource( 2 )
-region = Rect2( 896, 0, 112, 133 )
-
-[sub_resource type="AtlasTexture" id=80]
-atlas = ExtResource( 2 )
-region = Rect2( 1008, 0, 112, 133 )
-
-[sub_resource type="AtlasTexture" id=81]
-atlas = ExtResource( 2 )
-region = Rect2( 1120, 0, 112, 133 )
-
-[sub_resource type="AtlasTexture" id=82]
-atlas = ExtResource( 2 )
 region = Rect2( 1232, 0, 112, 133 )
 
 [sub_resource type="AtlasTexture" id=63]
@@ -386,6 +309,86 @@ region = Rect2( 1120, 0, 112, 133 )
 atlas = ExtResource( 7 )
 region = Rect2( 1232, 0, 112, 133 )
 
+[sub_resource type="AtlasTexture" id=83]
+atlas = ExtResource( 4 )
+region = Rect2( 0, 0, 112, 133 )
+
+[sub_resource type="AtlasTexture" id=84]
+atlas = ExtResource( 4 )
+region = Rect2( 112, 0, 112, 133 )
+
+[sub_resource type="AtlasTexture" id=85]
+atlas = ExtResource( 4 )
+region = Rect2( 224, 0, 112, 133 )
+
+[sub_resource type="AtlasTexture" id=86]
+atlas = ExtResource( 4 )
+region = Rect2( 336, 0, 112, 133 )
+
+[sub_resource type="AtlasTexture" id=87]
+atlas = ExtResource( 4 )
+region = Rect2( 448, 0, 112, 133 )
+
+[sub_resource type="AtlasTexture" id=88]
+atlas = ExtResource( 4 )
+region = Rect2( 560, 0, 112, 133 )
+
+[sub_resource type="AtlasTexture" id=89]
+atlas = ExtResource( 4 )
+region = Rect2( 672, 0, 112, 133 )
+
+[sub_resource type="AtlasTexture" id=90]
+atlas = ExtResource( 4 )
+region = Rect2( 784, 0, 112, 133 )
+
+[sub_resource type="AtlasTexture" id=91]
+atlas = ExtResource( 4 )
+region = Rect2( 896, 0, 112, 133 )
+
+[sub_resource type="AtlasTexture" id=92]
+atlas = ExtResource( 4 )
+region = Rect2( 1008, 0, 112, 133 )
+
+[sub_resource type="AtlasTexture" id=93]
+atlas = ExtResource( 4 )
+region = Rect2( 1120, 0, 112, 133 )
+
+[sub_resource type="AtlasTexture" id=94]
+atlas = ExtResource( 4 )
+region = Rect2( 1232, 0, 112, 133 )
+
+[sub_resource type="AtlasTexture" id=75]
+atlas = ExtResource( 2 )
+region = Rect2( 448, 0, 112, 133 )
+
+[sub_resource type="AtlasTexture" id=76]
+atlas = ExtResource( 2 )
+region = Rect2( 560, 0, 112, 133 )
+
+[sub_resource type="AtlasTexture" id=77]
+atlas = ExtResource( 2 )
+region = Rect2( 672, 0, 112, 133 )
+
+[sub_resource type="AtlasTexture" id=78]
+atlas = ExtResource( 2 )
+region = Rect2( 784, 0, 112, 133 )
+
+[sub_resource type="AtlasTexture" id=79]
+atlas = ExtResource( 2 )
+region = Rect2( 896, 0, 112, 133 )
+
+[sub_resource type="AtlasTexture" id=80]
+atlas = ExtResource( 2 )
+region = Rect2( 1008, 0, 112, 133 )
+
+[sub_resource type="AtlasTexture" id=81]
+atlas = ExtResource( 2 )
+region = Rect2( 1120, 0, 112, 133 )
+
+[sub_resource type="AtlasTexture" id=82]
+atlas = ExtResource( 2 )
+region = Rect2( 1232, 0, 112, 133 )
+
 [sub_resource type="SpriteFrames" id=95]
 animations = [ {
 "frames": [ SubResource( 97 ) ],
@@ -403,24 +406,14 @@ animations = [ {
 "name": "hit_1",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ) ],
-"loop": true,
-"name": "strong_attack",
-"speed": 5.0
-}, {
 "frames": [ SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ), SubResource( 25 ), SubResource( 26 ) ],
 "loop": true,
 "name": "hurt",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 83 ), SubResource( 84 ), SubResource( 85 ), SubResource( 86 ), SubResource( 87 ), SubResource( 88 ), SubResource( 89 ), SubResource( 90 ), SubResource( 91 ), SubResource( 92 ), SubResource( 93 ), SubResource( 94 ) ],
+"frames": [ SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ) ],
 "loop": true,
-"name": "run_attack",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 75 ), SubResource( 76 ), SubResource( 77 ), SubResource( 78 ), SubResource( 79 ), SubResource( 80 ), SubResource( 81 ), SubResource( 82 ) ],
-"loop": true,
-"name": "attack_2",
+"name": "strong_attack",
 "speed": 5.0
 }, {
 "frames": [ SubResource( 63 ), SubResource( 64 ), SubResource( 65 ), SubResource( 66 ), SubResource( 67 ), SubResource( 68 ), SubResource( 69 ), SubResource( 70 ), SubResource( 71 ), SubResource( 72 ), SubResource( 73 ), SubResource( 74 ) ],
@@ -437,6 +430,16 @@ animations = [ {
 "loop": true,
 "name": "hit_2",
 "speed": 5.0
+}, {
+"frames": [ SubResource( 83 ), SubResource( 84 ), SubResource( 85 ), SubResource( 86 ), SubResource( 87 ), SubResource( 88 ), SubResource( 89 ), SubResource( 90 ), SubResource( 91 ), SubResource( 92 ), SubResource( 93 ), SubResource( 94 ) ],
+"loop": true,
+"name": "run_attack",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 75 ), SubResource( 76 ), SubResource( 77 ), SubResource( 78 ), SubResource( 79 ), SubResource( 80 ), SubResource( 81 ), SubResource( 82 ) ],
+"loop": true,
+"name": "attack_2",
+"speed": 5.0
 } ]
 
 [sub_resource type="CapsuleShape2D" id=98]
@@ -451,10 +454,116 @@ scale = Vector2( 1.5, 1.5 )
 z_index = 10
 frames = SubResource( 95 )
 animation = "hit_2"
-frame = 9
+frame = 5
 speed_scale = 3.0
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 16, 27 )
 shape = SubResource( 98 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+
+[node name="Control" type="Control" parent="Camera2D"]
+margin_left = -511.0
+margin_top = -300.0
+margin_right = 513.0
+margin_bottom = 301.0
+
+[node name="health" type="TextureRect" parent="Camera2D/Control"]
+margin_left = 9.0
+margin_top = 12.0
+margin_right = 152.0
+margin_bottom = 160.0
+texture = ExtResource( 11 )
+expand = true
+
+[node name="hunger" type="TextureRect" parent="Camera2D/Control"]
+margin_left = -8.0
+margin_top = 58.0
+margin_right = 144.0
+margin_bottom = 209.0
+texture = ExtResource( 10 )
+expand = true
+
+[node name="items" type="TextureRect" parent="Camera2D/Control"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -263.0
+margin_top = -298.0
+margin_right = 437.0
+margin_bottom = 402.0
+rect_scale = Vector2( 0.9, 0.9 )
+texture = ExtResource( 12 )
+expand = true
+
+[node name="item1" type="TextureButton" parent="Camera2D/Control/items"]
+margin_left = 94.4444
+margin_top = 367.778
+margin_right = 139.444
+margin_bottom = 412.778
+expand = true
+
+[node name="item2" type="TextureButton" parent="Camera2D/Control/items"]
+margin_left = 147.778
+margin_top = 368.889
+margin_right = 192.778
+margin_bottom = 413.889
+expand = true
+
+[node name="item3" type="TextureButton" parent="Camera2D/Control/items"]
+margin_left = 201.111
+margin_top = 367.778
+margin_right = 246.111
+margin_bottom = 412.778
+expand = true
+
+[node name="item4" type="TextureButton" parent="Camera2D/Control/items"]
+margin_left = 253.333
+margin_top = 366.667
+margin_right = 298.333
+margin_bottom = 411.667
+expand = true
+
+[node name="item5" type="TextureButton" parent="Camera2D/Control/items"]
+margin_left = 307.778
+margin_top = 367.778
+margin_right = 352.778
+margin_bottom = 412.778
+expand = true
+
+[node name="tem6" type="TextureButton" parent="Camera2D/Control/items"]
+margin_left = 358.889
+margin_top = 368.889
+margin_right = 403.889
+margin_bottom = 413.889
+expand = true
+
+[node name="item7" type="TextureButton" parent="Camera2D/Control/items"]
+margin_left = 410.0
+margin_top = 367.778
+margin_right = 455.0
+margin_bottom = 412.778
+expand = true
+
+[node name="item8" type="TextureButton" parent="Camera2D/Control/items"]
+margin_left = 464.444
+margin_top = 368.889
+margin_right = 509.444
+margin_bottom = 413.889
+expand = true
+
+[node name="item9" type="TextureButton" parent="Camera2D/Control/items"]
+margin_left = 515.555
+margin_top = 367.778
+margin_right = 560.555
+margin_bottom = 412.778
+expand = true
+
+[node name="item10" type="TextureButton" parent="Camera2D/Control/items"]
+margin_left = 567.778
+margin_top = 368.889
+margin_right = 612.778
+margin_bottom = 413.889
+expand = true

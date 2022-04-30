@@ -15,7 +15,72 @@ export (int) var stone = 0
 export (int) var leaves = 0
 export (int) var rope = 0
 
+var hunger = 100
+var health = 4
+var get_hunger = false
 
+
+var hunger1 =  preload("res://tiles/assets/bars/hunger (1).png")
+var hunger2 = preload("res://tiles/assets/bars/hunger (5).png")
+var hunger3 = preload("res://tiles/assets/bars/hunger (4).png")
+var hunger4 = preload("res://tiles/assets/bars/hunger (3).png")
+var hunger5 = preload("res://tiles/assets/bars/hunger (2).png")
+
+var health1 =  preload("res://tiles/assets/bars/health (2).png")
+var health2 = preload("res://tiles/assets/bars/health (1).png")
+var health3 = preload("res://tiles/assets/bars/health (4).png")
+var health4 = preload("res://tiles/assets/bars/health (3).png")
+
+
+var axe = preload("res://tiles/assets/axe.png")
+var showel = preload("res://tiles/assets/showel.png")
+var sword = preload("res://tiles/assets/sword.png")
+var pickaxe = preload("res://tiles/assets/chopper.png")
+
+var current_items = [
+	{"name" : "axe", "link" : 'res://tiles/assets/axe.png'},
+	{"name" : "showel", "link" : 'res://tiles/assets/showel.png'},
+	{"name" : "pickaxe", "link" : 'res://tiles/assets/chopper.png'},
+]
+
+func _ready():
+	var index = 0
+	for value in current_items:
+		index = index + 1
+		var item = load(value['link'])
+		get_node("Camera2D/Control/items/item" + str(index)).set_normal_texture(item)
+		
+func hungry():
+	if(hunger >= 0 && !get_hunger):
+		get_hunger = true
+		yield(get_tree().create_timer(2),"timeout")
+		hunger = hunger - 1
+		yield(get_tree().create_timer(1),"timeout")
+		if(hunger < 10):
+			health = health - 1
+		get_hunger = false	
+
+func _process(delta):
+	hungry()
+	if(hunger > 80):
+		get_node("Camera2D/Control/hunger").texture = hunger1
+	elif(hunger < 80 && hunger > 50):
+		get_node("Camera2D/Control/hunger").texture = hunger2
+	elif(hunger < 60 && hunger > 30):
+		get_node("Camera2D/Control/hunger").texture = hunger3
+	elif(hunger < 30 && hunger > 0):
+		get_node("Camera2D/Control/hunger").texture = hunger4
+	elif(hunger == 0):
+		get_node("Camera2D/Control/hunger").texture = hunger5	
+	
+	if(health == 4):
+		get_node("Camera2D/Control/health").texture = health1
+	elif(health == 3):
+		get_node("Camera2D/Control/health").texture = health2
+	elif(health == 2):
+		get_node("Camera2D/Control/health").texture = health3
+	elif(health == 1):
+		get_node("Camera2D/Control/health").texture = health4				
 
 func attack():
 	if(!hiting):
