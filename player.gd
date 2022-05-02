@@ -39,17 +39,46 @@ var pickaxe = preload("res://tiles/assets/chopper.png")
 
 var current_items = [
 	{"name" : "axe", "link" : 'res://tiles/assets/axe.png'},
-	{"name" : "showel", "link" : 'res://tiles/assets/showel.png'},
+	{"name" : "bow", "link" : 'res://tiles/assets/bow.png'},
+	{"name" : "pickaxe", "link" : 'res://tiles/assets/sword.png'},
+]
+
+var hot_items = [
+	{"name" : "sword", "link" : 'res://tiles/assets/sword.png'},
+	{"name" : "bow", "link" : 'res://tiles/assets/bow.png'},
+	{"name" : "axe", "link" : 'res://tiles/assets/axe.png'},
 	{"name" : "pickaxe", "link" : 'res://tiles/assets/chopper.png'},
+]
+
+var inventory = [
+	{"name" : "leaf", "link" : 'res://tiles/assets/leaf.png', "count" : 5},
+	{"name" : "wood", "link" : 'res://tiles/assets/wood.png', "count" : 2},
+	{"name" : "stone", "link" : 'res://tiles/assets/stone.png', "count" : 12},
 ]
 
 func _ready():
 	var index = 0
-	for value in current_items:
+	for value in hot_items:
 		index = index + 1
 		var item = load(value['link'])
-		get_node("Camera2D/Control/items/item" + str(index)).set_normal_texture(item)
+		get_node("Camera2D/Control/inventar/TextureRect/hot" + str(index)).set_normal_texture(item)
 		
+	
+func on_inventar():
+	var inventar = get_node("Camera2D/Control/inventar")
+	var index = 0
+	for value in inventory:
+		index = index + 1
+		var item = load(value['link'])
+		get_node("Camera2D/Control/inventar/TextureRect/item" + str(index)).set_normal_texture(item)
+		if(value['count'] > 1):
+			get_node("Camera2D/Control/inventar/TextureRect/item" +str(index) + "/count").text = str(value['count'])
+		
+	if(inventar.visible):
+		inventar.visible = false
+	else:
+		inventar.visible = true	
+			
 func hungry():
 	if(hunger >= 0 && !get_hunger):
 		get_hunger = true
@@ -148,6 +177,8 @@ func change_weapon(weapon):
 func get_input():
 	velocity = Vector2()
 	
+	if Input.is_action_just_pressed("b"):
+		on_inventar()
 	if Input.is_action_just_pressed("axe"):
 		change_weapon("axe")
 	if Input.is_action_just_pressed("bow"):
