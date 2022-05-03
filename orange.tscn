@@ -1,0 +1,62 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://large_three.gd" type="Script" id=1]
+[ext_resource path="res://tiles/forest/orange.png" type="Texture" id=2]
+[ext_resource path="res://tiles/three_cut_animation/SFX303_01.png" type="Texture" id=3]
+[ext_resource path="res://tiles/three_cut_animation/SFX303_02.png" type="Texture" id=4]
+[ext_resource path="res://tiles/three_cut_animation/SFX303_04.png" type="Texture" id=5]
+[ext_resource path="res://tiles/three_cut_animation/SFX303_05.png" type="Texture" id=6]
+[ext_resource path="res://tiles/three_cut_animation/SFX303_03.png" type="Texture" id=7]
+[ext_resource path="res://tiles/forest/ezgif.com-gif-maker (24).png" type="Texture" id=8]
+
+[sub_resource type="CircleShape2D" id=27]
+radius = 43.8634
+
+[sub_resource type="RectangleShape2D" id=28]
+extents = Vector2( 12.1875, 18.3281 )
+
+[sub_resource type="SpriteFrames" id=29]
+animations = [ {
+"frames": [ null, ExtResource( 3 ), ExtResource( 4 ), ExtResource( 7 ), ExtResource( 5 ), ExtResource( 6 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[node name="orange" type="Area2D"]
+position = Vector2( -23, -227 )
+script = ExtResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 49, -25 )
+scale = Vector2( 1.8, 1.8 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 50, 5 )
+shape = SubResource( 27 )
+
+[node name="KinematicBody2D" type="KinematicBody2D" parent="."]
+position = Vector2( 36, -2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D"]
+position = Vector2( 14, 1 )
+scale = Vector2( 0.8, 0.8 )
+z_index = 100
+shape = SubResource( 28 )
+
+[node name="damage" type="AnimatedSprite" parent="."]
+position = Vector2( 49, 5 )
+scale = Vector2( 1.5, 1 )
+z_index = 999
+frames = SubResource( 29 )
+speed_scale = 2.2
+flip_h = true
+
+[node name="Sprite2" type="Sprite" parent="."]
+visible = false
+position = Vector2( 50, 17 )
+scale = Vector2( 1.35714, 1.25 )
+texture = ExtResource( 8 )
+
+[connection signal="area_entered" from="." to="." method="_on_axe"]

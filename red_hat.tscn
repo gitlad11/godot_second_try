@@ -1,4 +1,4 @@
-[gd_scene load_steps=110 format=2]
+[gd_scene load_steps=112 format=2]
 
 [ext_resource path="res://player/tile002.png" type="Texture" id=1]
 [ext_resource path="res://player/tile005.png" type="Texture" id=2]
@@ -13,6 +13,8 @@
 [ext_resource path="res://tiles/assets/bars/health (2).png" type="Texture" id=11]
 [ext_resource path="res://tiles/assets/bars/items.png" type="Texture" id=12]
 [ext_resource path="res://tiles/assets/bars/pixil-frame-1.png" type="Texture" id=13]
+[ext_resource path="res://tiles/assets/Food_0.png" type="Texture" id=14]
+[ext_resource path="res://tiles/assets/pixil-frame-0.png" type="Texture" id=15]
 
 [sub_resource type="AtlasTexture" id=97]
 atlas = ExtResource( 8 )
@@ -90,100 +92,52 @@ region = Rect2( 1120, 0, 112, 133 )
 atlas = ExtResource( 3 )
 region = Rect2( 1232, 0, 112, 133 )
 
-[sub_resource type="AtlasTexture" id=63]
-atlas = ExtResource( 6 )
+[sub_resource type="AtlasTexture" id=51]
+atlas = ExtResource( 1 )
 region = Rect2( 0, 0, 112, 133 )
 
-[sub_resource type="AtlasTexture" id=64]
-atlas = ExtResource( 6 )
+[sub_resource type="AtlasTexture" id=52]
+atlas = ExtResource( 1 )
 region = Rect2( 112, 0, 112, 133 )
 
-[sub_resource type="AtlasTexture" id=65]
-atlas = ExtResource( 6 )
+[sub_resource type="AtlasTexture" id=53]
+atlas = ExtResource( 1 )
 region = Rect2( 224, 0, 112, 133 )
 
-[sub_resource type="AtlasTexture" id=66]
-atlas = ExtResource( 6 )
+[sub_resource type="AtlasTexture" id=54]
+atlas = ExtResource( 1 )
 region = Rect2( 336, 0, 112, 133 )
 
-[sub_resource type="AtlasTexture" id=67]
-atlas = ExtResource( 6 )
+[sub_resource type="AtlasTexture" id=55]
+atlas = ExtResource( 1 )
 region = Rect2( 448, 0, 112, 133 )
 
-[sub_resource type="AtlasTexture" id=68]
-atlas = ExtResource( 6 )
+[sub_resource type="AtlasTexture" id=56]
+atlas = ExtResource( 1 )
 region = Rect2( 560, 0, 112, 133 )
 
-[sub_resource type="AtlasTexture" id=69]
-atlas = ExtResource( 6 )
+[sub_resource type="AtlasTexture" id=57]
+atlas = ExtResource( 1 )
 region = Rect2( 672, 0, 112, 133 )
 
-[sub_resource type="AtlasTexture" id=70]
-atlas = ExtResource( 6 )
+[sub_resource type="AtlasTexture" id=58]
+atlas = ExtResource( 1 )
 region = Rect2( 784, 0, 112, 133 )
 
-[sub_resource type="AtlasTexture" id=71]
-atlas = ExtResource( 6 )
+[sub_resource type="AtlasTexture" id=59]
+atlas = ExtResource( 1 )
 region = Rect2( 896, 0, 112, 133 )
 
-[sub_resource type="AtlasTexture" id=72]
-atlas = ExtResource( 6 )
+[sub_resource type="AtlasTexture" id=60]
+atlas = ExtResource( 1 )
 region = Rect2( 1008, 0, 112, 133 )
 
-[sub_resource type="AtlasTexture" id=73]
-atlas = ExtResource( 6 )
+[sub_resource type="AtlasTexture" id=61]
+atlas = ExtResource( 1 )
 region = Rect2( 1120, 0, 112, 133 )
 
-[sub_resource type="AtlasTexture" id=74]
-atlas = ExtResource( 6 )
-region = Rect2( 1232, 0, 112, 133 )
-
-[sub_resource type="AtlasTexture" id=83]
-atlas = ExtResource( 4 )
-region = Rect2( 0, 0, 112, 133 )
-
-[sub_resource type="AtlasTexture" id=84]
-atlas = ExtResource( 4 )
-region = Rect2( 112, 0, 112, 133 )
-
-[sub_resource type="AtlasTexture" id=85]
-atlas = ExtResource( 4 )
-region = Rect2( 224, 0, 112, 133 )
-
-[sub_resource type="AtlasTexture" id=86]
-atlas = ExtResource( 4 )
-region = Rect2( 336, 0, 112, 133 )
-
-[sub_resource type="AtlasTexture" id=87]
-atlas = ExtResource( 4 )
-region = Rect2( 448, 0, 112, 133 )
-
-[sub_resource type="AtlasTexture" id=88]
-atlas = ExtResource( 4 )
-region = Rect2( 560, 0, 112, 133 )
-
-[sub_resource type="AtlasTexture" id=89]
-atlas = ExtResource( 4 )
-region = Rect2( 672, 0, 112, 133 )
-
-[sub_resource type="AtlasTexture" id=90]
-atlas = ExtResource( 4 )
-region = Rect2( 784, 0, 112, 133 )
-
-[sub_resource type="AtlasTexture" id=91]
-atlas = ExtResource( 4 )
-region = Rect2( 896, 0, 112, 133 )
-
-[sub_resource type="AtlasTexture" id=92]
-atlas = ExtResource( 4 )
-region = Rect2( 1008, 0, 112, 133 )
-
-[sub_resource type="AtlasTexture" id=93]
-atlas = ExtResource( 4 )
-region = Rect2( 1120, 0, 112, 133 )
-
-[sub_resource type="AtlasTexture" id=94]
-atlas = ExtResource( 4 )
+[sub_resource type="AtlasTexture" id=62]
+atlas = ExtResource( 1 )
 region = Rect2( 1232, 0, 112, 133 )
 
 [sub_resource type="AtlasTexture" id=8]
@@ -234,6 +188,114 @@ region = Rect2( 1120, 0, 112, 133 )
 atlas = ExtResource( 5 )
 region = Rect2( 1232, 0, 112, 133 )
 
+[sub_resource type="AtlasTexture" id=20]
+atlas = ExtResource( 8 )
+region = Rect2( 0, 0, 112, 133 )
+
+[sub_resource type="AtlasTexture" id=21]
+atlas = ExtResource( 8 )
+region = Rect2( 112, 0, 112, 133 )
+
+[sub_resource type="AtlasTexture" id=22]
+atlas = ExtResource( 8 )
+region = Rect2( 224, 0, 112, 133 )
+
+[sub_resource type="AtlasTexture" id=23]
+atlas = ExtResource( 8 )
+region = Rect2( 336, 0, 112, 133 )
+
+[sub_resource type="AtlasTexture" id=24]
+atlas = ExtResource( 8 )
+region = Rect2( 448, 0, 112, 133 )
+
+[sub_resource type="AtlasTexture" id=25]
+atlas = ExtResource( 8 )
+region = Rect2( 560, 0, 112, 133 )
+
+[sub_resource type="AtlasTexture" id=26]
+atlas = ExtResource( 8 )
+region = Rect2( 672, 0, 112, 133 )
+
+[sub_resource type="AtlasTexture" id=83]
+atlas = ExtResource( 4 )
+region = Rect2( 0, 0, 112, 133 )
+
+[sub_resource type="AtlasTexture" id=84]
+atlas = ExtResource( 4 )
+region = Rect2( 112, 0, 112, 133 )
+
+[sub_resource type="AtlasTexture" id=85]
+atlas = ExtResource( 4 )
+region = Rect2( 224, 0, 112, 133 )
+
+[sub_resource type="AtlasTexture" id=86]
+atlas = ExtResource( 4 )
+region = Rect2( 336, 0, 112, 133 )
+
+[sub_resource type="AtlasTexture" id=87]
+atlas = ExtResource( 4 )
+region = Rect2( 448, 0, 112, 133 )
+
+[sub_resource type="AtlasTexture" id=88]
+atlas = ExtResource( 4 )
+region = Rect2( 560, 0, 112, 133 )
+
+[sub_resource type="AtlasTexture" id=89]
+atlas = ExtResource( 4 )
+region = Rect2( 672, 0, 112, 133 )
+
+[sub_resource type="AtlasTexture" id=90]
+atlas = ExtResource( 4 )
+region = Rect2( 784, 0, 112, 133 )
+
+[sub_resource type="AtlasTexture" id=91]
+atlas = ExtResource( 4 )
+region = Rect2( 896, 0, 112, 133 )
+
+[sub_resource type="AtlasTexture" id=92]
+atlas = ExtResource( 4 )
+region = Rect2( 1008, 0, 112, 133 )
+
+[sub_resource type="AtlasTexture" id=93]
+atlas = ExtResource( 4 )
+region = Rect2( 1120, 0, 112, 133 )
+
+[sub_resource type="AtlasTexture" id=94]
+atlas = ExtResource( 4 )
+region = Rect2( 1232, 0, 112, 133 )
+
+[sub_resource type="AtlasTexture" id=75]
+atlas = ExtResource( 2 )
+region = Rect2( 448, 0, 112, 133 )
+
+[sub_resource type="AtlasTexture" id=76]
+atlas = ExtResource( 2 )
+region = Rect2( 560, 0, 112, 133 )
+
+[sub_resource type="AtlasTexture" id=77]
+atlas = ExtResource( 2 )
+region = Rect2( 672, 0, 112, 133 )
+
+[sub_resource type="AtlasTexture" id=78]
+atlas = ExtResource( 2 )
+region = Rect2( 784, 0, 112, 133 )
+
+[sub_resource type="AtlasTexture" id=79]
+atlas = ExtResource( 2 )
+region = Rect2( 896, 0, 112, 133 )
+
+[sub_resource type="AtlasTexture" id=80]
+atlas = ExtResource( 2 )
+region = Rect2( 1008, 0, 112, 133 )
+
+[sub_resource type="AtlasTexture" id=81]
+atlas = ExtResource( 2 )
+region = Rect2( 1120, 0, 112, 133 )
+
+[sub_resource type="AtlasTexture" id=82]
+atlas = ExtResource( 2 )
+region = Rect2( 1232, 0, 112, 133 )
+
 [sub_resource type="AtlasTexture" id=27]
 atlas = ExtResource( 7 )
 region = Rect2( 0, 0, 112, 133 )
@@ -282,113 +344,53 @@ region = Rect2( 1120, 0, 112, 133 )
 atlas = ExtResource( 7 )
 region = Rect2( 1232, 0, 112, 133 )
 
-[sub_resource type="AtlasTexture" id=75]
-atlas = ExtResource( 2 )
-region = Rect2( 448, 0, 112, 133 )
-
-[sub_resource type="AtlasTexture" id=76]
-atlas = ExtResource( 2 )
-region = Rect2( 560, 0, 112, 133 )
-
-[sub_resource type="AtlasTexture" id=77]
-atlas = ExtResource( 2 )
-region = Rect2( 672, 0, 112, 133 )
-
-[sub_resource type="AtlasTexture" id=78]
-atlas = ExtResource( 2 )
-region = Rect2( 784, 0, 112, 133 )
-
-[sub_resource type="AtlasTexture" id=79]
-atlas = ExtResource( 2 )
-region = Rect2( 896, 0, 112, 133 )
-
-[sub_resource type="AtlasTexture" id=80]
-atlas = ExtResource( 2 )
-region = Rect2( 1008, 0, 112, 133 )
-
-[sub_resource type="AtlasTexture" id=81]
-atlas = ExtResource( 2 )
-region = Rect2( 1120, 0, 112, 133 )
-
-[sub_resource type="AtlasTexture" id=82]
-atlas = ExtResource( 2 )
-region = Rect2( 1232, 0, 112, 133 )
-
-[sub_resource type="AtlasTexture" id=51]
-atlas = ExtResource( 1 )
+[sub_resource type="AtlasTexture" id=63]
+atlas = ExtResource( 6 )
 region = Rect2( 0, 0, 112, 133 )
 
-[sub_resource type="AtlasTexture" id=52]
-atlas = ExtResource( 1 )
+[sub_resource type="AtlasTexture" id=64]
+atlas = ExtResource( 6 )
 region = Rect2( 112, 0, 112, 133 )
 
-[sub_resource type="AtlasTexture" id=53]
-atlas = ExtResource( 1 )
+[sub_resource type="AtlasTexture" id=65]
+atlas = ExtResource( 6 )
 region = Rect2( 224, 0, 112, 133 )
 
-[sub_resource type="AtlasTexture" id=54]
-atlas = ExtResource( 1 )
+[sub_resource type="AtlasTexture" id=66]
+atlas = ExtResource( 6 )
 region = Rect2( 336, 0, 112, 133 )
 
-[sub_resource type="AtlasTexture" id=55]
-atlas = ExtResource( 1 )
+[sub_resource type="AtlasTexture" id=67]
+atlas = ExtResource( 6 )
 region = Rect2( 448, 0, 112, 133 )
 
-[sub_resource type="AtlasTexture" id=56]
-atlas = ExtResource( 1 )
+[sub_resource type="AtlasTexture" id=68]
+atlas = ExtResource( 6 )
 region = Rect2( 560, 0, 112, 133 )
 
-[sub_resource type="AtlasTexture" id=57]
-atlas = ExtResource( 1 )
+[sub_resource type="AtlasTexture" id=69]
+atlas = ExtResource( 6 )
 region = Rect2( 672, 0, 112, 133 )
 
-[sub_resource type="AtlasTexture" id=58]
-atlas = ExtResource( 1 )
+[sub_resource type="AtlasTexture" id=70]
+atlas = ExtResource( 6 )
 region = Rect2( 784, 0, 112, 133 )
 
-[sub_resource type="AtlasTexture" id=59]
-atlas = ExtResource( 1 )
+[sub_resource type="AtlasTexture" id=71]
+atlas = ExtResource( 6 )
 region = Rect2( 896, 0, 112, 133 )
 
-[sub_resource type="AtlasTexture" id=60]
-atlas = ExtResource( 1 )
+[sub_resource type="AtlasTexture" id=72]
+atlas = ExtResource( 6 )
 region = Rect2( 1008, 0, 112, 133 )
 
-[sub_resource type="AtlasTexture" id=61]
-atlas = ExtResource( 1 )
+[sub_resource type="AtlasTexture" id=73]
+atlas = ExtResource( 6 )
 region = Rect2( 1120, 0, 112, 133 )
 
-[sub_resource type="AtlasTexture" id=62]
-atlas = ExtResource( 1 )
+[sub_resource type="AtlasTexture" id=74]
+atlas = ExtResource( 6 )
 region = Rect2( 1232, 0, 112, 133 )
-
-[sub_resource type="AtlasTexture" id=20]
-atlas = ExtResource( 8 )
-region = Rect2( 0, 0, 112, 133 )
-
-[sub_resource type="AtlasTexture" id=21]
-atlas = ExtResource( 8 )
-region = Rect2( 112, 0, 112, 133 )
-
-[sub_resource type="AtlasTexture" id=22]
-atlas = ExtResource( 8 )
-region = Rect2( 224, 0, 112, 133 )
-
-[sub_resource type="AtlasTexture" id=23]
-atlas = ExtResource( 8 )
-region = Rect2( 336, 0, 112, 133 )
-
-[sub_resource type="AtlasTexture" id=24]
-atlas = ExtResource( 8 )
-region = Rect2( 448, 0, 112, 133 )
-
-[sub_resource type="AtlasTexture" id=25]
-atlas = ExtResource( 8 )
-region = Rect2( 560, 0, 112, 133 )
-
-[sub_resource type="AtlasTexture" id=26]
-atlas = ExtResource( 8 )
-region = Rect2( 672, 0, 112, 133 )
 
 [sub_resource type="SpriteFrames" id=95]
 animations = [ {
@@ -407,14 +409,9 @@ animations = [ {
 "name": "hit_1",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 63 ), SubResource( 64 ), SubResource( 65 ), SubResource( 66 ), SubResource( 67 ), SubResource( 68 ), SubResource( 69 ), SubResource( 70 ), SubResource( 71 ), SubResource( 72 ), SubResource( 73 ), SubResource( 74 ) ],
+"frames": [ SubResource( 51 ), SubResource( 52 ), SubResource( 53 ), SubResource( 54 ), SubResource( 55 ), SubResource( 56 ), SubResource( 57 ), SubResource( 58 ), SubResource( 59 ), SubResource( 60 ), SubResource( 61 ), SubResource( 62 ) ],
 "loop": true,
-"name": "run2",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 83 ), SubResource( 84 ), SubResource( 85 ), SubResource( 86 ), SubResource( 87 ), SubResource( 88 ), SubResource( 89 ), SubResource( 90 ), SubResource( 91 ), SubResource( 92 ), SubResource( 93 ), SubResource( 94 ) ],
-"loop": true,
-"name": "run_attack",
+"name": "bow",
 "speed": 5.0
 }, {
 "frames": [ SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ) ],
@@ -422,9 +419,14 @@ animations = [ {
 "name": "strong_attack",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 27 ), SubResource( 28 ), SubResource( 29 ), SubResource( 30 ), SubResource( 31 ), SubResource( 32 ), SubResource( 33 ), SubResource( 34 ), SubResource( 35 ), SubResource( 36 ), SubResource( 37 ), SubResource( 38 ) ],
+"frames": [ SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ), SubResource( 25 ), SubResource( 26 ) ],
 "loop": true,
-"name": "hit_2",
+"name": "hurt",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 83 ), SubResource( 84 ), SubResource( 85 ), SubResource( 86 ), SubResource( 87 ), SubResource( 88 ), SubResource( 89 ), SubResource( 90 ), SubResource( 91 ), SubResource( 92 ), SubResource( 93 ), SubResource( 94 ) ],
+"loop": true,
+"name": "run_attack",
 "speed": 5.0
 }, {
 "frames": [ SubResource( 75 ), SubResource( 76 ), SubResource( 77 ), SubResource( 78 ), SubResource( 79 ), SubResource( 80 ), SubResource( 81 ), SubResource( 82 ) ],
@@ -432,14 +434,14 @@ animations = [ {
 "name": "attack_2",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 51 ), SubResource( 52 ), SubResource( 53 ), SubResource( 54 ), SubResource( 55 ), SubResource( 56 ), SubResource( 57 ), SubResource( 58 ), SubResource( 59 ), SubResource( 60 ), SubResource( 61 ), SubResource( 62 ) ],
+"frames": [ SubResource( 27 ), SubResource( 28 ), SubResource( 29 ), SubResource( 30 ), SubResource( 31 ), SubResource( 32 ), SubResource( 33 ), SubResource( 34 ), SubResource( 35 ), SubResource( 36 ), SubResource( 37 ), SubResource( 38 ) ],
 "loop": true,
-"name": "bow",
+"name": "hit_2",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ), SubResource( 25 ), SubResource( 26 ) ],
+"frames": [ SubResource( 63 ), SubResource( 64 ), SubResource( 65 ), SubResource( 66 ), SubResource( 67 ), SubResource( 68 ), SubResource( 69 ), SubResource( 70 ), SubResource( 71 ), SubResource( 72 ), SubResource( 73 ), SubResource( 74 ) ],
 "loop": true,
-"name": "hurt",
+"name": "run2",
 "speed": 5.0
 } ]
 
@@ -455,7 +457,6 @@ scale = Vector2( 1.5, 1.5 )
 z_index = 10
 frames = SubResource( 95 )
 animation = "attack"
-frame = 2
 speed_scale = 3.0
 playing = true
 
@@ -589,8 +590,8 @@ texture = ExtResource( 13 )
 [node name="item1" type="TextureButton" parent="Camera2D/Control/inventar/TextureRect"]
 margin_left = 224.167
 margin_top = 75.0
-margin_right = 269.167
-margin_bottom = 118.0
+margin_right = 270.167
+margin_bottom = 121.0
 expand = true
 
 [node name="count" type="RichTextLabel" parent="Camera2D/Control/inventar/TextureRect/item1"]
@@ -599,11 +600,21 @@ margin_top = 32.5
 margin_right = 51.8333
 margin_bottom = 47.5
 
+[node name="outlined" type="TextureRect" parent="Camera2D/Control/inventar/TextureRect/item1"]
+visible = false
+margin_left = -2.0
+margin_top = -3.0
+margin_right = 70.0
+margin_bottom = 70.0
+rect_scale = Vector2( 0.7, 0.7 )
+texture = ExtResource( 15 )
+expand = true
+
 [node name="item2" type="TextureButton" parent="Camera2D/Control/inventar/TextureRect"]
-margin_left = 276.667
-margin_top = 75.0
-margin_right = 321.667
-margin_bottom = 118.0
+margin_left = 485.0
+margin_top = 76.6667
+margin_right = 531.0
+margin_bottom = 122.667
 expand = true
 
 [node name="count" type="RichTextLabel" parent="Camera2D/Control/inventar/TextureRect/item2"]
@@ -612,11 +623,21 @@ margin_top = 32.5
 margin_right = 51.8333
 margin_bottom = 47.5
 
+[node name="outlined" type="TextureRect" parent="Camera2D/Control/inventar/TextureRect/item2"]
+visible = false
+margin_left = -2.0
+margin_top = -4.0
+margin_right = 67.0
+margin_bottom = 67.0
+rect_scale = Vector2( 0.7, 0.7 )
+texture = ExtResource( 15 )
+expand = true
+
 [node name="item3" type="TextureButton" parent="Camera2D/Control/inventar/TextureRect"]
-margin_left = 328.333
+margin_left = 434.167
 margin_top = 75.0
-margin_right = 373.333
-margin_bottom = 118.0
+margin_right = 480.167
+margin_bottom = 121.0
 expand = true
 
 [node name="count" type="RichTextLabel" parent="Camera2D/Control/inventar/TextureRect/item3"]
@@ -625,12 +646,649 @@ margin_top = 32.5
 margin_right = 51.8333
 margin_bottom = 47.5
 
+[node name="outlined" type="TextureRect" parent="Camera2D/Control/inventar/TextureRect/item3"]
+visible = false
+margin_left = -2.0
+margin_top = -2.0
+margin_right = 71.0
+margin_bottom = 69.0
+rect_scale = Vector2( 0.7, 0.7 )
+texture = ExtResource( 15 )
+expand = true
+
+[node name="item4" type="TextureButton" parent="Camera2D/Control/inventar/TextureRect"]
+margin_left = 382.0
+margin_top = 73.0
+margin_right = 428.0
+margin_bottom = 119.0
+expand = true
+
+[node name="count" type="RichTextLabel" parent="Camera2D/Control/inventar/TextureRect/item4"]
+margin_left = 35.8333
+margin_top = 32.5
+margin_right = 51.8333
+margin_bottom = 47.5
+
+[node name="outlined" type="TextureRect" parent="Camera2D/Control/inventar/TextureRect/item4"]
+visible = false
+margin_left = -2.0
+margin_top = -3.0
+margin_right = 68.0
+margin_bottom = 71.0
+rect_scale = Vector2( 0.7, 0.7 )
+texture = ExtResource( 15 )
+expand = true
+
+[node name="item5" type="TextureButton" parent="Camera2D/Control/inventar/TextureRect"]
+margin_left = 327.5
+margin_top = 74.1667
+margin_right = 373.5
+margin_bottom = 120.167
+expand = true
+
+[node name="count" type="RichTextLabel" parent="Camera2D/Control/inventar/TextureRect/item5"]
+margin_left = 35.8333
+margin_top = 32.5
+margin_right = 51.8333
+margin_bottom = 47.5
+
+[node name="outlined" type="TextureRect" parent="Camera2D/Control/inventar/TextureRect/item5"]
+visible = false
+margin_left = -2.0
+margin_top = -3.0
+margin_right = 69.0
+margin_bottom = 66.0
+rect_scale = Vector2( 0.7, 0.7 )
+texture = ExtResource( 15 )
+expand = true
+
+[node name="item6" type="TextureButton" parent="Camera2D/Control/inventar/TextureRect"]
+margin_left = 278.0
+margin_top = 74.0
+margin_right = 324.0
+margin_bottom = 120.0
+expand = true
+
+[node name="count" type="RichTextLabel" parent="Camera2D/Control/inventar/TextureRect/item6"]
+margin_left = 35.8333
+margin_top = 32.5
+margin_right = 51.8333
+margin_bottom = 47.5
+
+[node name="outlined" type="TextureRect" parent="Camera2D/Control/inventar/TextureRect/item6"]
+visible = false
+margin_left = -2.0
+margin_top = -3.0
+margin_right = 66.0
+margin_bottom = 66.0
+rect_scale = Vector2( 0.7, 0.7 )
+texture = ExtResource( 15 )
+expand = true
+
+[node name="item7" type="TextureButton" parent="Camera2D/Control/inventar/TextureRect"]
+margin_left = 221.667
+margin_top = 125.833
+margin_right = 267.667
+margin_bottom = 171.833
+expand = true
+
+[node name="count" type="RichTextLabel" parent="Camera2D/Control/inventar/TextureRect/item7"]
+margin_left = 35.8333
+margin_top = 32.5
+margin_right = 51.8333
+margin_bottom = 47.5
+
+[node name="outlined" type="TextureRect" parent="Camera2D/Control/inventar/TextureRect/item7"]
+visible = false
+margin_left = -2.0
+margin_top = -3.0
+margin_right = 72.0
+margin_bottom = 64.0
+rect_scale = Vector2( 0.7, 0.7 )
+texture = ExtResource( 15 )
+expand = true
+
+[node name="item8" type="TextureButton" parent="Camera2D/Control/inventar/TextureRect"]
+margin_left = 275.833
+margin_top = 124.167
+margin_right = 321.833
+margin_bottom = 170.167
+expand = true
+
+[node name="count" type="RichTextLabel" parent="Camera2D/Control/inventar/TextureRect/item8"]
+margin_left = 35.8333
+margin_top = 32.5
+margin_right = 51.8333
+margin_bottom = 47.5
+
+[node name="outlined" type="TextureRect" parent="Camera2D/Control/inventar/TextureRect/item8"]
+visible = false
+margin_left = -2.0
+margin_top = -3.0
+margin_right = 69.0
+margin_bottom = 66.0
+rect_scale = Vector2( 0.7, 0.7 )
+texture = ExtResource( 15 )
+expand = true
+
+[node name="item9" type="TextureButton" parent="Camera2D/Control/inventar/TextureRect"]
+margin_left = 327.5
+margin_top = 125.0
+margin_right = 373.5
+margin_bottom = 171.0
+expand = true
+
+[node name="count" type="RichTextLabel" parent="Camera2D/Control/inventar/TextureRect/item9"]
+margin_left = 35.8333
+margin_top = 32.5
+margin_right = 51.8333
+margin_bottom = 47.5
+
+[node name="outlined" type="TextureRect" parent="Camera2D/Control/inventar/TextureRect/item9"]
+visible = false
+margin_left = -2.0
+margin_top = -3.0
+margin_right = 71.0
+margin_bottom = 65.0
+rect_scale = Vector2( 0.7, 0.7 )
+texture = ExtResource( 15 )
+expand = true
+
+[node name="item10" type="TextureButton" parent="Camera2D/Control/inventar/TextureRect"]
+margin_left = 380.0
+margin_top = 124.0
+margin_right = 426.0
+margin_bottom = 170.0
+expand = true
+
+[node name="count" type="RichTextLabel" parent="Camera2D/Control/inventar/TextureRect/item10"]
+margin_left = 35.8333
+margin_top = 32.5
+margin_right = 51.8333
+margin_bottom = 47.5
+
+[node name="outlined" type="TextureRect" parent="Camera2D/Control/inventar/TextureRect/item10"]
+visible = false
+margin_left = -2.0
+margin_top = -3.0
+margin_right = 72.0
+margin_bottom = 67.0
+rect_scale = Vector2( 0.7, 0.7 )
+texture = ExtResource( 15 )
+expand = true
+
+[node name="item11" type="TextureButton" parent="Camera2D/Control/inventar/TextureRect"]
+margin_left = 432.5
+margin_top = 125.0
+margin_right = 478.5
+margin_bottom = 171.0
+expand = true
+
+[node name="count" type="RichTextLabel" parent="Camera2D/Control/inventar/TextureRect/item11"]
+margin_left = 35.8333
+margin_top = 32.5
+margin_right = 51.8333
+margin_bottom = 47.5
+
+[node name="outlined" type="TextureRect" parent="Camera2D/Control/inventar/TextureRect/item11"]
+visible = false
+margin_left = -2.0
+margin_top = -3.0
+margin_right = 69.0
+margin_bottom = 68.0
+rect_scale = Vector2( 0.7, 0.7 )
+texture = ExtResource( 15 )
+expand = true
+
+[node name="item12" type="TextureButton" parent="Camera2D/Control/inventar/TextureRect"]
+margin_left = 483.333
+margin_top = 124.167
+margin_right = 529.333
+margin_bottom = 170.167
+expand = true
+
+[node name="count" type="RichTextLabel" parent="Camera2D/Control/inventar/TextureRect/item12"]
+margin_left = 35.8333
+margin_top = 32.5
+margin_right = 51.8333
+margin_bottom = 47.5
+
+[node name="outlined" type="TextureRect" parent="Camera2D/Control/inventar/TextureRect/item12"]
+visible = false
+margin_left = -2.0
+margin_top = -3.0
+margin_right = 72.0
+margin_bottom = 66.0
+rect_scale = Vector2( 0.7, 0.7 )
+texture = ExtResource( 15 )
+expand = true
+
+[node name="item13" type="TextureButton" parent="Camera2D/Control/inventar/TextureRect"]
+margin_left = 485.833
+margin_top = 175.0
+margin_right = 531.833
+margin_bottom = 221.0
+expand = true
+
+[node name="count" type="RichTextLabel" parent="Camera2D/Control/inventar/TextureRect/item13"]
+margin_left = 35.8333
+margin_top = 32.5
+margin_right = 51.8333
+margin_bottom = 47.5
+
+[node name="outlined" type="TextureRect" parent="Camera2D/Control/inventar/TextureRect/item13"]
+visible = false
+margin_left = -2.0
+margin_top = -3.0
+margin_right = 66.0
+margin_bottom = 66.0
+rect_scale = Vector2( 0.7, 0.7 )
+texture = ExtResource( 15 )
+expand = true
+
+[node name="item14" type="TextureButton" parent="Camera2D/Control/inventar/TextureRect"]
+margin_left = 432.5
+margin_top = 175.0
+margin_right = 478.5
+margin_bottom = 221.0
+expand = true
+
+[node name="count" type="RichTextLabel" parent="Camera2D/Control/inventar/TextureRect/item14"]
+margin_left = 35.8333
+margin_top = 32.5
+margin_right = 51.8333
+margin_bottom = 47.5
+
+[node name="outlined" type="TextureRect" parent="Camera2D/Control/inventar/TextureRect/item14"]
+visible = false
+margin_left = -2.0
+margin_top = -3.0
+margin_right = 70.0
+margin_bottom = 69.0
+rect_scale = Vector2( 0.7, 0.7 )
+texture = ExtResource( 15 )
+expand = true
+
+[node name="item15" type="TextureButton" parent="Camera2D/Control/inventar/TextureRect"]
+margin_left = 378.0
+margin_top = 176.0
+margin_right = 424.0
+margin_bottom = 222.0
+expand = true
+
+[node name="count" type="RichTextLabel" parent="Camera2D/Control/inventar/TextureRect/item15"]
+margin_left = 35.8333
+margin_top = 32.5
+margin_right = 51.8333
+margin_bottom = 47.5
+
+[node name="outlined" type="TextureRect" parent="Camera2D/Control/inventar/TextureRect/item15"]
+visible = false
+margin_left = -2.0
+margin_top = -3.0
+margin_right = 71.0
+margin_bottom = 67.0
+rect_scale = Vector2( 0.7, 0.7 )
+texture = ExtResource( 15 )
+expand = true
+
+[node name="item16" type="TextureButton" parent="Camera2D/Control/inventar/TextureRect"]
+margin_left = 327.5
+margin_top = 175.833
+margin_right = 373.5
+margin_bottom = 221.833
+expand = true
+
+[node name="count" type="RichTextLabel" parent="Camera2D/Control/inventar/TextureRect/item16"]
+margin_left = 35.8333
+margin_top = 32.5
+margin_right = 51.8333
+margin_bottom = 47.5
+
+[node name="outlined" type="TextureRect" parent="Camera2D/Control/inventar/TextureRect/item16"]
+visible = false
+margin_left = -2.0
+margin_top = -3.0
+margin_right = 71.0
+margin_bottom = 70.0
+rect_scale = Vector2( 0.7, 0.7 )
+texture = ExtResource( 15 )
+expand = true
+
+[node name="item17" type="TextureButton" parent="Camera2D/Control/inventar/TextureRect"]
+margin_left = 273.333
+margin_top = 175.0
+margin_right = 319.333
+margin_bottom = 221.0
+expand = true
+
+[node name="count" type="RichTextLabel" parent="Camera2D/Control/inventar/TextureRect/item17"]
+margin_left = 35.8333
+margin_top = 32.5
+margin_right = 51.8333
+margin_bottom = 47.5
+
+[node name="outlined" type="TextureRect" parent="Camera2D/Control/inventar/TextureRect/item17"]
+visible = false
+margin_left = -2.0
+margin_top = -3.0
+margin_right = 73.0
+margin_bottom = 71.0
+rect_scale = Vector2( 0.7, 0.7 )
+texture = ExtResource( 15 )
+expand = true
+
+[node name="item18" type="TextureButton" parent="Camera2D/Control/inventar/TextureRect"]
+margin_left = 220.833
+margin_top = 177.5
+margin_right = 266.833
+margin_bottom = 223.5
+expand = true
+
+[node name="count" type="RichTextLabel" parent="Camera2D/Control/inventar/TextureRect/item18"]
+margin_left = 35.8333
+margin_top = 32.5
+margin_right = 51.8333
+margin_bottom = 47.5
+
+[node name="outlined" type="TextureRect" parent="Camera2D/Control/inventar/TextureRect/item18"]
+visible = false
+margin_left = -2.0
+margin_top = -3.0
+margin_right = 73.0
+margin_bottom = 66.0
+rect_scale = Vector2( 0.7, 0.7 )
+texture = ExtResource( 15 )
+expand = true
+
+[node name="item19" type="TextureButton" parent="Camera2D/Control/inventar/TextureRect"]
+margin_left = 220.833
+margin_top = 226.667
+margin_right = 266.833
+margin_bottom = 272.667
+expand = true
+
+[node name="count" type="RichTextLabel" parent="Camera2D/Control/inventar/TextureRect/item19"]
+margin_left = 35.8333
+margin_top = 32.5
+margin_right = 51.8333
+margin_bottom = 47.5
+
+[node name="outlined" type="TextureRect" parent="Camera2D/Control/inventar/TextureRect/item19"]
+visible = false
+margin_left = -2.0
+margin_top = -3.0
+margin_right = 75.0
+margin_bottom = 71.0
+rect_scale = Vector2( 0.7, 0.7 )
+texture = ExtResource( 15 )
+expand = true
+
+[node name="item20" type="TextureButton" parent="Camera2D/Control/inventar/TextureRect"]
+margin_left = 276.667
+margin_top = 226.667
+margin_right = 322.667
+margin_bottom = 272.667
+expand = true
+
+[node name="count" type="RichTextLabel" parent="Camera2D/Control/inventar/TextureRect/item20"]
+margin_left = 35.8333
+margin_top = 32.5
+margin_right = 51.8333
+margin_bottom = 47.5
+
+[node name="outlined" type="TextureRect" parent="Camera2D/Control/inventar/TextureRect/item20"]
+visible = false
+margin_left = -2.49969
+margin_top = -3.33368
+margin_right = 61.5003
+margin_bottom = 60.6663
+rect_scale = Vector2( 0.7, 0.7 )
+texture = ExtResource( 15 )
+
+[node name="item21" type="TextureButton" parent="Camera2D/Control/inventar/TextureRect"]
+margin_left = 326.667
+margin_top = 225.833
+margin_right = 372.667
+margin_bottom = 271.833
+expand = true
+
+[node name="count" type="RichTextLabel" parent="Camera2D/Control/inventar/TextureRect/item21"]
+margin_left = 35.8333
+margin_top = 32.5
+margin_right = 51.8333
+margin_bottom = 47.5
+
+[node name="outlined" type="TextureRect" parent="Camera2D/Control/inventar/TextureRect/item21"]
+visible = false
+margin_left = -2.49969
+margin_top = -3.33368
+margin_right = 61.5003
+margin_bottom = 60.6663
+rect_scale = Vector2( 0.7, 0.7 )
+texture = ExtResource( 15 )
+
+[node name="item22" type="TextureButton" parent="Camera2D/Control/inventar/TextureRect"]
+margin_left = 380.0
+margin_top = 225.833
+margin_right = 426.0
+margin_bottom = 271.833
+expand = true
+
+[node name="count" type="RichTextLabel" parent="Camera2D/Control/inventar/TextureRect/item22"]
+margin_left = 35.8333
+margin_top = 32.5
+margin_right = 51.8333
+margin_bottom = 47.5
+
+[node name="outlined" type="TextureRect" parent="Camera2D/Control/inventar/TextureRect/item22"]
+visible = false
+margin_left = -2.0
+margin_top = -3.0
+margin_right = 71.0
+margin_bottom = 73.0
+rect_scale = Vector2( 0.7, 0.7 )
+texture = ExtResource( 15 )
+expand = true
+
+[node name="item23" type="TextureButton" parent="Camera2D/Control/inventar/TextureRect"]
+margin_left = 432.5
+margin_top = 227.5
+margin_right = 478.5
+margin_bottom = 273.5
+expand = true
+
+[node name="count" type="RichTextLabel" parent="Camera2D/Control/inventar/TextureRect/item23"]
+margin_left = 35.8333
+margin_top = 32.5
+margin_right = 51.8333
+margin_bottom = 47.5
+
+[node name="outlined" type="TextureRect" parent="Camera2D/Control/inventar/TextureRect/item23"]
+visible = false
+margin_left = -2.0
+margin_top = -3.0
+margin_right = 71.0
+margin_bottom = 65.0
+rect_scale = Vector2( 0.7, 0.7 )
+texture = ExtResource( 15 )
+expand = true
+
+[node name="item24" type="TextureButton" parent="Camera2D/Control/inventar/TextureRect"]
+margin_left = 484.167
+margin_top = 227.5
+margin_right = 530.167
+margin_bottom = 273.5
+expand = true
+
+[node name="count" type="RichTextLabel" parent="Camera2D/Control/inventar/TextureRect/item24"]
+margin_left = 35.8333
+margin_top = 32.5
+margin_right = 51.8333
+margin_bottom = 47.5
+
+[node name="outlined" type="TextureRect" parent="Camera2D/Control/inventar/TextureRect/item24"]
+visible = false
+margin_left = -2.0
+margin_top = -3.0
+margin_right = 72.0
+margin_bottom = 71.0
+rect_scale = Vector2( 0.7, 0.7 )
+texture = ExtResource( 15 )
+expand = true
+
+[node name="item25" type="TextureButton" parent="Camera2D/Control/inventar/TextureRect"]
+margin_left = 487.5
+margin_top = 277.5
+margin_right = 533.5
+margin_bottom = 323.5
+expand = true
+
+[node name="count" type="RichTextLabel" parent="Camera2D/Control/inventar/TextureRect/item25"]
+margin_left = 35.8333
+margin_top = 32.5
+margin_right = 51.8333
+margin_bottom = 47.5
+
+[node name="outlined" type="TextureRect" parent="Camera2D/Control/inventar/TextureRect/item25"]
+visible = false
+margin_left = -2.0
+margin_top = -3.0
+margin_right = 66.0
+margin_bottom = 68.0
+rect_scale = Vector2( 0.7, 0.7 )
+texture = ExtResource( 15 )
+expand = true
+
+[node name="item26" type="TextureButton" parent="Camera2D/Control/inventar/TextureRect"]
+margin_left = 433.333
+margin_top = 279.167
+margin_right = 479.333
+margin_bottom = 325.167
+expand = true
+
+[node name="count" type="RichTextLabel" parent="Camera2D/Control/inventar/TextureRect/item26"]
+margin_left = 35.8333
+margin_top = 32.5
+margin_right = 51.8333
+margin_bottom = 47.5
+
+[node name="outlined" type="TextureRect" parent="Camera2D/Control/inventar/TextureRect/item26"]
+visible = false
+margin_left = -2.0
+margin_top = -3.0
+margin_right = 69.0
+margin_bottom = 67.0
+rect_scale = Vector2( 0.7, 0.7 )
+texture = ExtResource( 15 )
+expand = true
+
+[node name="item27" type="TextureButton" parent="Camera2D/Control/inventar/TextureRect"]
+margin_left = 379.167
+margin_top = 279.167
+margin_right = 425.167
+margin_bottom = 325.167
+expand = true
+
+[node name="count" type="RichTextLabel" parent="Camera2D/Control/inventar/TextureRect/item27"]
+margin_left = 35.8333
+margin_top = 32.5
+margin_right = 51.8333
+margin_bottom = 47.5
+
+[node name="outlined" type="TextureRect" parent="Camera2D/Control/inventar/TextureRect/item27"]
+visible = false
+margin_left = -2.0
+margin_top = -3.0
+margin_right = 71.0
+margin_bottom = 66.0
+rect_scale = Vector2( 0.7, 0.7 )
+texture = ExtResource( 15 )
+expand = true
+
+[node name="item28" type="TextureButton" parent="Camera2D/Control/inventar/TextureRect"]
+margin_left = 327.5
+margin_top = 279.167
+margin_right = 373.5
+margin_bottom = 325.167
+expand = true
+
+[node name="count" type="RichTextLabel" parent="Camera2D/Control/inventar/TextureRect/item28"]
+margin_left = 35.8333
+margin_top = 32.5
+margin_right = 51.8333
+margin_bottom = 47.5
+
+[node name="outlined" type="TextureRect" parent="Camera2D/Control/inventar/TextureRect/item28"]
+visible = false
+margin_left = -2.0
+margin_top = -3.0
+margin_right = 72.0
+margin_bottom = 66.0
+rect_scale = Vector2( 0.7, 0.7 )
+texture = ExtResource( 15 )
+expand = true
+
+[node name="item29" type="TextureButton" parent="Camera2D/Control/inventar/TextureRect"]
+margin_left = 274.167
+margin_top = 278.333
+margin_right = 320.167
+margin_bottom = 324.333
+expand = true
+
+[node name="count" type="RichTextLabel" parent="Camera2D/Control/inventar/TextureRect/item29"]
+margin_left = 35.8333
+margin_top = 32.5
+margin_right = 51.8333
+margin_bottom = 47.5
+
+[node name="outlined" type="TextureRect" parent="Camera2D/Control/inventar/TextureRect/item29"]
+visible = false
+margin_left = -2.0
+margin_top = -3.0
+margin_right = 72.0
+margin_bottom = 66.0
+rect_scale = Vector2( 0.7, 0.7 )
+texture = ExtResource( 15 )
+expand = true
+
+[node name="item30" type="TextureButton" parent="Camera2D/Control/inventar/TextureRect"]
+margin_left = 220.833
+margin_top = 278.333
+margin_right = 266.833
+margin_bottom = 324.333
+expand = true
+
+[node name="count" type="RichTextLabel" parent="Camera2D/Control/inventar/TextureRect/item30"]
+margin_left = 35.8333
+margin_top = 32.5
+margin_right = 51.8333
+margin_bottom = 47.5
+
+[node name="outlined" type="TextureRect" parent="Camera2D/Control/inventar/TextureRect/item30"]
+visible = false
+margin_left = -2.0
+margin_top = -3.0
+margin_right = 71.0
+margin_bottom = 70.0
+rect_scale = Vector2( 0.7, 0.7 )
+texture = ExtResource( 15 )
+expand = true
+
 [node name="hot1" type="TextureButton" parent="Camera2D/Control/inventar/TextureRect"]
 margin_left = 549.0
 margin_top = 92.0
 margin_right = 587.0
 margin_bottom = 129.0
 expand = true
+
+[node name="outlined" type="TextureRect" parent="Camera2D/Control/inventar/TextureRect/hot1"]
+margin_left = -2.49969
+margin_top = -3.33368
+margin_right = 61.5003
+margin_bottom = 60.6663
+rect_scale = Vector2( 0.7, 0.7 )
+texture = ExtResource( 15 )
 
 [node name="hot2" type="TextureButton" parent="Camera2D/Control/inventar/TextureRect"]
 margin_left = 548.333
@@ -639,6 +1297,15 @@ margin_right = 587.333
 margin_bottom = 191.167
 expand = true
 
+[node name="outlined" type="TextureRect" parent="Camera2D/Control/inventar/TextureRect/hot2"]
+visible = false
+margin_left = -2.49969
+margin_top = -3.33368
+margin_right = 61.5003
+margin_bottom = 60.6663
+rect_scale = Vector2( 0.7, 0.7 )
+texture = ExtResource( 15 )
+
 [node name="hot3" type="TextureButton" parent="Camera2D/Control/inventar/TextureRect"]
 margin_left = 550.0
 margin_top = 216.0
@@ -646,9 +1313,99 @@ margin_right = 588.0
 margin_bottom = 253.0
 expand = true
 
+[node name="outlined" type="TextureRect" parent="Camera2D/Control/inventar/TextureRect/hot3"]
+visible = false
+margin_left = -2.49969
+margin_top = -3.33368
+margin_right = 61.5003
+margin_bottom = 60.6663
+rect_scale = Vector2( 0.7, 0.7 )
+texture = ExtResource( 15 )
+
 [node name="hot4" type="TextureButton" parent="Camera2D/Control/inventar/TextureRect"]
 margin_left = 550.0
 margin_top = 277.5
 margin_right = 588.0
 margin_bottom = 314.5
 expand = true
+
+[node name="outlined" type="TextureRect" parent="Camera2D/Control/inventar/TextureRect/hot4"]
+visible = false
+margin_left = -2.49969
+margin_top = -3.33368
+margin_right = 61.5003
+margin_bottom = 60.6663
+rect_scale = Vector2( 0.7, 0.7 )
+texture = ExtResource( 15 )
+
+[node name="titles" type="Control" parent="Camera2D/Control/inventar"]
+margin_left = 151.0
+margin_top = 234.0
+margin_right = 330.0
+margin_bottom = 475.0
+
+[node name="icon" type="TextureRect" parent="Camera2D/Control/inventar/titles"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = -32.0
+margin_right = 30.0
+margin_bottom = -2.0
+texture = ExtResource( 14 )
+expand = true
+
+[node name="about" type="RichTextLabel" parent="Camera2D/Control/inventar/titles"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -85.5
+margin_top = 2.0
+margin_right = 73.5
+margin_bottom = 164.0
+text = "leaf:
+
+used to make ropes "
+
+[node name="parameter" type="RichTextLabel" parent="Camera2D/Control/inventar/titles"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -52.5
+margin_top = -24.0
+margin_right = 52.5
+margin_bottom = 6.0
+text = "hunger : 20"
+
+[connection signal="pressed" from="Camera2D/Control/inventar/TextureRect/item1" to="." method="on_item_look" binds= [ 10 ]]
+[connection signal="pressed" from="Camera2D/Control/inventar/TextureRect/item2" to="." method="on_item_look" binds= [ 11 ]]
+[connection signal="pressed" from="Camera2D/Control/inventar/TextureRect/item3" to="." method="on_item_look" binds= [ 12 ]]
+[connection signal="pressed" from="Camera2D/Control/inventar/TextureRect/item4" to="." method="on_item_look" binds= [ 13 ]]
+[connection signal="pressed" from="Camera2D/Control/inventar/TextureRect/item5" to="." method="on_item_look" binds= [ 14 ]]
+[connection signal="pressed" from="Camera2D/Control/inventar/TextureRect/item6" to="." method="on_item_look" binds= [ 15 ]]
+[connection signal="pressed" from="Camera2D/Control/inventar/TextureRect/item7" to="." method="on_item_look" binds= [ 16 ]]
+[connection signal="pressed" from="Camera2D/Control/inventar/TextureRect/item8" to="." method="on_item_look" binds= [ 17 ]]
+[connection signal="pressed" from="Camera2D/Control/inventar/TextureRect/item9" to="." method="on_item_look" binds= [ 18 ]]
+[connection signal="pressed" from="Camera2D/Control/inventar/TextureRect/item10" to="." method="on_item_look" binds= [ 19 ]]
+[connection signal="pressed" from="Camera2D/Control/inventar/TextureRect/item11" to="." method="on_item_look" binds= [ 20 ]]
+[connection signal="pressed" from="Camera2D/Control/inventar/TextureRect/item12" to="." method="on_item_look" binds= [ 21 ]]
+[connection signal="pressed" from="Camera2D/Control/inventar/TextureRect/item13" to="." method="on_item_look" binds= [ 22 ]]
+[connection signal="pressed" from="Camera2D/Control/inventar/TextureRect/item14" to="." method="on_item_look" binds= [ 23 ]]
+[connection signal="pressed" from="Camera2D/Control/inventar/TextureRect/item15" to="." method="on_item_look" binds= [ 24 ]]
+[connection signal="pressed" from="Camera2D/Control/inventar/TextureRect/item16" to="." method="on_item_look" binds= [ 25 ]]
+[connection signal="pressed" from="Camera2D/Control/inventar/TextureRect/item17" to="." method="on_item_look" binds= [ 26 ]]
+[connection signal="pressed" from="Camera2D/Control/inventar/TextureRect/item18" to="." method="on_item_look" binds= [ 27 ]]
+[connection signal="pressed" from="Camera2D/Control/inventar/TextureRect/item19" to="." method="on_item_look" binds= [ 28 ]]
+[connection signal="pressed" from="Camera2D/Control/inventar/TextureRect/item20" to="." method="on_item_look" binds= [ 29 ]]
+[connection signal="pressed" from="Camera2D/Control/inventar/TextureRect/item21" to="." method="on_item_look" binds= [ 30 ]]
+[connection signal="pressed" from="Camera2D/Control/inventar/TextureRect/item22" to="." method="on_item_look" binds= [ 31 ]]
+[connection signal="pressed" from="Camera2D/Control/inventar/TextureRect/item23" to="." method="on_item_look" binds= [ 32 ]]
+[connection signal="pressed" from="Camera2D/Control/inventar/TextureRect/item24" to="." method="on_item_look" binds= [ 33 ]]
+[connection signal="pressed" from="Camera2D/Control/inventar/TextureRect/item25" to="." method="on_item_look" binds= [ 34 ]]
+[connection signal="pressed" from="Camera2D/Control/inventar/TextureRect/item26" to="." method="on_item_look" binds= [ 35 ]]
+[connection signal="pressed" from="Camera2D/Control/inventar/TextureRect/item27" to="." method="on_item_look" binds= [ 36 ]]
+[connection signal="pressed" from="Camera2D/Control/inventar/TextureRect/item28" to="." method="on_item_look" binds= [ 37 ]]
+[connection signal="pressed" from="Camera2D/Control/inventar/TextureRect/item29" to="." method="on_item_look" binds= [ 38 ]]
+[connection signal="pressed" from="Camera2D/Control/inventar/TextureRect/item30" to="." method="on_item_look" binds= [ 39 ]]
+[connection signal="pressed" from="Camera2D/Control/inventar/TextureRect/hot1" to="." method="on_item_look" binds= [ 0 ]]
+[connection signal="pressed" from="Camera2D/Control/inventar/TextureRect/hot2" to="." method="on_item_look" binds= [ 1 ]]
+[connection signal="pressed" from="Camera2D/Control/inventar/TextureRect/hot3" to="." method="on_item_look" binds= [ 2 ]]
+[connection signal="pressed" from="Camera2D/Control/inventar/TextureRect/hot4" to="." method="on_item_look" binds= [ 3 ]]

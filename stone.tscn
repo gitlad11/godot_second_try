@@ -22,6 +22,7 @@ animations = [ {
 } ]
 
 [node name="stone" type="Area2D"]
+z_index = 1000
 
 [node name="KinematicBody2D" type="KinematicBody2D" parent="."]
 position = Vector2( 0, 6 )

@@ -19,6 +19,7 @@ var hunger = 100
 var health = 4
 var get_hunger = false
 
+var outlined = 0
 
 var hunger1 =  preload("res://tiles/assets/bars/hunger (1).png")
 var hunger2 = preload("res://tiles/assets/bars/hunger (5).png")
@@ -51,10 +52,28 @@ var hot_items = [
 ]
 
 var inventory = [
-	{"name" : "leaf", "link" : 'res://tiles/assets/leaf.png', "count" : 5},
-	{"name" : "wood", "link" : 'res://tiles/assets/wood.png', "count" : 2},
-	{"name" : "stone", "link" : 'res://tiles/assets/stone.png', "count" : 12},
+	{"name" : "cherry", "link" : "res://tiles/assets/Food_0.png", "damage" : '', "food" : '10', "count" : 3}
 ]
+
+var about = [
+	{"name" : 'Sword',"label" : 'Sword', "damage" : "10", "food" : '', "level" : '1'},
+	{ "name" : 'Bow', "label" : "Bow" , "damage" : "8", "food" : '', "level" : '1'},
+	{ "name" : 'Axe', "label" : "Axe", "level" : '1' , "food" : '', "damage" : ''},
+	{ "name" : 'Pickaxe', "label" : "Pickaxe", "level" : '1', "food" : '', "damage" : ''},
+	{"name" : "cherry", "label" : "a little breakfast, can be used in cooking and alchemy", "food" : "10", "damage" : ''},
+	{"name" : "bread", "label" : "meal that eveyone knows, can be used as bite for animals", "food" : "10", "damage" : ''},
+	{"name" : "hay", "label" : "usual plant on the fields, can be used in cooking and alchemy", "food" : "0", "damage" : ''},
+	{"name" : "raw pork", "label" : "meat, not so healthy if it's raw, can be used in cooking and as bite for animals", "food" : "20", "damage" : ''},
+	{"name" : "raw chicken", "label" : "meat, not so healthy if it's raw, can be used in cooking and as bite for animals", "food" : "20", "damage" : ''},
+	{"name" : "blueberries", "label" : "a little breakfast, can be used in cooking and alchemy", "food" : "10", "damage" : ''},
+	{"name" : "orange", "label" : "orange, round and tasty, can be used in cooking", "food" : '10', "damage" : ''},
+	{"name" : "wood", "label" : "very important resource, can be used in building", "food" : '', "damage" : ''},
+	{"name" : "stone", "label" : "important thing to make tools, can be used in building", "food" : '', "damage" : ''},
+	{"name" : "leaf", "label" : "ropes, ropes, ropes, can be used in building", "food" : '', "damage" : ''},
+	
+]
+
+
 
 func _ready():
 	var index = 0
@@ -82,7 +101,7 @@ func on_inventar():
 func hungry():
 	if(hunger >= 0 && !get_hunger):
 		get_hunger = true
-		yield(get_tree().create_timer(2),"timeout")
+		yield(get_tree().create_timer(3),"timeout")
 		hunger = hunger - 1
 		yield(get_tree().create_timer(1),"timeout")
 		if(hunger < 10):
@@ -252,5 +271,99 @@ func _on_position_area_exited(area):
 	if(area.get_name() == get_name()):
 		get_node("AnimationPlayer").z_index = 10
 
+func on_item_look(index):
+	var item = {"name" : '', "label" : '', "damage" : '', "food" : ''}
+	var ind = 0
+	
+	if(index < 10):
+		item = about[index]
+		get_node("Camera2D/Control/inventar/titles/about").text = item["label"]
+	else:
+		if(len(inventory) > index - 10):
+			var i = inventory[index - 10]
+			for value in about:
+				if(i['name'] == value['name']):
+					item = value
+					print(item)
+				
+	get_node("Camera2D/Control/inventar/titles/about").text = item["label"]				
+	if(len(item['damage']) > 0):
+		var icon = load("res://tiles/assets/sword.png")
+		get_node("Camera2D/Control/inventar/titles/icon").set_texture(icon)
+		get_node("Camera2D/Control/inventar/titles/parameter").text = "Damage : " + item['damage']
+	elif(len(item['food']) > 0):
+		var icon = load("res://tiles/assets/Food_0.png")
+		get_node("Camera2D/Control/inventar/titles/icon").set_texture(icon)
+		get_node("Camera2D/Control/inventar/titles/parameter").text = "Food : " + item['food']
+	else:
+		get_node("Camera2D/Control/inventar/titles/icon").set_texture(null)
+		get_node("Camera2D/Control/inventar/titles/parameter").text = ""
+	if(index < 10):
+		get_node("Camera2D/Control/inventar/TextureRect/hot" + str(index + 1) + "/outlined").set_visible(true)
+	else:
+		get_node("Camera2D/Control/inventar/TextureRect/item" + str(index - 9) + "/outlined").set_visible(true)	
+	
+	if(outlined < 10):
+		if(outlined != index):
+			get_node("Camera2D/Control/inventar/TextureRect/hot" + str(outlined + 1) + "/outlined").set_visible(false)
+	else:
+		if(outlined != index - 9):
+			get_node("Camera2D/Control/inventar/TextureRect/item" + str(outlined - 9) + "/outlined").set_visible(false)	
+	outlined = index
+		
 func on_item(body, item):
-	print(item)
+	var index = 0
+	var found = false
+	for i in inventory:
+		if item == i['name'] and i['count'] < 39:
+			var new_item = inventory[index]
+			new_item['count'] = new_item['count'] + 1
+			inventory.remove(index)
+			inventory.insert(index, new_item)
+			found = true
+		else:
+			index = index + 1	
+			
+	if !found && len(inventory) < 29:
+		var new_item;
+		if(item == "leaf"):
+			new_item = {
+				"name" : "leaf", 
+				"link" : 'res://tiles/assets/leaf.png', 
+				"count" : 1,
+				"food" : '', 
+				"damage" : ''
+				}
+		elif(item == 'ore'):
+			new_item = {
+				"name" : "ore", 
+				"link" : 'res://tiles/assets/stone.png', 
+				"count" : 1,
+				"food" : '', 
+				"damage" : ''
+				}
+		elif(item == "wood"):
+			new_item = 	{
+				"name" : "wood", 
+				"link" : 'res://tiles/assets/wood.png', 
+				"count" : 1,
+				"food" : '', 
+				"damage" : ''
+				}
+		elif(item == "hay"):
+			new_item = 	{
+				"name" : "hay", 
+				"link" : 'res://tiles/assets/hay.png', 
+				"count" : 1,
+				"food" : '', 
+				"damage" : ''
+				}
+		elif(item == "orange"):
+			new_item = {
+				"name" : "orange", 
+				"link" : 'res://tiles/assets/Food_30.png', 
+				"count" : 1,
+				"food" : '10', 
+				"damage" : ''
+			}						
+		inventory.append(new_item)

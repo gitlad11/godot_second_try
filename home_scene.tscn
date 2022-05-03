@@ -1,4 +1,4 @@
-[gd_scene load_steps=59 format=2]
+[gd_scene load_steps=61 format=2]
 
 [ext_resource path="res://earch_large.tscn" type="PackedScene" id=1]
 [ext_resource path="res://earth_water_left.tscn" type="PackedScene" id=2]
@@ -37,6 +37,8 @@
 [ext_resource path="res://island1.tscn" type="PackedScene" id=35]
 [ext_resource path="res://yuka.tscn" type="PackedScene" id=36]
 [ext_resource path="res://tiles/animation/pixil-frame-4.png" type="Texture" id=37]
+[ext_resource path="res://orange.tscn" type="PackedScene" id=38]
+[ext_resource path="res://orange_fruit.tscn" type="PackedScene" id=39]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 14 )
@@ -227,7 +229,7 @@ texture = ExtResource( 15 )
 position = Vector2( -2, -5 )
 scale = Vector2( 1.8, 1.8 )
 frames = SubResource( 5 )
-frame = 2
+frame = 1
 speed_scale = 1.6
 playing = true
 
@@ -364,6 +366,46 @@ position = Vector2( 24, 13 )
 scale = Vector2( 0.8, 0.8 )
 monitoring = false
 
+[node name="large_three4" parent="." instance=ExtResource( 17 )]
+position = Vector2( 126, -236 )
+script = ExtResource( 23 )
+
+[node name="wood" parent="large_three4" instance=ExtResource( 21 )]
+visible = false
+position = Vector2( 24, 13 )
+scale = Vector2( 0.8, 0.8 )
+monitoring = false
+
+[node name="large_three3" parent="." instance=ExtResource( 17 )]
+position = Vector2( -217, -330 )
+script = ExtResource( 23 )
+
+[node name="wood" parent="large_three3" instance=ExtResource( 21 )]
+visible = false
+position = Vector2( 24, 13 )
+scale = Vector2( 0.8, 0.8 )
+monitoring = false
+
+[node name="large_three2" parent="." instance=ExtResource( 17 )]
+position = Vector2( -31, -351 )
+script = ExtResource( 23 )
+
+[node name="wood" parent="large_three2" instance=ExtResource( 21 )]
+visible = false
+position = Vector2( 24, 13 )
+scale = Vector2( 0.8, 0.8 )
+monitoring = false
+
+[node name="large_three5" parent="." instance=ExtResource( 17 )]
+position = Vector2( 40, -297 )
+script = ExtResource( 23 )
+
+[node name="wood" parent="large_three5" instance=ExtResource( 21 )]
+visible = false
+position = Vector2( 24, 13 )
+scale = Vector2( 0.8, 0.8 )
+monitoring = false
+
 [node name="character" type="Node2D" parent="."]
 position = Vector2( 1430, -618 )
 scale = Vector2( 1.8, 1.8 )
@@ -406,6 +448,17 @@ visible = false
 position = Vector2( -1.11115, -1.11108 )
 shape = SubResource( 26 )
 
+[node name="orange_three" parent="." instance=ExtResource( 38 )]
+fruit = "orange"
+
+[node name="wood" parent="orange_three" instance=ExtResource( 21 )]
+visible = false
+position = Vector2( 24, 13 )
+scale = Vector2( 0.8, 0.8 )
+monitoring = false
+
+[node name="fruit" parent="orange_three" instance=ExtResource( 39 )]
+
 [connection signal="area_entered" from="stone" to="stone" method="_on_ore"]
 [connection signal="body_entered" from="stone/ore" to="player" method="on_item" binds= [ "ore" ]]
 [connection signal="body_entered" from="stone/ore" to="stone/ore" method="on_ore"]
@@ -416,5 +469,15 @@ shape = SubResource( 26 )
 [connection signal="body_entered" from="yuka/leaf" to="player" method="on_item" binds= [ "leaf" ]]
 [connection signal="area_entered" from="large_three" to="large_three" method="_on_axe"]
 [connection signal="body_entered" from="large_three/wood" to="player" method="on_item" binds= [ "wood" ]]
+[connection signal="area_entered" from="large_three4" to="large_three4" method="_on_axe"]
+[connection signal="body_entered" from="large_three4/wood" to="player" method="on_item" binds= [ "wood" ]]
+[connection signal="area_entered" from="large_three3" to="large_three3" method="_on_axe"]
+[connection signal="body_entered" from="large_three3/wood" to="player" method="on_item" binds= [ "wood" ]]
+[connection signal="area_entered" from="large_three2" to="large_three2" method="_on_axe"]
+[connection signal="body_entered" from="large_three2/wood" to="player" method="on_item" binds= [ "wood" ]]
+[connection signal="area_entered" from="large_three5" to="large_three5" method="_on_axe"]
+[connection signal="body_entered" from="large_three5/wood" to="player" method="on_item" binds= [ "wood" ]]
 [connection signal="body_entered" from="character/vision" to="character" method="on_vision"]
 [connection signal="body_exited" from="character/vision" to="character" method="_on_unvision"]
+[connection signal="body_entered" from="orange_three/wood" to="player" method="on_item" binds= [ "wood" ]]
+[connection signal="body_entered" from="orange_three/fruit" to="player" method="on_item" binds= [ "orange" ]]

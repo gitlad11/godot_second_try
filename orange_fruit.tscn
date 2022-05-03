@@ -1,0 +1,67 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://orange.gd" type="Script" id=1]
+[ext_resource path="res://tiles/assets/Pixilart Sprite Sheet (4).png" type="Texture" id=2]
+[ext_resource path="res://tiles/assets/Food_30.png" type="Texture" id=3]
+
+[sub_resource type="CircleShape2D" id=27]
+radius = 13.0171
+
+[sub_resource type="AtlasTexture" id=29]
+atlas = ExtResource( 2 )
+region = Rect2( 0, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=30]
+atlas = ExtResource( 2 )
+region = Rect2( 16, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=31]
+atlas = ExtResource( 2 )
+region = Rect2( 32, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=32]
+atlas = ExtResource( 2 )
+region = Rect2( 48, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=33]
+atlas = ExtResource( 2 )
+region = Rect2( 64, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=34]
+atlas = ExtResource( 2 )
+region = Rect2( 80, 0, 16, 16 )
+
+[sub_resource type="SpriteFrames" id=28]
+animations = [ {
+"frames": [ ExtResource( 3 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 29 ), SubResource( 30 ), SubResource( 31 ), SubResource( 32 ), SubResource( 33 ), SubResource( 34 ) ],
+"loop": true,
+"name": "gone",
+"speed": 5.0
+} ]
+
+[node name="fruit" type="Area2D"]
+visible = false
+position = Vector2( -3.00001, 33 )
+scale = Vector2( 1.5, 1.5 )
+monitoring = false
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 27, -2 )
+shape = SubResource( 27 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 26.6667, -2.66667 )
+frames = SubResource( 28 )
+animation = "gone"
+frame = 4
+
+[connection signal="body_entered" from="." to="." method="_on_orange"]

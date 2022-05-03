@@ -45,6 +45,7 @@ animations = [ {
 } ]
 
 [node name="leaf" type="Area2D"]
+z_index = 1000
 script = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

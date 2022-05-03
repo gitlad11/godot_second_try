@@ -2,6 +2,7 @@ extends Area2D
 
 export (int) var endurance = 6
 export (int) var woods = 1
+export (String) var fruit = "" 
 
 var cutting = false
 var cut_down = false
@@ -22,6 +23,9 @@ func _process(delta):
 		wood.monitoring = true
 		get_node("Sprite").queue_free()
 		get_node("damage").queue_free()
+		if(len(fruit) > 0):
+			get_node("fruit").visible = true
+			get_node("fruit").monitoring = true
 
 
 func _on_axe(area):
