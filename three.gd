@@ -4,8 +4,6 @@ export (int) var endurance = 4
 export (int) var woods = 1
 
 func _on_cut_three(area):
-	print(get_name())
-	print(area.get_name())
 	if(area.get_name() == get_name()):
 		endurance = endurance - 1
 		

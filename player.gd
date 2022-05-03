@@ -19,6 +19,8 @@ var hunger = 100
 var health = 4
 var get_hunger = false
 
+var current_item = 0
+
 var outlined = 0
 
 var hunger1 =  preload("res://tiles/assets/bars/hunger (1).png")
@@ -52,7 +54,6 @@ var hot_items = [
 ]
 
 var inventory = [
-	{"name" : "cherry", "link" : "res://tiles/assets/Food_0.png", "damage" : '', "food" : '10', "count" : 3}
 ]
 
 var about = [
@@ -68,12 +69,10 @@ var about = [
 	{"name" : "blueberries", "label" : "a little breakfast, can be used in cooking and alchemy", "food" : "10", "damage" : ''},
 	{"name" : "orange", "label" : "orange, round and tasty, can be used in cooking", "food" : '10', "damage" : ''},
 	{"name" : "wood", "label" : "very important resource, can be used in building", "food" : '', "damage" : ''},
-	{"name" : "stone", "label" : "important thing to make tools, can be used in building", "food" : '', "damage" : ''},
+	{"name" : "ore", "label" : "important thing to make tools, can be used in building", "food" : '', "damage" : ''},
 	{"name" : "leaf", "label" : "ropes, ropes, ropes, can be used in building", "food" : '', "damage" : ''},
 	
 ]
-
-
 
 func _ready():
 	var index = 0
@@ -81,7 +80,24 @@ func _ready():
 		index = index + 1
 		var item = load(value['link'])
 		get_node("Camera2D/Control/inventar/TextureRect/hot" + str(index)).set_normal_texture(item)
-		
+	index = 0	
+	for value in current_items:
+		index = index + 1
+		var item = load(value['link'])
+		get_node("Camera2D/Control/items/item" + str(index)).set_normal_texture(item)
+	
+	
+func add_current(index):
+	var item
+	if(current_item < 10):
+		item = hot_items[index]
+	else:
+		item = inventory[index - 10]
+	current_items.remove(index - 1)	
+	current_items.insert(index - 1 ,item)	
+	var texture = load(item['link'])
+	get_node("Camera2D/Control/items/item" + str(index)).set_normal_texture(texture)
+	
 	
 func on_inventar():
 	var inventar = get_node("Camera2D/Control/inventar")
@@ -278,13 +294,14 @@ func on_item_look(index):
 	if(index < 10):
 		item = about[index]
 		get_node("Camera2D/Control/inventar/titles/about").text = item["label"]
+		current_item = index
 	else:
 		if(len(inventory) > index - 10):
 			var i = inventory[index - 10]
 			for value in about:
 				if(i['name'] == value['name']):
 					item = value
-					print(item)
+					current_item = index 
 				
 	get_node("Camera2D/Control/inventar/titles/about").text = item["label"]				
 	if(len(item['damage']) > 0):

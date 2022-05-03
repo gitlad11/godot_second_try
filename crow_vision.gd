@@ -13,4 +13,5 @@ func _on_vision(body):
 			get_node("KinematicBody2D").on_flying("right")	
 		get_node("KinematicBody2D/AnimatedSprite").play("fly")
 		get_node("KinematicBody2D/AnimatedSprite").set_speed_scale(1.2)
-		
+		yield(get_tree().create_timer(9),"timeout")
+		queue_free()
