@@ -459,7 +459,7 @@ scale = Vector2( 1.5, 1.5 )
 z_index = 10
 frames = SubResource( 95 )
 animation = "attack"
-frame = 3
+frame = 2
 speed_scale = 3.0
 playing = true
 
@@ -687,10 +687,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -425.0
-margin_top = -195.5
-margin_right = 275.0
-margin_bottom = 504.5
+margin_left = -230.0
+margin_top = -217.5
+margin_right = 470.0
+margin_bottom = 482.5
 texture = ExtResource( 13 )
 
 [node name="item1" type="TextureButton" parent="Camera2D/Control/inventar/TextureRect"]
@@ -1445,30 +1445,10 @@ rect_scale = Vector2( 0.7, 0.7 )
 texture = ExtResource( 15 )
 
 [node name="titles" type="Control" parent="Camera2D/Control/inventar"]
-margin_left = 151.0
-margin_top = 189.0
-margin_right = 330.0
-margin_bottom = 427.0
-
-[node name="icon" type="TextureRect" parent="Camera2D/Control/inventar/titles"]
-anchor_top = 0.5
-anchor_bottom = 0.5
-margin_left = 8.0
-margin_top = 39.0
-margin_right = 38.0
-margin_bottom = 70.0
-expand = true
-
-[node name="icon2" type="TextureRect" parent="Camera2D/Control/inventar/titles"]
-visible = false
-anchor_top = 0.5
-anchor_bottom = 0.5
-margin_left = 8.0
-margin_top = 5.0
-margin_right = 38.0
-margin_bottom = 36.0
-texture = ExtResource( 16 )
-expand = true
+margin_left = 228.0
+margin_top = 141.0
+margin_right = 384.0
+margin_bottom = 323.0
 
 [node name="about" type="RichTextLabel" parent="Camera2D/Control/inventar/titles"]
 anchor_left = 0.5
@@ -1478,37 +1458,57 @@ margin_top = 4.0
 margin_right = 69.5
 margin_bottom = 120.0
 
+[node name="icon" type="TextureRect" parent="Camera2D/Control/inventar/titles"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 11.0
+margin_top = 37.0
+margin_right = 39.0
+margin_bottom = 65.0
+expand = true
+
+[node name="icon2" type="TextureRect" parent="Camera2D/Control/inventar/titles"]
+visible = false
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 12.0
+margin_top = 3.0
+margin_right = 41.0
+margin_bottom = 32.0
+texture = ExtResource( 16 )
+expand = true
+
 [node name="parameter" type="RichTextLabel" parent="Camera2D/Control/inventar/titles"]
 anchor_top = 0.5
 anchor_bottom = 0.5
-margin_left = 41.0
-margin_top = 48.0
-margin_right = 146.0
-margin_bottom = 78.0
+margin_left = 36.0
+margin_top = 41.0
+margin_right = 141.0
+margin_bottom = 71.0
 
 [node name="parameter2" type="RichTextLabel" parent="Camera2D/Control/inventar/titles"]
 anchor_top = 0.5
 anchor_bottom = 0.5
-margin_left = 40.0
-margin_top = 15.0
-margin_right = 145.0
-margin_bottom = 45.0
+margin_left = 39.0
+margin_top = 10.0
+margin_right = 144.0
+margin_bottom = 40.0
 
 [node name="button" type="TextureButton" parent="Camera2D/Control/inventar/titles"]
 visible = false
-margin_left = 34.0
-margin_top = 197.0
-margin_right = 546.0
-margin_bottom = 337.0
+margin_left = 29.0
+margin_top = 167.0
+margin_right = 541.0
+margin_bottom = 307.0
 rect_scale = Vector2( 0.2, 0.2 )
 texture_normal = ExtResource( 14 )
 expand = true
 
 [node name="button_label" type="Label" parent="Camera2D/Control/inventar/titles"]
-margin_left = 71.0
-margin_top = 202.0
-margin_right = 127.0
-margin_bottom = 218.0
+margin_left = 52.0
+margin_top = 173.0
+margin_right = 108.0
+margin_bottom = 189.0
 
 [node name="TextureButton" type="TextureButton" parent="Camera2D/Control"]
 anchor_left = 1.0
