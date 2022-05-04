@@ -25,9 +25,15 @@ func movement():
 		get_node("Sprite").set_flip_h( false )
 
 func on_arrow_stop():
+	yield(get_tree().create_timer(0.4),"timeout")
+	queue_free()
+
+func on_body_enter(body):
+	yield(get_tree().create_timer(0.4),"timeout")
 	queue_free()
 	
 func _physics_process(delta):
 	if(flying):
 		movement()
 		velocity = move_and_slide(velocity)	
+

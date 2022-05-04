@@ -1,4 +1,4 @@
-[gd_scene load_steps=61 format=2]
+[gd_scene load_steps=57 format=2]
 
 [ext_resource path="res://earch_large.tscn" type="PackedScene" id=1]
 [ext_resource path="res://earth_water_left.tscn" type="PackedScene" id=2]
@@ -13,8 +13,7 @@
 [ext_resource path="res://tiles/forest/ezgif.com-gif-maker (19).png" type="Texture" id=11]
 [ext_resource path="res://tiles/forest/grass.png" type="Texture" id=12]
 [ext_resource path="res://stone.tscn" type="PackedScene" id=13]
-[ext_resource path="res://tiles/animation/Campfire36.png" type="Texture" id=14]
-[ext_resource path="res://tiles/forest/ezgif.com-gif-maker (5).png" type="Texture" id=15]
+[ext_resource path="res://bonfire.tscn" type="PackedScene" id=14]
 [ext_resource path="res://leaf.tscn" type="PackedScene" id=16]
 [ext_resource path="res://large_three.tscn" type="PackedScene" id=17]
 [ext_resource path="res://bridge_done.tscn" type="PackedScene" id=18]
@@ -39,33 +38,8 @@
 [ext_resource path="res://tiles/animation/pixil-frame-4.png" type="Texture" id=37]
 [ext_resource path="res://orange.tscn" type="PackedScene" id=38]
 [ext_resource path="res://orange_fruit.tscn" type="PackedScene" id=39]
-
-[sub_resource type="AtlasTexture" id=1]
-atlas = ExtResource( 14 )
-region = Rect2( 0, 0, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=2]
-atlas = ExtResource( 14 )
-region = Rect2( 32, 0, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=3]
-atlas = ExtResource( 14 )
-region = Rect2( 64, 0, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=4]
-atlas = ExtResource( 14 )
-region = Rect2( 96, 0, 32, 32 )
-
-[sub_resource type="SpriteFrames" id=5]
-animations = [ {
-"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ) ],
-"loop": true,
-"name": "default",
-"speed": 5.0
-} ]
-
-[sub_resource type="CircleShape2D" id=6]
-radius = 66.0681
+[ext_resource path="res://raw_chicken.gd" type="Script" id=40]
+[ext_resource path="res://raw_chicken.tscn" type="PackedScene" id=41]
 
 [sub_resource type="CircleShape2D" id=20]
 radius = 485.004
@@ -106,6 +80,9 @@ extents = Vector2( 10, 255.5 )
 
 [sub_resource type="RectangleShape2D" id=19]
 extents = Vector2( 6.75, 97.75 )
+
+[sub_resource type="CircleShape2D" id=29]
+radius = 30.0
 
 [sub_resource type="AtlasTexture" id=22]
 atlas = ExtResource( 24 )
@@ -218,24 +195,7 @@ position = Vector2( 2287, -1222 )
 [node name="Node2D47" parent="." instance=ExtResource( 8 )]
 position = Vector2( -1265, -5 )
 
-[node name="Area2D" type="Area2D" parent="."]
-position = Vector2( 159, -393 )
-
-[node name="Sprite" type="Sprite" parent="Area2D"]
-position = Vector2( -5, 5 )
-texture = ExtResource( 15 )
-
-[node name="AnimatedSprite" type="AnimatedSprite" parent="Area2D"]
-position = Vector2( -2, -5 )
-scale = Vector2( 1.8, 1.8 )
-frames = SubResource( 5 )
-frame = 2
-speed_scale = 1.6
-playing = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2( -7, 0 )
-shape = SubResource( 6 )
+[node name="bonfire" parent="." instance=ExtResource( 14 )]
 
 [node name="bridge_done" parent="." instance=ExtResource( 18 )]
 position = Vector2( 470, -394 )
@@ -244,7 +204,7 @@ position = Vector2( 470, -394 )
 position = Vector2( 308, -236 )
 
 [node name="player" parent="." instance=ExtResource( 19 )]
-position = Vector2( 888, -407 )
+position = Vector2( 887, -408 )
 z_index = 10
 
 [node name="bow_range" type="Area2D" parent="player"]
@@ -351,7 +311,13 @@ position = Vector2( 429, -762 )
 shape = SubResource( 19 )
 
 [node name="crow_vision" parent="." instance=ExtResource( 33 )]
-position = Vector2( -143, -601 )
+position = Vector2( -136, -611 )
+
+[node name="body" type="Area2D" parent="crow_vision"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="crow_vision/body"]
+position = Vector2( -14, 9 )
+shape = SubResource( 29 )
 
 [node name="island" parent="." instance=ExtResource( 35 )]
 position = Vector2( 1486, -127 )
@@ -361,46 +327,6 @@ position = Vector2( -117, -271 )
 script = ExtResource( 23 )
 
 [node name="wood" parent="large_three" instance=ExtResource( 21 )]
-visible = false
-position = Vector2( 24, 13 )
-scale = Vector2( 0.8, 0.8 )
-monitoring = false
-
-[node name="large_three4" parent="." instance=ExtResource( 17 )]
-position = Vector2( 126, -236 )
-script = ExtResource( 23 )
-
-[node name="wood" parent="large_three4" instance=ExtResource( 21 )]
-visible = false
-position = Vector2( 24, 13 )
-scale = Vector2( 0.8, 0.8 )
-monitoring = false
-
-[node name="large_three3" parent="." instance=ExtResource( 17 )]
-position = Vector2( -217, -330 )
-script = ExtResource( 23 )
-
-[node name="wood" parent="large_three3" instance=ExtResource( 21 )]
-visible = false
-position = Vector2( 24, 13 )
-scale = Vector2( 0.8, 0.8 )
-monitoring = false
-
-[node name="large_three2" parent="." instance=ExtResource( 17 )]
-position = Vector2( -31, -351 )
-script = ExtResource( 23 )
-
-[node name="wood" parent="large_three2" instance=ExtResource( 21 )]
-visible = false
-position = Vector2( 24, 13 )
-scale = Vector2( 0.8, 0.8 )
-monitoring = false
-
-[node name="large_three5" parent="." instance=ExtResource( 17 )]
-position = Vector2( 40, -297 )
-script = ExtResource( 23 )
-
-[node name="wood" parent="large_three5" instance=ExtResource( 21 )]
 visible = false
 position = Vector2( 24, 13 )
 scale = Vector2( 0.8, 0.8 )
@@ -459,6 +385,10 @@ monitoring = false
 
 [node name="fruit" parent="orange_three" instance=ExtResource( 39 )]
 
+[node name="raw_chicken" parent="." instance=ExtResource( 41 )]
+position = Vector2( -147, -608 )
+script = ExtResource( 40 )
+
 [connection signal="area_entered" from="stone" to="stone" method="_on_ore"]
 [connection signal="body_entered" from="stone/ore" to="player" method="on_item" binds= [ "ore" ]]
 [connection signal="body_entered" from="stone/ore" to="stone/ore" method="on_ore"]
@@ -467,17 +397,12 @@ monitoring = false
 [connection signal="body_entered" from="yuka/position" to="player" method="_on_position_above"]
 [connection signal="body_exited" from="yuka/position" to="player" method="_on_position_area_exited"]
 [connection signal="body_entered" from="yuka/leaf" to="player" method="on_item" binds= [ "leaf" ]]
+[connection signal="area_entered" from="crow_vision/body" to="crow_vision" method="death"]
 [connection signal="area_entered" from="large_three" to="large_three" method="_on_axe"]
 [connection signal="body_entered" from="large_three/wood" to="player" method="on_item" binds= [ "wood" ]]
-[connection signal="area_entered" from="large_three4" to="large_three4" method="_on_axe"]
-[connection signal="body_entered" from="large_three4/wood" to="player" method="on_item" binds= [ "wood" ]]
-[connection signal="area_entered" from="large_three3" to="large_three3" method="_on_axe"]
-[connection signal="body_entered" from="large_three3/wood" to="player" method="on_item" binds= [ "wood" ]]
-[connection signal="area_entered" from="large_three2" to="large_three2" method="_on_axe"]
-[connection signal="body_entered" from="large_three2/wood" to="player" method="on_item" binds= [ "wood" ]]
-[connection signal="area_entered" from="large_three5" to="large_three5" method="_on_axe"]
-[connection signal="body_entered" from="large_three5/wood" to="player" method="on_item" binds= [ "wood" ]]
 [connection signal="body_entered" from="character/vision" to="character" method="on_vision"]
 [connection signal="body_exited" from="character/vision" to="character" method="_on_unvision"]
 [connection signal="body_entered" from="orange_three/wood" to="player" method="on_item" binds= [ "wood" ]]
 [connection signal="body_entered" from="orange_three/fruit" to="player" method="on_item" binds= [ "orange" ]]
+[connection signal="body_entered" from="raw_chicken" to="player" method="on_item" binds= [ "raw_chicken" ]]
+[connection signal="body_entered" from="raw_chicken" to="raw_chicken" method="on_taken"]

@@ -10,18 +10,14 @@ var direction = "left"
 export (float) var attack_speed = 0.6
 export (String) var current_weapon = "sword"
 
-export (int) var wood = 0
-export (int) var stone = 0
-export (int) var leaves = 0
-export (int) var rope = 0
-
-var hunger = 100
+var hunger = 80
 var health = 4
 var get_hunger = false
 
-var current_item = 0
+var current_item = 999
 
 var outlined = 0
+var outlined_current = 1
 
 var hunger1 =  preload("res://tiles/assets/bars/hunger (1).png")
 var hunger2 = preload("res://tiles/assets/bars/hunger (5).png")
@@ -41,9 +37,6 @@ var sword = preload("res://tiles/assets/sword.png")
 var pickaxe = preload("res://tiles/assets/chopper.png")
 
 var current_items = [
-	{"name" : "axe", "link" : 'res://tiles/assets/axe.png'},
-	{"name" : "bow", "link" : 'res://tiles/assets/bow.png'},
-	{"name" : "pickaxe", "link" : 'res://tiles/assets/sword.png'},
 ]
 
 var hot_items = [
@@ -89,15 +82,31 @@ func _ready():
 	
 func add_current(index):
 	var item
-	if(current_item < 10):
-		item = hot_items[index]
+	if(current_item != 999):
+		if(current_item < 10):
+			item = hot_items[current_item]
+		else:
+			item = inventory[current_item - 10]
+		var contains = false	
+		for value in current_items:
+			if(value == item):
+				contains = true
+		if(!contains):		
+			current_items.remove(index - 1)	
+			current_items.insert(index - 1 ,item)	
+			var texture = load(item['link'])
+			get_node("Camera2D/Control/items/item" + str(index)).set_normal_texture(texture)
+		current_item = 999
 	else:
-		item = inventory[index - 10]
-	current_items.remove(index - 1)	
-	current_items.insert(index - 1 ,item)	
-	var texture = load(item['link'])
-	get_node("Camera2D/Control/items/item" + str(index)).set_normal_texture(texture)
-	
+		get_node("Camera2D/Control/items/item" + str(index) + "/outlined").visible = true
+		get_node("Camera2D/Control/items/item" + str(outlined_current) + '/outlined').visible = false
+		outlined_current = index
+		if(len(current_items) > outlined_current - 1):
+			print(outlined_current)
+			if(current_items[outlined_current - 1]["name"] == "sword" or current_items[outlined_current - 1]["name"] == "axe" or current_items[outlined_current - 1]['name'] == "bow" or current_items[outlined_current - 1]["name"] == "pickaxe"):
+				current_weapon = current_items[outlined_current - 1]['name']
+				print(current_weapon)
+		
 	
 func on_inventar():
 	var inventar = get_node("Camera2D/Control/inventar")
@@ -111,6 +120,14 @@ func on_inventar():
 		
 	if(inventar.visible):
 		inventar.visible = false
+		current_item = 999
+		get_node("Camera2D/Control/inventar/titles/icon").set_texture(null)
+		get_node("Camera2D/Control/inventar/titles/parameter").text = ""
+		get_node("Camera2D/Control/inventar/titles/about").text = ''
+		get_node("Camera2D/Control/inventar/titles/button").visible = false
+		get_node("Camera2D/Control/inventar/titles/button_label").text = ""
+		get_node("Camera2D/Control/inventar/titles/icon2").visible = false
+		get_node("Camera2D/Control/inventar/titles/parameter2").text = "" 
 	else:
 		inventar.visible = true	
 			
@@ -120,7 +137,7 @@ func hungry():
 		yield(get_tree().create_timer(3),"timeout")
 		hunger = hunger - 1
 		yield(get_tree().create_timer(1),"timeout")
-		if(hunger < 10):
+		if(hunger <= 1):
 			health = health - 1
 		get_hunger = false	
 
@@ -137,14 +154,15 @@ func _process(delta):
 	elif(hunger == 0):
 		get_node("Camera2D/Control/hunger").texture = hunger5	
 	
-	if(health == 4):
-		get_node("Camera2D/Control/health").texture = health1
-	elif(health == 3):
-		get_node("Camera2D/Control/health").texture = health2
-	elif(health == 2):
-		get_node("Camera2D/Control/health").texture = health3
-	elif(health == 1):
-		get_node("Camera2D/Control/health").texture = health4				
+	match health:
+		4:
+			get_node("Camera2D/Control/health").texture = health1
+		3:
+			get_node("Camera2D/Control/health").texture = health2
+		2:
+			get_node("Camera2D/Control/health").texture = health3
+		1:
+			get_node("Camera2D/Control/health").texture = health4	
 
 func attack():
 	if(!hiting):
@@ -187,21 +205,23 @@ func shoot():
 		
 		var arrow = preload("res://arrow.tscn").instance()
 	
-		arrow.on_flying(direction)	
-		if(direction == "left"):
-			arrow.position.x = position.x - 140
-			arrow.position.y = position.y + 120
-		elif(direction == "right"):
-			arrow.position.x = position.x - 50
-			arrow.position.y = position.y + 120		
-		elif(direction == "down"):
-			arrow.position.x = position.x - 80
-			arrow.position.y = position.y + 180	
-			arrow.rotation_degrees = -90
-		else:
-			arrow.position.x = position.x - 80
-			arrow.position.y = position.y + 70	
-			arrow.rotation_degrees = 90		
+		arrow.on_flying(direction)		
+		match direction:
+			"left":
+				arrow.position.x = position.x - 140
+				arrow.position.y = position.y + 120
+			"right":
+				arrow.position.x = position.x - 50
+				arrow.position.y = position.y + 120
+			"down":
+				arrow.position.x = position.x - 80
+				arrow.position.y = position.y + 180	
+				arrow.rotation_degrees = -90	
+			"up":
+				arrow.position.x = position.x - 80
+				arrow.position.y = position.y + 70	
+				arrow.rotation_degrees = 90
+	
 		get_tree().get_root().add_child(arrow)	
 		speed = 160	
 		hiting = false
@@ -308,13 +328,31 @@ func on_item_look(index):
 		var icon = load("res://tiles/assets/sword.png")
 		get_node("Camera2D/Control/inventar/titles/icon").set_texture(icon)
 		get_node("Camera2D/Control/inventar/titles/parameter").text = "Damage : " + item['damage']
+		
+		get_node("Camera2D/Control/inventar/titles/button").visible = true
+		get_node("Camera2D/Control/inventar/titles/button_label").text = "upgrade"
+		
+		get_node("Camera2D/Control/inventar/titles/icon2").visible = true
+		get_node("Camera2D/Control/inventar/titles/parameter2").text = "level : " + item['level'] 
+		
 	elif(len(item['food']) > 0):
 		var icon = load("res://tiles/assets/Food_0.png")
 		get_node("Camera2D/Control/inventar/titles/icon").set_texture(icon)
 		get_node("Camera2D/Control/inventar/titles/parameter").text = "Food : " + item['food']
+		
+		get_node("Camera2D/Control/inventar/titles/button").visible = true
+		get_node("Camera2D/Control/inventar/titles/button_label").text = "eat"
+		
+		get_node("Camera2D/Control/inventar/titles/icon2").visible = false
+		get_node("Camera2D/Control/inventar/titles/parameter2").text = "" 
 	else:
 		get_node("Camera2D/Control/inventar/titles/icon").set_texture(null)
 		get_node("Camera2D/Control/inventar/titles/parameter").text = ""
+		get_node("Camera2D/Control/inventar/titles/button").visible = false
+		get_node("Camera2D/Control/inventar/titles/button_label").text = ""
+		get_node("Camera2D/Control/inventar/titles/icon2").visible = false
+		get_node("Camera2D/Control/inventar/titles/parameter2").text = "" 
+		
 	if(index < 10):
 		get_node("Camera2D/Control/inventar/TextureRect/hot" + str(index + 1) + "/outlined").set_visible(true)
 	else:
@@ -327,60 +365,98 @@ func on_item_look(index):
 		if(outlined != index - 9):
 			get_node("Camera2D/Control/inventar/TextureRect/item" + str(outlined - 9) + "/outlined").set_visible(false)	
 	outlined = index
+	
 		
 func on_item(body, item):
-	var index = 0
-	var found = false
-	for i in inventory:
-		if item == i['name'] and i['count'] < 39:
-			var new_item = inventory[index]
-			new_item['count'] = new_item['count'] + 1
-			inventory.remove(index)
-			inventory.insert(index, new_item)
-			found = true
+	if(body.get_name() == "player"):
+		var index = 0
+		var found = false
+		for i in inventory:
+			if item == i['name'] and i['count'] < 39:
+				var new_item = inventory[index]
+				new_item['count'] = new_item['count'] + 1
+				inventory.remove(index)
+				inventory.insert(index, new_item)
+				found = true
+			else:
+				index = index + 1	
+				
+		if !found && len(inventory) < 29:
+			var new_item;
+			match item:
+				"leaf":
+					new_item = {
+					"name" : "leaf", 
+					"link" : 'res://tiles/assets/leaf.png', 
+					"count" : 1,
+					"food" : '', 
+					"damage" : ''
+					}
+				"ore":
+					new_item = {
+					"name" : "ore", 
+					"link" : 'res://tiles/assets/stone.png', 
+					"count" : 1,
+					"food" : '', 
+					"damage" : ''
+					}
+				"wood":
+					new_item = 	{
+					"name" : "wood", 
+					"link" : 'res://tiles/assets/wood.png', 
+					"count" : 1,
+					"food" : '', 
+					"damage" : ''
+					}
+				"hay":
+					new_item = 	{
+					"name" : "hay", 
+					"link" : 'res://tiles/assets/hay.png', 
+					"count" : 1,
+					"food" : '', 
+					"damage" : ''
+					}
+				"orange":
+					new_item = {
+					"name" : "orange", 
+					"link" : 'res://tiles/assets/Food_30.png', 
+					"count" : 1,
+					"food" : '10', 
+					"damage" : ''
+				}
+				"raw_chicken":
+					new_item = {
+					"name" : "raw chicken", 
+					"link" : 'res://tiles/assets/tile002.png', 
+					"count" : 3,
+					"food" : '20', 
+					"damage" : ''
+				}									
+			inventory.append(new_item)
+
+func on_parameter():
+	if(get_node("Camera2D/Control/inventar/titles/button_label").text == "eat"):					
+		var hun = int(inventory[current_item - 10]['food'])
+		if(hunger + hun < 100):
+			hunger = hunger + hun
 		else:
-			index = index + 1	
+			hunger = 100
+		
+		if(inventory[current_item - 10]['count'] > 1):
+			var item = inventory[current_item - 10]
+			item["count"] = item["count"] - 1
+			inventory.remove(current_item - 10)
+			inventory.insert(current_item - 10, item)
+			get_node("Camera2D/Control/inventar/TextureRect/item" + str(current_item - 9) + "/count").text = str(item['count'])
+		else:
+			inventory.remove(current_item - 10)
+			get_node("Camera2D/Control/inventar/TextureRect/item" + str(current_item - 9)).set_normal_texture(null)
+			get_node("Camera2D/Control/inventar/TextureRect/item" + str(current_item - 9) + '/count').text = ''
+			get_node("Camera2D/Control/inventar/titles/icon").set_texture(null)
+			get_node("Camera2D/Control/inventar/titles/parameter").text = ""
+			get_node("Camera2D/Control/inventar/titles/about").text = ""
+			get_node("Camera2D/Control/inventar/titles/button").visible = false
+			get_node("Camera2D/Control/inventar/titles/button_label").text = ""
+			get_node("Camera2D/Control/inventar/titles/icon2").visible = false
+			get_node("Camera2D/Control/inventar/titles/parameter2").text = "" 
 			
-	if !found && len(inventory) < 29:
-		var new_item;
-		if(item == "leaf"):
-			new_item = {
-				"name" : "leaf", 
-				"link" : 'res://tiles/assets/leaf.png', 
-				"count" : 1,
-				"food" : '', 
-				"damage" : ''
-				}
-		elif(item == 'ore'):
-			new_item = {
-				"name" : "ore", 
-				"link" : 'res://tiles/assets/stone.png', 
-				"count" : 1,
-				"food" : '', 
-				"damage" : ''
-				}
-		elif(item == "wood"):
-			new_item = 	{
-				"name" : "wood", 
-				"link" : 'res://tiles/assets/wood.png', 
-				"count" : 1,
-				"food" : '', 
-				"damage" : ''
-				}
-		elif(item == "hay"):
-			new_item = 	{
-				"name" : "hay", 
-				"link" : 'res://tiles/assets/hay.png', 
-				"count" : 1,
-				"food" : '', 
-				"damage" : ''
-				}
-		elif(item == "orange"):
-			new_item = {
-				"name" : "orange", 
-				"link" : 'res://tiles/assets/Food_30.png', 
-				"count" : 1,
-				"food" : '10', 
-				"damage" : ''
-			}						
-		inventory.append(new_item)
