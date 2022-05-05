@@ -196,6 +196,7 @@ position = Vector2( 2287, -1222 )
 position = Vector2( -1265, -5 )
 
 [node name="bonfire" parent="." instance=ExtResource( 14 )]
+position = Vector2( 162, -392 )
 
 [node name="bridge_done" parent="." instance=ExtResource( 18 )]
 position = Vector2( 470, -394 )
@@ -208,7 +209,6 @@ position = Vector2( 887, -408 )
 z_index = 10
 
 [node name="bow_range" type="Area2D" parent="player"]
-visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="player/bow_range"]
 position = Vector2( 8, 36 )
@@ -266,7 +266,7 @@ shape = SubResource( 7 )
 [node name="position" type="Area2D" parent="yuka"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="yuka/position"]
-position = Vector2( 2, 48 )
+position = Vector2( -7, 33 )
 shape = SubResource( 7 )
 
 [node name="leaf" parent="yuka" instance=ExtResource( 16 )]
@@ -332,6 +332,12 @@ position = Vector2( 24, 13 )
 scale = Vector2( 0.8, 0.8 )
 monitoring = false
 
+[node name="position" type="Area2D" parent="large_three"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="large_three/position"]
+position = Vector2( 39, 7 )
+shape = SubResource( 7 )
+
 [node name="character" type="Node2D" parent="."]
 position = Vector2( 1430, -618 )
 scale = Vector2( 1.8, 1.8 )
@@ -386,10 +392,18 @@ monitoring = false
 
 [node name="fruit" parent="orange_three" instance=ExtResource( 39 )]
 
+[node name="position" type="Area2D" parent="orange_three"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="orange_three/position"]
+position = Vector2( 47, 39 )
+shape = SubResource( 7 )
+
 [node name="raw_chicken" parent="." instance=ExtResource( 41 )]
 position = Vector2( -147, -608 )
 script = ExtResource( 40 )
 
+[connection signal="body_entered" from="bonfire" to="player" method="on_inventory_type" binds= [ 1 ]]
+[connection signal="body_exited" from="bonfire" to="player" method="on_inventory_type" binds= [ 0 ]]
 [connection signal="area_entered" from="stone" to="stone" method="_on_ore"]
 [connection signal="body_entered" from="stone/ore" to="player" method="on_item" binds= [ "ore" ]]
 [connection signal="body_entered" from="stone/ore" to="stone/ore" method="on_ore"]
@@ -401,9 +415,13 @@ script = ExtResource( 40 )
 [connection signal="area_entered" from="crow_vision/body" to="crow_vision" method="death"]
 [connection signal="area_entered" from="large_three" to="large_three" method="_on_axe"]
 [connection signal="body_entered" from="large_three/wood" to="player" method="on_item" binds= [ "wood" ]]
+[connection signal="body_entered" from="large_three/position" to="player" method="_on_position_above"]
+[connection signal="body_exited" from="large_three/position" to="player" method="_on_position_area_exited"]
 [connection signal="body_entered" from="character/vision" to="character" method="on_vision"]
 [connection signal="body_exited" from="character/vision" to="character" method="_on_unvision"]
 [connection signal="body_entered" from="orange_three/wood" to="player" method="on_item" binds= [ "wood" ]]
 [connection signal="body_entered" from="orange_three/fruit" to="player" method="on_item" binds= [ "orange" ]]
+[connection signal="body_entered" from="orange_three/position" to="player" method="_on_position_above"]
+[connection signal="body_exited" from="orange_three/position" to="player" method="_on_position_area_exited"]
 [connection signal="body_entered" from="raw_chicken" to="player" method="on_item" binds= [ "raw_chicken" ]]
 [connection signal="body_entered" from="raw_chicken" to="raw_chicken" method="on_taken"]

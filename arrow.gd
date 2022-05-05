@@ -29,8 +29,9 @@ func on_arrow_stop():
 	queue_free()
 
 func on_body_enter(body):
-	yield(get_tree().create_timer(0.4),"timeout")
-	queue_free()
+	if(body.get_name() != "arrow"):
+		yield(get_tree().create_timer(0.4),"timeout")
+		queue_free()
 	
 func _physics_process(delta):
 	if(flying):

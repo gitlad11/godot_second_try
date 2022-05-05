@@ -8,6 +8,7 @@
 extents = Vector2( 28, 6 )
 
 [sub_resource type="RectangleShape2D" id=22]
+extents = Vector2( 38, 14 )
 
 [node name="arrow" type="KinematicBody2D"]
 position = Vector2( -51, 36 )
@@ -29,7 +30,7 @@ flip_h = true
 script = ExtResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="range"]
-position = Vector2( -8, -4 )
+position = Vector2( 22, -4 )
 shape = SubResource( 22 )
 
 [connection signal="area_exited" from="range" to="range" method="_on_range_exited"]

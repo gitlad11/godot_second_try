@@ -10,10 +10,12 @@ var direction = "left"
 export (float) var attack_speed = 0.6
 export (String) var current_weapon = "sword"
 
+var paused = false
 var hunger = 80
 var health = 4
 var get_hunger = false
 
+var inventory_type = 0
 var current_item = 999
 
 var outlined = 0
@@ -35,6 +37,11 @@ var axe = preload("res://tiles/assets/axe.png")
 var showel = preload("res://tiles/assets/showel.png")
 var sword = preload("res://tiles/assets/sword.png")
 var pickaxe = preload("res://tiles/assets/chopper.png")
+
+var icon_craft = preload("res://tiles/assets/bars/tools.png")
+var icon_inventory = preload("res://tiles/assets/backpack.png")
+
+var cooking_table = []
 
 var current_items = [
 ]
@@ -84,9 +91,12 @@ func add_current(index):
 	var item
 	if(current_item != 999):
 		if(current_item < 10):
+		
 			item = hot_items[current_item]
 		else:
+		
 			item = inventory[current_item - 10]
+		var ind = 0
 		var contains = false	
 		for value in current_items:
 			if(value == item):
@@ -96,7 +106,6 @@ func add_current(index):
 			current_items.insert(index - 1 ,item)	
 			var texture = load(item['link'])
 			get_node("Camera2D/Control/items/item" + str(index)).set_normal_texture(texture)
-		current_item = 999
 	else:
 		get_node("Camera2D/Control/items/item" + str(index) + "/outlined").visible = true
 		get_node("Camera2D/Control/items/item" + str(outlined_current) + '/outlined').visible = false
@@ -108,7 +117,7 @@ func add_current(index):
 				print(current_weapon)
 		
 	
-func on_inventar():
+func on_inventar(type):
 	var inventar = get_node("Camera2D/Control/inventar")
 	var index = 0
 	for value in inventory:
@@ -119,8 +128,10 @@ func on_inventar():
 			get_node("Camera2D/Control/inventar/TextureRect/item" +str(index) + "/count").text = str(value['count'])
 		
 	if(inventar.visible):
+		if(type == "cooking"):	
+			on_cooking()
 		inventar.visible = false
-		current_item = 999
+		paused = false
 		get_node("Camera2D/Control/inventar/titles/icon").set_texture(null)
 		get_node("Camera2D/Control/inventar/titles/parameter").text = ""
 		get_node("Camera2D/Control/inventar/titles/about").text = ''
@@ -128,8 +139,20 @@ func on_inventar():
 		get_node("Camera2D/Control/inventar/titles/button_label").text = ""
 		get_node("Camera2D/Control/inventar/titles/icon2").visible = false
 		get_node("Camera2D/Control/inventar/titles/parameter2").text = "" 
+		get_node("Camera2D/Control/Cooking").visible = false
+		
+	
+		current_item = 999
+		var cooking_items = [1, 2, 3 ]
+		cooking_table.clear()
+		for value in cooking_items:
+			get_node("Camera2D/Control/Cooking/TextureRect/item" + str(value)).set_normal_texture(null)
+		
 	else:
+		paused = true
 		inventar.visible = true	
+		if(type == "cooking"):	
+			on_cooking()
 			
 func hungry():
 	if(hunger >= 0 && !get_hunger):
@@ -233,7 +256,11 @@ func get_input():
 	velocity = Vector2()
 	
 	if Input.is_action_just_pressed("b"):
-		on_inventar()
+		if(inventory_type == 1):
+			on_inventar("cooking")
+		else:
+			on_inventar("")
+		
 	if Input.is_action_just_pressed("axe"):
 		change_weapon("axe")
 	if Input.is_action_just_pressed("bow"):
@@ -294,8 +321,9 @@ func get_input():
 	velocity = velocity.normalized() * speed
 	
 func _physics_process(delta):
-	get_input()
-	velocity = move_and_slide(velocity)	
+		get_input()
+		if(!paused):
+			velocity = move_and_slide(velocity)	
 	
 				
 func _on_position_above(area):
@@ -322,7 +350,9 @@ func on_item_look(index):
 				if(i['name'] == value['name']):
 					item = value
 					current_item = index 
-				
+		else:
+			current_item = 999
+					
 	get_node("Camera2D/Control/inventar/titles/about").text = item["label"]				
 	if(len(item['damage']) > 0):
 		var icon = load("res://tiles/assets/sword.png")
@@ -358,13 +388,14 @@ func on_item_look(index):
 	else:
 		get_node("Camera2D/Control/inventar/TextureRect/item" + str(index - 9) + "/outlined").set_visible(true)	
 	
-	if(outlined < 10):
-		if(outlined != index):
-			get_node("Camera2D/Control/inventar/TextureRect/hot" + str(outlined + 1) + "/outlined").set_visible(false)
-	else:
-		if(outlined != index - 9):
-			get_node("Camera2D/Control/inventar/TextureRect/item" + str(outlined - 9) + "/outlined").set_visible(false)	
-	outlined = index
+	if(index != outlined):
+		if(outlined < 10):
+			if(outlined != index):
+				get_node("Camera2D/Control/inventar/TextureRect/hot" + str(outlined + 1) + "/outlined").set_visible(false)
+		else:
+			if(outlined != index - 9):
+				get_node("Camera2D/Control/inventar/TextureRect/item" + str(outlined - 9) + "/outlined").set_visible(false)	
+		outlined = index
 	
 		
 func on_item(body, item):
@@ -460,3 +491,24 @@ func on_parameter():
 			get_node("Camera2D/Control/inventar/titles/icon2").visible = false
 			get_node("Camera2D/Control/inventar/titles/parameter2").text = "" 
 			
+func on_cooking():
+	get_node("Camera2D/Control/Cooking").visible = true
+	
+	
+func on_inventory_type(body, type):
+	if(body.get_name() == "player"):
+		inventory_type = type
+		if(type != 0):
+			get_node("Camera2D/Control/inventory_craft").set_normal_texture(icon_craft)
+		else:
+			get_node("Camera2D/Control/inventory_craft").set_normal_texture(icon_inventory)
+
+
+func on_cooking_item(extra_arg_0):
+	print(current_item)
+	if(current_item >= 10 && current_item != 999):
+		var item = inventory[current_item - 10]
+		cooking_table.append(item)
+		var link = load(item["link"])
+		get_node("Camera2D/Control/Cooking/TextureRect/item" + str(extra_arg_0)).set_normal_texture(link)
+		

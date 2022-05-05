@@ -6,7 +6,7 @@
 [ext_resource path="res://tiles/animation/fire/Bonfire_4.png" type="Texture" id=5]
 
 [sub_resource type="CircleShape2D" id=6]
-radius = 66.0681
+radius = 73.0616
 
 [sub_resource type="SpriteFrames" id=7]
 animations = [ {
@@ -20,11 +20,11 @@ animations = [ {
 position = Vector2( 159, -393 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -7, 0 )
+position = Vector2( -10, 4 )
 shape = SubResource( 6 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( -8, -26 )
+position = Vector2( -11, -22 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 7 )
 frame = 4
