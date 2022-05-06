@@ -320,7 +320,7 @@ position = Vector2( -14, 9 )
 shape = SubResource( 29 )
 
 [node name="island" parent="." instance=ExtResource( 35 )]
-position = Vector2( 1486, -127 )
+position = Vector2( 1485, -128 )
 
 [node name="large_three" parent="." instance=ExtResource( 17 )]
 position = Vector2( -117, -271 )
@@ -335,6 +335,22 @@ monitoring = false
 [node name="position" type="Area2D" parent="large_three"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="large_three/position"]
+position = Vector2( 39, 7 )
+shape = SubResource( 7 )
+
+[node name="large_three2" parent="." instance=ExtResource( 17 )]
+position = Vector2( -13, -373 )
+script = ExtResource( 23 )
+
+[node name="wood" parent="large_three2" instance=ExtResource( 21 )]
+visible = false
+position = Vector2( 24, 13 )
+scale = Vector2( 0.8, 0.8 )
+monitoring = false
+
+[node name="position" type="Area2D" parent="large_three2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="large_three2/position"]
 position = Vector2( 39, 7 )
 shape = SubResource( 7 )
 
@@ -417,6 +433,10 @@ script = ExtResource( 40 )
 [connection signal="body_entered" from="large_three/wood" to="player" method="on_item" binds= [ "wood" ]]
 [connection signal="body_entered" from="large_three/position" to="player" method="_on_position_above"]
 [connection signal="body_exited" from="large_three/position" to="player" method="_on_position_area_exited"]
+[connection signal="area_entered" from="large_three2" to="large_three2" method="_on_axe"]
+[connection signal="body_entered" from="large_three2/wood" to="player" method="on_item" binds= [ "wood" ]]
+[connection signal="body_entered" from="large_three2/position" to="player" method="_on_position_above"]
+[connection signal="body_exited" from="large_three2/position" to="player" method="_on_position_area_exited"]
 [connection signal="body_entered" from="character/vision" to="character" method="on_vision"]
 [connection signal="body_exited" from="character/vision" to="character" method="_on_unvision"]
 [connection signal="body_entered" from="orange_three/wood" to="player" method="on_item" binds= [ "wood" ]]

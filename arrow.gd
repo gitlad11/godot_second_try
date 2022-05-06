@@ -1,5 +1,6 @@
 extends KinematicBody2D
 
+
 var flying = false
 var in_range = false
 export (int) var speed = 340

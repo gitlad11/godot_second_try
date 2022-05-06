@@ -27,10 +27,10 @@ var hunger3 = preload("res://tiles/assets/bars/hunger (4).png")
 var hunger4 = preload("res://tiles/assets/bars/hunger (3).png")
 var hunger5 = preload("res://tiles/assets/bars/hunger (2).png")
 
-var health1 =  preload("res://tiles/assets/bars/health (2).png")
-var health2 = preload("res://tiles/assets/bars/health (1).png")
-var health3 = preload("res://tiles/assets/bars/health (4).png")
-var health4 = preload("res://tiles/assets/bars/health (3).png")
+var health1 =  preload("res://tiles/assets/bars/health2 (2).png")
+var health2 = preload("res://tiles/assets/bars/health2 (1).png")
+var health3 = preload("res://tiles/assets/bars/health2 (4).png")
+var health4 = preload("res://tiles/assets/bars/health2 (3).png")
 
 
 var axe = preload("res://tiles/assets/axe.png")
@@ -41,7 +41,7 @@ var pickaxe = preload("res://tiles/assets/chopper.png")
 var icon_craft = preload("res://tiles/assets/bars/tools.png")
 var icon_inventory = preload("res://tiles/assets/backpack.png")
 
-var cooking_table = []
+var cooking_table = [{"name" : ""},{"name" : ""},{"name" : ''}, {}]
 
 var current_items = [
 ]
@@ -71,8 +71,14 @@ var about = [
 	{"name" : "wood", "label" : "very important resource, can be used in building", "food" : '', "damage" : ''},
 	{"name" : "ore", "label" : "important thing to make tools, can be used in building", "food" : '', "damage" : ''},
 	{"name" : "leaf", "label" : "ropes, ropes, ropes, can be used in building", "food" : '', "damage" : ''},
-	
+	{"name" : "chicken", "label" : "hot and tasty, lowers hunger", "food" : '50', "damage" : ''}
 ]
+
+var cooking_recipes = [
+	['raw chicken', "wood", "", {"name" : "chicken", "link" : "res://tiles/assets/Food_3.png"}]
+]
+
+var cooking_item
 
 func _ready():
 	var index = 0
@@ -91,7 +97,6 @@ func add_current(index):
 	var item
 	if(current_item != 999):
 		if(current_item < 10):
-		
 			item = hot_items[current_item]
 		else:
 		
@@ -143,8 +148,8 @@ func on_inventar(type):
 		
 	
 		current_item = 999
-		var cooking_items = [1, 2, 3 ]
-		cooking_table.clear()
+		var cooking_items = [1, 2, 3]
+		cooking_table = [{"name" : ""}, {"name" : ""}, {"name" : ""}, {}]
 		for value in cooking_items:
 			get_node("Camera2D/Control/Cooking/TextureRect/item" + str(value)).set_normal_texture(null)
 		
@@ -400,21 +405,110 @@ func on_item_look(index):
 		
 func on_item(body, item):
 	if(body.get_name() == "player"):
-		var index = 0
-		var found = false
-		for i in inventory:
-			if item == i['name'] and i['count'] < 39:
-				var new_item = inventory[index]
-				new_item['count'] = new_item['count'] + 1
-				inventory.remove(index)
-				inventory.insert(index, new_item)
+		add_inventory_item(item)
+
+func on_parameter():
+	if(get_node("Camera2D/Control/inventar/titles/button_label").text == "eat"):					
+		var hun = int(inventory[current_item - 10]['food'])
+		if(hunger + hun < 100):
+			hunger = hunger + hun
+		else:
+			hunger = 100
+		
+		if(inventory[current_item - 10]['count'] > 1):
+			var item = inventory[current_item - 10]
+			item["count"] = item["count"] - 1
+			inventory.remove(current_item - 10)
+			inventory.insert(current_item - 10, item)
+			get_node("Camera2D/Control/inventar/TextureRect/item" + str(current_item - 9) + "/count").text = str(item['count'])
+		else:
+			inventory.remove(current_item - 10)
+			get_node("Camera2D/Control/inventar/TextureRect/item" + str(current_item - 9)).set_normal_texture(null)
+			get_node("Camera2D/Control/inventar/TextureRect/item" + str(current_item - 9) + '/count').text = ''
+			get_node("Camera2D/Control/inventar/titles/icon").set_texture(null)
+			get_node("Camera2D/Control/inventar/titles/parameter").text = ""
+			get_node("Camera2D/Control/inventar/titles/about").text = ""
+			get_node("Camera2D/Control/inventar/titles/button").visible = false
+			get_node("Camera2D/Control/inventar/titles/button_label").text = ""
+			get_node("Camera2D/Control/inventar/titles/icon2").visible = false
+			get_node("Camera2D/Control/inventar/titles/parameter2").text = "" 
+			
+func on_cooking():
+	get_node("Camera2D/Control/Cooking").visible = true
+	
+	
+func on_inventory_type(body, type):
+	if(body.get_name() == "player"):
+		inventory_type = type
+		if(type != 0):
+			get_node("Camera2D/Control/inventory_craft").set_normal_texture(icon_craft)
+		else:
+			get_node("Camera2D/Control/inventory_craft").set_normal_texture(icon_inventory)
+
+
+func on_cooking_item(extra_arg_0):
+	if(current_item >= 10 && current_item != 999):
+		var item = inventory[current_item - 10]
+		if(inventory[current_item - 10]['count'] > 1):
+			var new_item = inventory[current_item - 10]
+			new_item['count'] = new_item['count'] - 1
+			inventory.remove(current_item - 10)
+			inventory.insert(current_item - 10, new_item)
+			get_node("Camera2D/Control/inventar/TextureRect/item" + str(current_item - 9) + "/count").text = str(item['count'])	
+		else:
+			inventory.remove(current_item - 10)
+			get_node("Camera2D/Control/inventar/TextureRect/item" + str(current_item - 9) + "/count").text = ""
+			get_node("Camera2D/Control/inventar/TextureRect/item" + str(current_item - 9)).set_normal_texture(null)
+		cooking_table.remove(extra_arg_0 - 1)
+		cooking_table.insert(extra_arg_0 -1, item)
+		var link = load(item["link"])
+		get_node("Camera2D/Control/Cooking/TextureRect/item" + str(extra_arg_0)).set_normal_texture(link)
+		get_node("Camera2D/Control/inventar/TextureRect/item" + str(outlined - 9) + "/outlined").set_visible(false)	
+		current_item = 999
+	else:
+		cooking_table.remove(extra_arg_0 - 1)
+		cooking_table.insert(extra_arg_0  -1 , { "name" : '' })
+		get_node("Camera2D/Control/Cooking/TextureRect/item" + str(extra_arg_0)).set_normal_texture(null)
+	cooking()	
+	
+	
+func cooking():
+	var index = 0
+	var link
+	if(cooking_table[0]['name'] == "wood" and cooking_table[1]["name"] == "wood" and cooking_table[2]["name"] == "wood"):
+		cooking_item = { "name" : 'fire', "link" : "res://tiles/animation/fire/fire_column_medium_5.png" }
+	else:
+		cooking_item = null
+		get_node("Camera2D/Control/Cooking/TextureRect/item4").set_normal_texture(null)
+	var found = false
+	for value in cooking_recipes:
+		if(!found):
+			if(value[0] == cooking_table[0]['name'] and value[1] == cooking_table[1]['name'] and value[2] == cooking_table[2]['name'] ):
+				cooking_item = value[3]
 				found = true
-			else:
-				index = index + 1	
+		else:
+			pass	
+		
+	if(cooking_item != null):	
+		link = load(cooking_item["link"])
+		get_node("Camera2D/Control/Cooking/TextureRect/item4").set_normal_texture(link)
+
+func add_inventory_item(item):
+	var index = 0
+	var found = false
+	for i in inventory:
+		if item == i['name'] and i['count'] < 39:
+			var new_item = inventory[index]
+			new_item['count'] = new_item['count'] + 1
+			inventory.remove(index)
+			inventory.insert(index, new_item)
+			found = true
+		else:
+			index = index + 1	
 				
-		if !found && len(inventory) < 29:
-			var new_item;
-			match item:
+	if !found && len(inventory) < 29:
+		var new_item;
+		match item:
 				"leaf":
 					new_item = {
 					"name" : "leaf", 
@@ -462,53 +556,29 @@ func on_item(body, item):
 					"count" : 3,
 					"food" : '20', 
 					"damage" : ''
-				}									
-			inventory.append(new_item)
+				}		
+				"chicken":
+					new_item = {
+						"name" : "chicken",
+						"link" : "res://tiles/assets/Food_3.png",
+						"count" : 1,
+						"food" : '50',
+						"damage" : ''
+					}							
+		inventory.append(new_item)
 
-func on_parameter():
-	if(get_node("Camera2D/Control/inventar/titles/button_label").text == "eat"):					
-		var hun = int(inventory[current_item - 10]['food'])
-		if(hunger + hun < 100):
-			hunger = hunger + hun
-		else:
-			hunger = 100
-		
-		if(inventory[current_item - 10]['count'] > 1):
-			var item = inventory[current_item - 10]
-			item["count"] = item["count"] - 1
-			inventory.remove(current_item - 10)
-			inventory.insert(current_item - 10, item)
-			get_node("Camera2D/Control/inventar/TextureRect/item" + str(current_item - 9) + "/count").text = str(item['count'])
-		else:
-			inventory.remove(current_item - 10)
-			get_node("Camera2D/Control/inventar/TextureRect/item" + str(current_item - 9)).set_normal_texture(null)
-			get_node("Camera2D/Control/inventar/TextureRect/item" + str(current_item - 9) + '/count').text = ''
-			get_node("Camera2D/Control/inventar/titles/icon").set_texture(null)
-			get_node("Camera2D/Control/inventar/titles/parameter").text = ""
-			get_node("Camera2D/Control/inventar/titles/about").text = ""
-			get_node("Camera2D/Control/inventar/titles/button").visible = false
-			get_node("Camera2D/Control/inventar/titles/button_label").text = ""
-			get_node("Camera2D/Control/inventar/titles/icon2").visible = false
-			get_node("Camera2D/Control/inventar/titles/parameter2").text = "" 
-			
-func on_cooking():
-	get_node("Camera2D/Control/Cooking").visible = true
-	
-	
-func on_inventory_type(body, type):
-	if(body.get_name() == "player"):
-		inventory_type = type
-		if(type != 0):
-			get_node("Camera2D/Control/inventory_craft").set_normal_texture(icon_craft)
-		else:
-			get_node("Camera2D/Control/inventory_craft").set_normal_texture(icon_inventory)
-
-
-func on_cooking_item(extra_arg_0):
-	print(current_item)
-	if(current_item >= 10 && current_item != 999):
-		var item = inventory[current_item - 10]
-		cooking_table.append(item)
-		var link = load(item["link"])
-		get_node("Camera2D/Control/Cooking/TextureRect/item" + str(extra_arg_0)).set_normal_texture(link)
-		
+func cooked():
+	add_inventory_item(cooking_item['name'])
+	var inventar = get_node("Camera2D/Control/inventar")
+	var index = 0
+	for value in inventory:
+		index = index + 1
+		var item = load(value['link'])
+		get_node("Camera2D/Control/inventar/TextureRect/item" + str(index)).set_normal_texture(item)
+		if(value['count'] > 1):
+			get_node("Camera2D/Control/inventar/TextureRect/item" +str(index) + "/count").text = str(value['count'])	
+	cooking_table = [{"name" : ""},{"name" : ""},{"name" : ''}, {}]
+	cooking_item = null
+	var items = [1, 2, 3, 4]
+	for value in items:
+		get_node("Camera2D/Control/Cooking/TextureRect/item" + str(value)).set_normal_texture(null)
